@@ -203,7 +203,7 @@ NIGHT_SONIC = """\
 
 <sub>🔥 <b>BAKALA DE TROYA</b> — 15h non-stop DJ marathon · Industrial Warehouse · Dark Disco & IDM</sub>
 <br/>
-<sub>🎵 Latest: <a href="https://open.spotify.com/album/4vMh97bWkGZON5R2u55P8J"><b>Manifiesto de lo Inmanente</b></a></sub>
+<sub>🎵 Latest: <a href="https://open.spotify.com/intl-es/album/7HTxaYpcYV5sVDlj2kzx7y"><b>Manifiesto de lo Inmanente</b></a></sub>
 
 </div>
 
