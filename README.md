@@ -27,19 +27,21 @@
 
 ```yaml
 # > whoami
-name:      Borja Moskv
-alias:     bakaladetroya
-location:  Bilbao, Basque Country
-role:      Sovereign Architect · Producer · DJ
-stack:     [Python, TypeScript, Rust, WebGL, GLSL]
-genres:    [IDM, Techno, Ambient, Dark Disco, Electro]
-axiom:     "Ω₃ — Byzantine Default: Verify then trust."
-aesthetic: "#0A0A0A × #CCFF00 — Industrial Noir 2026"
+name:       Borja Moskv
+also:       bakaladetroya, Flamenc Osmic, Boney Mdma & Neil Ráyadon
+location:   Bilbao, Basque Country  # No de Berlín.
+role:       Sovereign Architect by day · Producer & DJ by night
+stack:      [Python, TypeScript, Rust, WebGL, GLSL]
+genres:     [IDM, Techno, Ambient, Dark Disco, Electro]
+axiom:      "Ω₃ — Byzantine Default: Verify then trust."
+aesthetic:  "#0A0A0A × #CCFF00 — Industrial Noir 2026"
+weakness:   Tendencia a complicarme la vida.
 now:
-  building:   CORTEX Persist v0.3 — cryptographic memory for AI agents
-  deploying:  cortexpersist.com / .dev / .org
-  releasing:  Lore Electrónico: Borja Moskv Multiverso
-  exploring:  Zero-knowledge proofs & EU AI Act compliance
+  building:    CORTEX Persist v0.3 — cryptographic memory for AI agents
+  releasing:   Lore Electrónico: Borja Moskv Multiverso
+  deploying:   cortexpersist.com / .dev / .org
+  exploring:   Zero-knowledge proofs & EU AI Act compliance
+  dj_marathon: 15h non-stop · Industrial Warehouse · Dark Disco & IDM
 ```
 
 ---
