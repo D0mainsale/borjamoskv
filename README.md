@@ -5,10 +5,7 @@
 </div>
 
 <div align="center">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=2500&pause=800&color=CCFF00&background=0A0A0A00&center=true&vCenter=true&repeat=true&width=600&height=45&lines=BORJA+MOSKV;SOVEREIGN+ARCHITECT;CORTEX+PERSIST;TRUST+INFRASTRUCTURE" alt="BORJA MOSKV" /></a>
-
-<sub>☀️ <b>Modo Día</b> — Código · Arquitectura · Infraestructura de Confianza</sub>
-
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=2500&pause=800&color=CCFF00&background=0A0A0A00&center=true&vCenter=true&repeat=true&width=600&height=45&lines=BORJA+MOSKV;SOVEREIGN+ARCHITECT;BAKALA+DE+TROYA;CORTEX+PERSIST;DARK+DISCO+%2F%2F+IDM" alt="BORJA MOSKV" /></a>
 </div>
 
 ---
@@ -31,14 +28,17 @@
 ```yaml
 # > whoami
 name:      Borja Moskv
+alias:     bakaladetroya
 location:  Bilbao, Basque Country
-role:      Sovereign Architect — Trust Infrastructure for Autonomous AI
+role:      Sovereign Architect · Producer · DJ
 stack:     [Python, TypeScript, Rust, WebGL, GLSL]
+genres:    [IDM, Techno, Ambient, Dark Disco, Electro]
 axiom:     "Ω₃ — Byzantine Default: Verify then trust."
 aesthetic: "#0A0A0A × #CCFF00 — Industrial Noir 2026"
 now:
   building:   CORTEX Persist v0.3 — cryptographic memory for AI agents
   deploying:  cortexpersist.com / .dev / .org
+  releasing:  Lore Electrónico: Borja Moskv Multiverso
   exploring:  Zero-knowledge proofs & EU AI Act compliance
 ```
 
@@ -91,6 +91,62 @@ now:
 
 ---
 
+### 🎧 `// SONIC`
+
+<div align="center">
+
+**IDM · Techno · Ambient · Dark Disco · Electro**
+
+[![Bandcamp](https://img.shields.io/badge/Bandcamp-0A0A0A?style=for-the-badge&logo=bandcamp&logoColor=CCFF00)](https://borjamoskv.bandcamp.com)
+[![Spotify](https://img.shields.io/badge/Spotify-0A0A0A?style=for-the-badge&logo=spotify&logoColor=CCFF00)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
+[![SoundCloud](https://img.shields.io/badge/SoundCloud-0A0A0A?style=for-the-badge&logo=soundcloud&logoColor=CCFF00)](https://soundcloud.com/borja-moskv)
+[![YouTube](https://img.shields.io/badge/YouTube-0A0A0A?style=for-the-badge&logo=youtube&logoColor=CCFF00)](https://www.youtube.com/@borjamoskv)
+[![Mixcloud](https://img.shields.io/badge/Mixcloud-0A0A0A?style=for-the-badge&logo=mixcloud&logoColor=CCFF00)](https://www.mixcloud.com/borjamoskv/)
+[![Discogs](https://img.shields.io/badge/Discogs-0A0A0A?style=for-the-badge&logo=discogs&logoColor=CCFF00)](https://www.discogs.com/es/release/35551876-Bakala-de-Troya-Lore-Electr%C3%B3nico-Borja-Moskv-Multiverso)
+
+<sub>🔥 <b>BAKALA DE TROYA</b> — 15h non-stop DJ marathon · Industrial Warehouse · Dark Disco & IDM</sub>
+<br/>
+<sub>🎵 Latest: <a href="https://open.spotify.com/intl-es/album/4vMh97bWkGZON5R2u55P8J"><b>Lore Electrónico: Borja Moskv Multiverso</b></a></sub>
+
+</div>
+
+---
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🎛 `Rework Engine`
+
+> Autonomous electronic rework pipeline.
+
+```
+🎚️ Demucs htdemucs_ft stem separation
+🎹 Librosa harmonic analysis & pitch
+🔊 Pedalboard FX chain & sidechain
+🧬 Spectral morphing & spatial mastering
+```
+
+</td>
+<td width="50%" valign="top">
+
+### 🔬 `Research`
+
+> Zero-knowledge & sovereign systems.
+
+```
+🔒 ZK-SNARKs & post-quantum crypto
+🇪🇺 EU AI Act compliance engine
+🧪 Formal verification (Z3 solver)
+🌐 Federation & Byzantine consensus
+```
+
+</td>
+</tr>
+</table>
+
+---
+
 <div align="center">
 
 <a href="https://github.com/borjamoskv/Cortex-Persist"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=Cortex-Persist&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
@@ -130,6 +186,9 @@ now:
 
 [![Web](https://img.shields.io/badge/borjamoskv.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.borjamoskv.com)
 [![CORTEX](https://img.shields.io/badge/cortexpersist.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
+[![Bandcamp](https://img.shields.io/badge/Bandcamp-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=bandcamp&logoColor=0A0A0A)](https://borjamoskv.bandcamp.com)
+[![Spotify](https://img.shields.io/badge/Spotify-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=spotify&logoColor=0A0A0A)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
+[![Discogs](https://img.shields.io/badge/Discogs-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=discogs&logoColor=0A0A0A)](https://www.discogs.com/es/release/35551876-Bakala-de-Troya-Lore-Electr%C3%B3nico-Borja-Moskv-Multiverso)
 [![Portrait](https://img.shields.io/badge/portrait.so-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://portrait.so/borja)
 [![Foundation](https://img.shields.io/badge/Foundation-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://foundation.app/@bakaladetroya)
 [![Naroa](https://img.shields.io/badge/naroa.online-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.naroa.online)
