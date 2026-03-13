@@ -1,0 +1,34 @@
+name: 🧠 Dynamic Profile README
+
+on:
+  schedule:
+    # Every 2 hours — keeps the day/night switch accurate
+    - cron: "0 */2 * * *"
+  workflow_dispatch:  # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate README
+        run: python scripts/update_readme.py
+
+      - name: Commit & Push
+        run: |
+          git config user.name "MOSKV-1"
+          git config user.email "borjamoskv@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "🔄 $(python -c "from datetime import datetime; from zoneinfo import ZoneInfo; now=datetime.now(ZoneInfo('Europe/Madrid')); print(f'{'🌙 Night' if now.hour >= 21 or now.hour < 8 else '☀️ Day'} mode — {now.strftime('%H:%M CET')}')")"
+          git push

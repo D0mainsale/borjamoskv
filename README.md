@@ -1,16 +1,21 @@
 <div align="center">
 
-<img src="./banner.png" alt="MOSKV-1" width="100%" />
+<img src="./logomoskv.png" alt="MOSKV-1" width="200">
 
-<br/>
+</div>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=2500&pause=800&color=CCFF00&background=0A0A0A00&center=true&vCenter=true&repeat=true&width=600&height=45&lines=BORJA+MOSKV;SOVEREIGN+ARCHITECT;BAKALA+DE+TROYA;CORTEX+PERSIST" alt="BORJA MOSKV" /></a>
+<div align="center">
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=2500&pause=800&color=CCFF00&background=0A0A0A00&center=true&vCenter=true&repeat=true&width=600&height=45&lines=BORJA+MOSKV;SOVEREIGN+ARCHITECT;CORTEX+PERSIST;TRUST+INFRASTRUCTURE" alt="BORJA MOSKV" /></a>
 
-<sub>Producción · Arte · DJ · Código — Todo junto, todo desde Bilbao</sub>
+<sub>☀️ <b>Modo Día</b> — Código · Arquitectura · Infraestructura de Confianza</sub>
 
-<br/><br/>
+</div>
 
-[![CORTEX](https://img.shields.io/badge/CORTEX_Persist-v0.3-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
+---
+
+<div align="center">
+
+[![CORTEX](https://img.shields.io/badge/CORTEX-Persist_v0.3-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
 [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-Compliant-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
 [![Agents](https://img.shields.io/badge/Swarm-100_Agents-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
 [![Tests](https://img.shields.io/badge/1993-Tests-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
@@ -26,7 +31,6 @@
 ```yaml
 # > whoami
 name:      Borja Moskv
-alias:     bakaladetroya
 location:  Bilbao, Basque Country
 role:      Sovereign Architect — Trust Infrastructure for Autonomous AI
 stack:     [Python, TypeScript, Rust, WebGL, GLSL]
@@ -34,7 +38,7 @@ axiom:     "Ω₃ — Byzantine Default: Verify then trust."
 aesthetic: "#0A0A0A × #CCFF00 — Industrial Noir 2026"
 now:
   building:   CORTEX Persist v0.3 — cryptographic memory for AI agents
-  releasing:  Manifiesto de lo Inmanente
+  deploying:  cortexpersist.com / .dev / .org
   exploring:  Zero-knowledge proofs & EU AI Act compliance
 ```
 
@@ -60,7 +64,7 @@ now:
 🔐 AES-256 · Ed25519 · hash-chain ledger
 🧬 sqlite-vec ANN · ONNX embeddings
 🌐 FastAPI · MCP · Google ADK
-📊 Shannon entropy · 1993 tests
+📊 Shannon entropy · 1993 tests · 21 Seals
 ```
 
 [![.com](https://img.shields.io/badge/cortexpersist.com-CCFF00?style=flat-square&labelColor=0A0A0A)](https://cortexpersist.com) [![.dev](https://img.shields.io/badge/.dev-CCFF00?style=flat-square&labelColor=0A0A0A)](https://cortexpersist.dev) [![.org](https://img.shields.io/badge/.org-CCFF00?style=flat-square&labelColor=0A0A0A)](https://cortexpersist.org)
@@ -98,28 +102,6 @@ now:
 
 ---
 
-### 🎧 `// SONIC`
-
-<div align="center">
-
-[![Spotify](https://novatorem-borjamoskv.vercel.app/api/spotify)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
-
-**IDM · Techno · Ambient · Dark Disco · Electro**
-
-[![Bandcamp](https://img.shields.io/badge/Bandcamp-0A0A0A?style=for-the-badge&logo=bandcamp&logoColor=CCFF00)](https://borjamoskv.bandcamp.com)
-[![Spotify](https://img.shields.io/badge/Spotify-0A0A0A?style=for-the-badge&logo=spotify&logoColor=CCFF00)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
-[![SoundCloud](https://img.shields.io/badge/SoundCloud-0A0A0A?style=for-the-badge&logo=soundcloud&logoColor=CCFF00)](https://soundcloud.com/borja-moskv)
-[![YouTube](https://img.shields.io/badge/YouTube-0A0A0A?style=for-the-badge&logo=youtube&logoColor=CCFF00)](https://www.youtube.com/@borjamoskv)
-[![Mixcloud](https://img.shields.io/badge/Mixcloud-0A0A0A?style=for-the-badge&logo=mixcloud&logoColor=CCFF00)](https://www.mixcloud.com/borjamoskv/)
-
-<sub>🔥 <b>BAKALA DE TROYA</b> — 15h non-stop DJ marathon · Industrial Warehouse · Dark Disco & IDM</sub>
-<br/>
-<sub>🎵 Latest: <a href="https://open.spotify.com/album/4vMh97bWkGZON5R2u55P8J"><b>Manifiesto de lo Inmanente</b></a></sub>
-
-</div>
-
----
-
 <div align="center">
 
 <img src="https://github-profile-trophy.vercel.app/?username=borjamoskv&theme=darkhub&no-frame=true&no-bg=true&column=7" width="90%" />
@@ -135,7 +117,6 @@ now:
 
 <br/><br/>
 
-<!-- Contribution Snake — Requires GitHub Action (see .github/workflows/snake.yml) -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/borjamoskv/borjamoskv/output/github-snake-dark.svg" />
   <img alt="Snake animation" src="https://raw.githubusercontent.com/borjamoskv/borjamoskv/output/github-snake-dark.svg" />
@@ -153,7 +134,13 @@ now:
 [![Foundation](https://img.shields.io/badge/Foundation-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://foundation.app/@bakaladetroya)
 [![Naroa](https://img.shields.io/badge/naroa.online-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.naroa.online)
 
-<br/><br/>
+</div>
+
+
+<br/>
+
+
+<div align="center">
 
 ```
 We are many, yet we act as one.
