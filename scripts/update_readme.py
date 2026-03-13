@@ -7,7 +7,7 @@ Day:   08:00 → 20:59 CET/CEST
 Night: 21:00 → 07:59 CET/CEST
 """
 
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
@@ -18,7 +18,7 @@ MADRID = ZoneInfo("Europe/Madrid")
 HEADER = """\
 <div align="center">
 
-<img src="./logomoskv.png" alt="MOSKV-1" width="200">
+<img src="./banner.png" alt="MOSKV-1" width="420">
 
 </div>
 """
@@ -65,7 +65,7 @@ TELEMETRY = """\
 <br/><br/>
 
 <img src="https://github-readme-stats.vercel.app/api?username=borjamoskv&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&include_all_commits=true&count_private=true&custom_title=Telemetry" height="160" />
-<img src="https://github-readme-streak-stats.herokuapp.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
+<img src="https://streak-stats.demolab.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
 
 <br/><br/>
 
@@ -81,13 +81,28 @@ TELEMETRY = """\
 </div>
 """
 
-FOOTER_LINKS = """\
+DAY_FOOTER_LINKS = """\
 <div align="center">
 
 [![Web](https://img.shields.io/badge/borjamoskv.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.borjamoskv.com)
 [![CORTEX](https://img.shields.io/badge/cortexpersist.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
 [![Portrait](https://img.shields.io/badge/portrait.so-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://portrait.so/borja)
 [![Foundation](https://img.shields.io/badge/Foundation-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://foundation.app/@bakaladetroya)
+[![Naroa](https://img.shields.io/badge/naroa.online-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.naroa.online)
+
+</div>
+"""
+
+NIGHT_FOOTER_LINKS = """\
+<div align="center">
+
+[![Web](https://img.shields.io/badge/borjamoskv.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.borjamoskv.com)
+[![CORTEX](https://img.shields.io/badge/cortexpersist.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
+[![Bandcamp](https://img.shields.io/badge/Bandcamp-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=bandcamp&logoColor=0A0A0A)](https://borjamoskv.bandcamp.com)
+[![Spotify](https://img.shields.io/badge/Spotify-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=spotify&logoColor=0A0A0A)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
+[![SoundCloud](https://img.shields.io/badge/SoundCloud-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=soundcloud&logoColor=0A0A0A)](https://soundcloud.com/borja-moskv)
+[![YouTube](https://img.shields.io/badge/YouTube-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=youtube&logoColor=0A0A0A)](https://www.youtube.com/@borjamoskv)
+[![Discogs](https://img.shields.io/badge/Discogs-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=discogs&logoColor=0A0A0A)](https://www.discogs.com/es/release/35551876-Bakala-de-Troya-Lore-Electr%C3%B3nico-Borja-Moskv-Multiverso)
 [![Naroa](https://img.shields.io/badge/naroa.online-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.naroa.online)
 
 </div>
@@ -180,7 +195,7 @@ role:      Producer · DJ · Sonic Architect
 genres:    [IDM, Techno, Ambient, Dark Disco, Electro]
 aesthetic: "#0A0A0A × #CCFF00 — Industrial Noir 2026"
 now:
-  releasing:  Manifiesto de lo Inmanente
+  releasing:  Lore Electrónico: Borja Moskv Multiverso
   mixing:     15h non-stop · Industrial Warehouse · Dark Disco & IDM
   building:   Autonomous Rework Pipeline (Demucs + Librosa + Pedalboard)
 ```
@@ -191,8 +206,6 @@ NIGHT_SONIC = """\
 
 <div align="center">
 
-[![Spotify](https://novatorem-borjamoskv.vercel.app/api/spotify)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
-
 **IDM · Techno · Ambient · Dark Disco · Electro**
 
 [![Bandcamp](https://img.shields.io/badge/Bandcamp-0A0A0A?style=for-the-badge&logo=bandcamp&logoColor=CCFF00)](https://borjamoskv.bandcamp.com)
@@ -200,10 +213,11 @@ NIGHT_SONIC = """\
 [![SoundCloud](https://img.shields.io/badge/SoundCloud-0A0A0A?style=for-the-badge&logo=soundcloud&logoColor=CCFF00)](https://soundcloud.com/borja-moskv)
 [![YouTube](https://img.shields.io/badge/YouTube-0A0A0A?style=for-the-badge&logo=youtube&logoColor=CCFF00)](https://www.youtube.com/@borjamoskv)
 [![Mixcloud](https://img.shields.io/badge/Mixcloud-0A0A0A?style=for-the-badge&logo=mixcloud&logoColor=CCFF00)](https://www.mixcloud.com/borjamoskv/)
+[![Discogs](https://img.shields.io/badge/Discogs-0A0A0A?style=for-the-badge&logo=discogs&logoColor=CCFF00)](https://www.discogs.com/es/release/35551876-Bakala-de-Troya-Lore-Electr%C3%B3nico-Borja-Moskv-Multiverso)
 
 <sub>🔥 <b>BAKALA DE TROYA</b> — 15h non-stop DJ marathon · Industrial Warehouse · Dark Disco & IDM</sub>
 <br/>
-<sub>🎵 Latest: <a href="https://open.spotify.com/intl-es/album/7HTxaYpcYV5sVDlj2kzx7y"><b>Manifiesto de lo Inmanente</b></a></sub>
+<sub>🎵 Latest: <a href="https://open.spotify.com/intl-es/album/4vMh97bWkGZON5R2u55P8J"><b>Lore Electrónico: Borja Moskv Multiverso</b></a></sub>
 
 </div>
 
@@ -298,7 +312,12 @@ def build_readme(night: bool) -> str:
     sections.append("---\n")
     sections.append(TELEMETRY)
     sections.append("---\n")
-    sections.append(FOOTER_LINKS)
+
+    if night:
+        sections.append(NIGHT_FOOTER_LINKS)
+    else:
+        sections.append(DAY_FOOTER_LINKS)
+
     sections.append("\n<br/>\n\n")
     sections.append(FOOTER_SIGNATURE)
 

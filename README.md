@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./logomoskv.png" alt="MOSKV-1" width="200">
+<img src="./banner.png" alt="MOSKV-1" width="420">
 
 </div>
 
@@ -109,7 +109,7 @@ now:
 <br/><br/>
 
 <img src="https://github-readme-stats.vercel.app/api?username=borjamoskv&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&include_all_commits=true&count_private=true&custom_title=Telemetry" height="160" />
-<img src="https://github-readme-streak-stats.herokuapp.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
+<img src="https://streak-stats.demolab.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
 
 <br/><br/>
 
