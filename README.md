@@ -15,7 +15,9 @@
 [![CORTEX](https://img.shields.io/badge/CORTEX-Persist_v0.3-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
 [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-Compliant-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
 [![Agents](https://img.shields.io/badge/Swarm-100_Agents-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
-[![Tests](https://img.shields.io/badge/1993-Tests-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
+[![Tests](https://img.shields.io/badge/Tests-1993-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://github.com/borjamoskv/Cortex-Persist)
+[![License](https://img.shields.io/github/license/borjamoskv/Cortex-Persist?style=for-the-badge&labelColor=0A0A0A&color=CCFF00)](https://github.com/borjamoskv/Cortex-Persist)
+[![Last Commit](https://img.shields.io/github/last-commit/borjamoskv/Cortex-Persist?style=for-the-badge&labelColor=0A0A0A&color=CCFF00)](https://github.com/borjamoskv/Cortex-Persist)
 
 <br/>
 
@@ -178,9 +180,9 @@ now:
 <div align="center">
 
 <a href="https://github.com/borjamoskv/Cortex-Persist"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=Cortex-Persist&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
-<a href="https://github.com/borjamoskv/cortexpersist-landing"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=cortexpersist-landing&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
 <a href="https://github.com/borjamoskv/gordacorp-immersive"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=gordacorp-immersive&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
 <a href="https://github.com/borjamoskv/comienzos-clone"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=comienzos-clone&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/cortexpersist-landing"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=cortexpersist-landing&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
 
 </div>
 
@@ -193,6 +195,10 @@ now:
 <br/><br/>
 
 <img src="https://github-readme-stats.vercel.app/api?username=borjamoskv&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&include_all_commits=true&count_private=true&custom_title=Telemetry" height="160" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=borjamoskv&layout=compact&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&langs_count=8&custom_title=Stack+Distribution" height="160" />
+
+<br/><br/>
+
 <img src="https://streak-stats.demolab.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
 
 <br/><br/>
