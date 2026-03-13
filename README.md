@@ -44,6 +44,32 @@ now:
   dj_marathon: 15h non-stop · Industrial Warehouse · Dark Disco & IDM
 ```
 
+<details>
+<summary>&nbsp;&nbsp;📜 <i>Leer el manifiesto</i></summary>
+<br/>
+
+> Si todo esto parece un plan, no lo es. Es más bien una acumulación de decisiones ligeramente dudosas tomadas con bastante convicción. A veces me preguntan qué hago exactamente. Suelo decir "electrónica", porque es corto y la gente asiente. Luego, en casa, pienso que tampoco era eso, pero ya es tarde.
+>
+> Sigo añadiendo capas como quien pone otra silla en una habitación que ya está llena. No porque haga falta, sino porque alguien podría sentarse.
+>
+> **No es épico. Pero insiste.**
+>
+> Me llamo Borja Moskv, pero eso es verdad a medias. Casi nadie me llama así. Hay días que soy Bakala de Troya, otros Flamenc Osmic, otros Boney Mdma & Neil Ráyadon, y otros simplemente no me llaman.
+>
+> No tengo una identidad fija porque no la necesito. Los nombres no son máscaras: son modos de funcionamiento. Interruptores. Cambios de tono. Cada alias es la misma cabeza mirando desde otro ángulo.
+>
+> Todo lo que hago —música, visuales, textos, proyectos digitales, sets, relatos— responde a la misma manía persistente: construir un universo propio. Un sitio donde la electrónica no es solo baile, sino relato, ironía y pensamiento de barrio.
+>
+> No hago música para demostrar nada. Hago música para ordenar el ruido, aunque casi siempre lo ordeno de una manera que genera más ruido. Es una contradicción funcional. Me llevo bien con ella.
+>
+> La electrónica, para mí, no es futuro ni vanguardia: es costumbrismo con máquinas. Gente bailando con cara de estar resolviendo algo importante. Sintetizadores diciendo más de lo que deberían.
+>
+> No persigo la novedad. Persigo la coherencia rara. Que alguien escuche algo mío y piense: *"no sé muy bien qué es esto, pero es claramente de la misma cabeza"*. Con eso me basta.
+>
+> Todo esto sale de Bilbao. No de Berlín. Con humedad, ironía y tendencia a complicarme la vida. Podría simplificarlo todo, claro. **Pero entonces no tendría gracia.**
+
+</details>
+
 ---
 
 <div align="center">
