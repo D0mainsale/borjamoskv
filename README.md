@@ -38,6 +38,7 @@ genres:     [IDM, Techno, Ambient, Dark Disco, Electro]
 axiom:      "Ω₃ — Byzantine Default: Verify then trust."
 aesthetic:  "#0A0A0A × #CCFF00 — Industrial Noir 2026"
 weakness:   Tendencia a complicarme la vida.
+substack:   Jarana d'Or — Boney MDMA & Neil Ráyadon
 now:
   building:    CORTEX Persist v0.3 — cryptographic memory for AI agents
   releasing:   Lore Electrónico: Borja Moskv Multiverso
@@ -132,7 +133,8 @@ now:
 [![SoundCloud](https://img.shields.io/badge/SoundCloud-0A0A0A?style=for-the-badge&logo=soundcloud&logoColor=CCFF00)](https://soundcloud.com/borja-moskv)
 [![YouTube](https://img.shields.io/badge/YouTube-0A0A0A?style=for-the-badge&logo=youtube&logoColor=CCFF00)](https://www.youtube.com/@borjamoskv)
 [![Mixcloud](https://img.shields.io/badge/Mixcloud-0A0A0A?style=for-the-badge&logo=mixcloud&logoColor=CCFF00)](https://www.mixcloud.com/borjamoskv/)
-[![Discogs](https://img.shields.io/badge/Discogs-0A0A0A?style=for-the-badge&logo=discogs&logoColor=CCFF00)](https://www.discogs.com/es/release/35551876-Bakala-de-Troya-Lore-Electr%C3%B3nico-Borja-Moskv-Multiverso)
+[![Discogs](https://img.shields.io/badge/Discogs-0A0A0A?style=for-the-badge&logo=discogs&logoColor=CCFF00)](https://www.discogs.com/es/artist/16862764-Borja-Moskv)
+[![Substack](https://img.shields.io/badge/Substack-0A0A0A?style=for-the-badge&logo=substack&logoColor=CCFF00)](https://borjamoskv.substack.com)
 
 <sub>🔥 <b>BAKALA DE TROYA</b> — 15h non-stop DJ marathon · Industrial Warehouse · Dark Disco & IDM</sub>
 <br/>
@@ -179,10 +181,12 @@ now:
 
 <div align="center">
 
-<a href="https://github.com/borjamoskv/Cortex-Persist"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=Cortex-Persist&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
-<a href="https://github.com/borjamoskv/gordacorp-immersive"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=gordacorp-immersive&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
-<a href="https://github.com/borjamoskv/comienzos-clone"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=comienzos-clone&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
-<a href="https://github.com/borjamoskv/cortexpersist-landing"><img src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=cortexpersist-landing&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/Cortex-Persist"><img alt="Cortex-Persist" src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=Cortex-Persist&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/gordacorp-immersive"><img alt="gordacorp-immersive" src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=gordacorp-immersive&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/eth-phishing-detect"><img alt="eth-phishing-detect" src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=eth-phishing-detect&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/borjamoskv_site"><img alt="borjamoskv_site" src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=borjamoskv_site&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/comienzos-clone"><img alt="comienzos-clone" src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=comienzos-clone&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
+<a href="https://github.com/borjamoskv/cortexpersist-landing"><img alt="cortexpersist-landing" src="https://github-readme-stats.vercel.app/api/pin/?username=borjamoskv&repo=cortexpersist-landing&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00" /></a>
 
 </div>
 
@@ -190,20 +194,20 @@ now:
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=borjamoskv&theme=darkhub&no-frame=true&no-bg=true&column=7" width="90%" />
+<img alt="Trophies" src="https://github-profile-trophy.vercel.app/?username=borjamoskv&theme=darkhub&no-frame=true&no-bg=true&column=7" width="90%" />
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=borjamoskv&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&include_all_commits=true&count_private=true&custom_title=Telemetry" height="160" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=borjamoskv&layout=compact&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&langs_count=8&custom_title=Stack+Distribution" height="160" />
+<img alt="Telemetry" src="https://github-readme-stats.vercel.app/api?username=borjamoskv&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&include_all_commits=true&count_private=true&custom_title=Telemetry" height="160" />
+<img alt="Stack Distribution" src="https://github-readme-stats.vercel.app/api/top-langs/?username=borjamoskv&layout=compact&hide_border=true&bg_color=0A0A0A&title_color=CCFF00&text_color=FAFAFA&icon_color=CCFF00&langs_count=8&custom_title=Stack+Distribution" height="160" />
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
+<img alt="Streak" src="https://streak-stats.demolab.com?user=borjamoskv&hide_border=true&background=0A0A0A&ring=CCFF00&fire=CCFF00&currStreakLabel=CCFF00&sideLabels=FAFAFA&currStreakNum=FAFAFA&sideNums=FAFAFA&dates=666666" height="160" />
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=borjamoskv&bg_color=0A0A0A&color=FAFAFA&line=CCFF00&point=CCFF00&area=true&area_color=CCFF00&hide_border=true&custom_title=Contribution+Frequency" width="95%" />
+<img alt="Contribution Frequency" src="https://github-readme-activity-graph.vercel.app/graph?username=borjamoskv&bg_color=0A0A0A&color=FAFAFA&line=CCFF00&point=CCFF00&area=true&area_color=CCFF00&hide_border=true&custom_title=Contribution+Frequency" width="95%" />
 
 <br/><br/>
 
@@ -222,7 +226,8 @@ now:
 [![CORTEX](https://img.shields.io/badge/cortexpersist.com-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://cortexpersist.com)
 [![Bandcamp](https://img.shields.io/badge/Bandcamp-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=bandcamp&logoColor=0A0A0A)](https://borjamoskv.bandcamp.com)
 [![Spotify](https://img.shields.io/badge/Spotify-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=spotify&logoColor=0A0A0A)](https://open.spotify.com/intl-es/artist/4p7wMuZpktE5aBFhBoQdqa)
-[![Discogs](https://img.shields.io/badge/Discogs-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=discogs&logoColor=0A0A0A)](https://www.discogs.com/es/release/35551876-Bakala-de-Troya-Lore-Electr%C3%B3nico-Borja-Moskv-Multiverso)
+[![Discogs](https://img.shields.io/badge/Discogs-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=discogs&logoColor=0A0A0A)](https://www.discogs.com/es/artist/16862764-Borja-Moskv)
+[![Substack](https://img.shields.io/badge/Substack-CCFF00?style=for-the-badge&labelColor=0A0A0A&logo=substack&logoColor=0A0A0A)](https://borjamoskv.substack.com)
 [![Portrait](https://img.shields.io/badge/portrait.so-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://portrait.so/borja)
 [![Foundation](https://img.shields.io/badge/Foundation-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://foundation.app/@bakaladetroya)
 [![Naroa](https://img.shields.io/badge/naroa.online-CCFF00?style=for-the-badge&labelColor=0A0A0A)](https://www.naroa.online)
