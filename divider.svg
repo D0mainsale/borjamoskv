@@ -1,31 +1,23 @@
-<svg width="800" height="30" viewBox="0 0 800 30" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="20" viewBox="0 0 800 20" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .glow { filter: drop-shadow(0 0 3px #CCFF00); }
-      .bg-track { fill: #2B3BE5; opacity: 0.2; }
+      .glow-mag { filter: drop-shadow(0 0 3px #FF0055); }
+      .glow-cyan { filter: drop-shadow(0 0 3px #00F0FF); }
+      .text-micro { font-family: monospace; font-size: 10px; font-weight: bold; fill: #FAFAFA; opacity: 0.7;}
     </style>
   </defs>
-  
-  <rect x="0" y="14" width="800" height="1" class="bg-track" />
-  
-  <text x="10" y="18" fill="#FAFAFA" font-family="monospace" font-size="10" opacity="0.5">[ 0xMEM_ALLOC ]</text>
-  
-  <!-- Loading Blocks -->
-  <g transform="translate(130, 10)">
-    <rect x="0" y="0" width="10" height="8" fill="#CCFF00" class="glow" />
-    <rect x="15" y="0" width="10" height="8" fill="#CCFF00" class="glow">
-       <animate attributeName="opacity" values="0;1;1" dur="2s" repeatCount="indefinite" />
-    </rect>
-    <rect x="30" y="0" width="10" height="8" fill="#CCFF00" class="glow">
-       <animate attributeName="opacity" values="0;0;1" dur="2s" repeatCount="indefinite" />
-    </rect>
-    <rect x="45" y="0" width="10" height="8" fill="#2B3BE5" opacity="0.3" />
-    <rect x="60" y="0" width="10" height="8" fill="#2B3BE5" opacity="0.3" />
-    <rect x="75" y="0" width="10" height="8" fill="#2B3BE5" opacity="0.3" />
-  </g>
 
-  <!-- Sweeping Line -->
-  <rect x="230" y="14" width="50" height="1" fill="#CCFF00" class="glow">
-    <animate attributeName="x" values="230;800" dur="1s" repeatCount="indefinite" />
+  <!-- Left Side: Cyan -->
+  <rect x="0" y="9" width="350" height="2" fill="#00F0FF" opacity="0.4" />
+  <rect x="0" y="9" width="50" height="2" fill="#00F0FF" class="glow-cyan">
+    <animate attributeName="x" values="0;300" dur="1.5s" repeatCount="indefinite" />
+  </rect>
+
+  <text x="360" y="13" class="text-micro">[ SYSTEM_LINK ]</text>
+
+  <!-- Right Side: Magenta -->
+  <rect x="460" y="9" width="340" height="2" fill="#FF0055" opacity="0.4" />
+  <rect x="460" y="9" width="50" height="2" fill="#FF0055" class="glow-mag">
+    <animate attributeName="x" values="750;460" dur="1.5s" repeatCount="indefinite" />
   </rect>
 </svg>

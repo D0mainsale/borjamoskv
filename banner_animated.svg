@@ -1,98 +1,149 @@
 <svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .bg { fill: #0A0A0A; }
-      .grid-line { stroke: #2B3BE5; stroke-width: 0.5; opacity: 0.3; }
-      .text-hero { font-family: 'Courier New', Courier, monospace; font-size: 56px; font-weight: bold; fill: #FAFAFA; letter-spacing: -2px; }
-      .text-neon { font-family: 'Courier New', Courier, monospace; font-size: 14px; font-weight: bold; fill: #CCFF00; letter-spacing: 2px; }
-      .text-micro { font-family: 'Courier New', Courier, monospace; font-size: 10px; fill: #FAFAFA; opacity: 0.5; }
+      .bg { fill: #080808; }
+      .text-hero { font-family: monospace; font-size: 58px; font-weight: bold; letter-spacing: -2px; }
+      .text-sub { font-family: monospace; font-size: 14px; font-weight: bold; fill: #CCFF00; letter-spacing: 2px; }
+      .text-micro { font-family: monospace; font-size: 10px; fill: #FAFAFA; opacity: 0.6; }
       .glow { filter: drop-shadow(0 0 5px #CCFF00); }
-      .neon-stroke { stroke: #CCFF00; stroke-width: 1.5; fill: none; }
+      .glow-cyan { filter: drop-shadow(0 0 5px #00F0FF); }
+      .glow-mag { filter: drop-shadow(0 0 5px #FF0055); }
+      
+      .st-cyan { fill: #00F0FF; }
+      .st-mag { fill: #FF0055; }
+      .st-neon { fill: #CCFF00; }
+      .st-white { fill: #FAFAFA; }
+      
+      .grid-line { stroke: #2B3BE5; stroke-width: 0.5; opacity: 0.3; }
+      
+      @keyframes rgb-glitch-1 {
+        0%, 100% { transform: translate(0, 0); opacity: 1; }
+        10% { transform: translate(-3px, -2px); opacity: 0.8; }
+        20% { transform: translate(3px, 2px); opacity: 0.9; }
+        30% { transform: translate(-3px, 0); opacity: 1; }
+      }
+      @keyframes rgb-glitch-2 {
+        0%, 100% { transform: translate(0, 0); opacity: 1; }
+        12% { transform: translate(3px, 2px); opacity: 0.8; }
+        22% { transform: translate(-3px, -2px); opacity: 0.9; }
+        32% { transform: translate(3px, 0); opacity: 1; }
+      }
+      .rgb-c { animation: rgb-glitch-1 3.5s infinite; mix-blend-mode: screen; }
+      .rgb-m { animation: rgb-glitch-2 3.2s infinite; mix-blend-mode: screen; }
+      
     </style>
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" class="grid-line" />
+    
+    <pattern id="iso-grid" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="scale(1, 0.5) rotate(45)">
+      <path d="M 40 0 L 0 0 0 40" fill="none" class="grid-line" />
     </pattern>
+    <linearGradient id="fade" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="1" />
+      <stop offset="100%" stop-color="#2B3BE5" stop-opacity="0" />
+    </linearGradient>
   </defs>
 
-  <!-- Background Layer -->
+  <!-- Base Black -->
   <rect width="800" height="250" class="bg" />
-  <rect x="350" y="0" width="450" height="250" fill="url(#grid)">
-    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/>
-  </rect>
 
-  <!-- Left Side: Typography & Core Info -->
-  <g transform="translate(30, 80)">
-    <!-- Glitching Title -->
-    <text x="0" y="0" class="text-hero">
-      <tspan>BORJAMOSKV</tspan>
-      <animate attributeName="opacity" values="1;0.8;1;0.3;1" dur="3s" repeatCount="indefinite" />
-      <animate attributeName="x" values="0;2;-2;0" dur="3s" repeatCount="indefinite" />
-    </text>
-    
-    <text x="5" y="30" class="text-neon glow">CORTEX // SOVEREIGN_NODE</text>
-    
-    <!-- Animated Status Block -->
-    <rect x="5" y="47" width="8" height="8" fill="#CCFF00" class="glow">
-      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+  <!-- Isometric Techno Floor -->
+  <g transform="translate(0, 100)">
+    <!-- The grid moving downwards -->
+    <rect x="-800" y="-800" width="2400" height="2400" fill="url(#iso-grid)">
+      <animate attributeName="y" values="-800;-760" dur="2s" repeatCount="indefinite" />
     </rect>
-    <text x="25" y="55" class="text-micro">UPTIME: 99.99% // SECURED</text>
-    
-    <text x="5" y="75" class="text-micro">EST. 2026</text>
-    <text x="5" y="90" class="text-micro">LOC: BILBAO, BQ</text>
-    <text x="5" y="105" class="text-micro">AESTHETIC: INDUSTRIAL_NOIR</text>
+    <!-- Fade mask to hide the top horizon of the grid -->
+    <rect x="0" y="-100" width="800" height="150" fill="url(#fade)" />
   </g>
 
-  <!-- Right Side: Rotating Reactor Core -->
-  <g transform="translate(600, 125)">
-    <!-- Outer Ring -->
-    <circle cx="0" cy="0" r="80" stroke="#2B3BE5" stroke-width="1" fill="none" stroke-dasharray="4 4" opacity="0.6">
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" />
-    </circle>
-    
-    <!-- Mid Ring -->
-    <circle cx="0" cy="0" r="60" class="neon-stroke" stroke-dasharray="10 30 50 10">
-      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="10s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- Inner Core -->
-    <circle cx="0" cy="0" r="30" stroke="#FAFAFA" stroke-width="2" fill="none" opacity="0.2" />
-    <circle cx="0" cy="0" r="8" fill="#CCFF00" class="glow">
-      <animate attributeName="r" values="4;10;4" dur="2s" repeatCount="indefinite" />
-    </circle>
-    
-    <!-- Crosshairs -->
-    <path d="M -90 0 L 90 0 M 0 -90 L 0 90" stroke="#2B3BE5" stroke-width="0.5" opacity="0.5" />
-    
-    <!-- Orbiting Nodes -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" />
-      <circle cx="60" cy="0" r="3" fill="#FAFAFA" />
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="180" to="-180" dur="5s" repeatCount="indefinite" />
-      <circle cx="80" cy="0" r="2" fill="#CCFF00" class="glow" />
-    </g>
-  </g>
-
-  <!-- Hex Dump Data River -->
-  <g transform="translate(380, 50)" class="text-micro">
-    <text y="0">
-      <tspan x="0">0x4F 0x9A 0x11 0x00</tspan>
-      <tspan x="0" dy="15">0xBB 0x2C 0xFF 0x44</tspan>
-      <tspan x="0" dy="15">0x01 0xA3 0x9B 0x77</tspan>
-      <tspan x="0" dy="15">0x22 0x48 0x6C 0xDE</tspan>
-      <tspan x="0" dy="15">0x99 0x00 0x00 0x1A</tspan>
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite" />
+  <!-- Left Side: Chromatic Hero Title -->
+  <g transform="translate(40, 90)">
+    <!-- Magenta Base -->
+    <text x="-2" y="0" class="text-hero st-mag rgb-m glow-mag">BORJAMOSKV</text>
+    <!-- Cyan Base -->
+    <text x="2" y="0" class="text-hero st-cyan rgb-c glow-cyan">BORJAMOSKV</text>
+    <!-- White Top -->
+    <text x="0" y="0" class="text-hero st-white">
+       <animate attributeName="opacity" values="1;0.9;1;0.4;1" dur="4s" repeatCount="indefinite" />
+       BORJAMOSKV
     </text>
+    
+    <text x="5" y="35" class="text-sub glow">CORTEX // SOVEREIGN_NODE</text>
+    <text x="5" y="55" class="text-micro">PROTOCOL_V3: CHROMATIC + ISOMETRIC AESTHETIC</text>
+    <text x="5" y="70" class="text-micro">EST. 2026 // BILBAO</text>
+    <rect x="5" y="85" width="200" height="1" fill="#FAFAFA" opacity="0.3" />
   </g>
 
-  <!-- Top / Bottom decorative frames -->
-  <rect x="0" y="0" width="800" height="3" fill="#CCFF00" opacity="0.8" />
-  <rect x="0" y="247" width="800" height="3" fill="#2B3BE5" opacity="0.5" />
-  
-  <!-- Sweeping Scanner Line -->
-  <line x1="300" y1="0" x2="300" y2="250" stroke="#CCFF00" stroke-width="2" opacity="0.5" class="glow">
-    <animate attributeName="x1" values="300;800;300" dur="4s" repeatCount="indefinite" />
-    <animate attributeName="x2" values="300;800;300" dur="4s" repeatCount="indefinite" />
+  <!-- Center-Right: "Audio" Spectrum Visualizer -->
+  <g transform="translate(380, 150)">
+    <text x="0" y="-35" class="text-micro" fill="#CCFF00">>> AUDIO_BUFFER [ON]</text>
+    <g transform="translate(0, 10)">
+      <!-- 15 bars acting as graphic equalizer -->
+      <rect x="0" y="0" width="6" height="20" fill="#CCFF00" class="glow">
+        <animate attributeName="y" values="0;-40;0" dur="0.4s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;60;20" dur="0.4s" repeatCount="indefinite" />
+      </rect>
+      <rect x="10" y="0" width="6" height="20" fill="#00F0FF" class="glow-cyan">
+        <animate attributeName="y" values="0;-25;0" dur="0.3s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;45;20" dur="0.3s" repeatCount="indefinite" />
+      </rect>
+      <rect x="20" y="0" width="6" height="20" fill="#FF0055" class="glow-mag">
+        <animate attributeName="y" values="0;-50;0" dur="0.5s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;70;20" dur="0.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="30" y="0" width="6" height="20" fill="#CCFF00" class="glow">
+        <animate attributeName="y" values="0;-15;0" dur="0.25s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;35;20" dur="0.25s" repeatCount="indefinite" />
+      </rect>
+      <rect x="40" y="0" width="6" height="20" fill="#00F0FF" class="glow-cyan">
+        <animate attributeName="y" values="0;-55;0" dur="0.6s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;75;20" dur="0.6s" repeatCount="indefinite" />
+      </rect>
+      <rect x="50" y="0" width="6" height="20" fill="#FAFAFA">
+        <animate attributeName="y" values="0;-35;0" dur="0.45s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;55;20" dur="0.45s" repeatCount="indefinite" />
+      </rect>
+      <rect x="60" y="0" width="6" height="20" fill="#FF0055" class="glow-mag">
+        <animate attributeName="y" values="0;-45;0" dur="0.5s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;65;20" dur="0.5s" repeatCount="indefinite" />
+      </rect>
+      <rect x="70" y="0" width="6" height="20" fill="#CCFF00" class="glow">
+        <animate attributeName="y" values="0;-20;0" dur="0.35s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;40;20" dur="0.35s" repeatCount="indefinite" />
+      </rect>
+      <rect x="80" y="0" width="6" height="20" fill="#00F0FF" class="glow-cyan">
+        <animate attributeName="y" values="0;-60;0" dur="0.65s" repeatCount="indefinite" />
+        <animate attributeName="height" values="20;80;20" dur="0.65s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- Far Right: Astrolabe / Data Core -->
+  <g transform="translate(680, 110)">
+    <!-- Central Node -->
+    <circle cx="0" cy="0" r="10" fill="#FAFAFA" class="glow">
+       <animate attributeName="r" values="8;12;8" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Complex Counter-rotating rings -->
+    <circle cx="0" cy="0" r="40" stroke="#CCFF00" stroke-width="2" fill="none" stroke-dasharray="10 50">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="60" stroke="#00F0FF" stroke-width="1.5" fill="none" stroke-dasharray="20 10 5 10">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="80" stroke="#FF0055" stroke-width="1" fill="none" stroke-dasharray="1 10">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Radar Line -->
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#CCFF00" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" />
+    </line>
+  </g>
+
+  <!-- Decorative Border & Scanning Sweep -->
+  <rect x="0" y="0" width="800" height="250" fill="none" stroke="#2B3BE5" stroke-width="4" opacity="0.3"/>
+  <line x1="0" y1="0" x2="800" y2="0" stroke="#CCFF00" stroke-width="4" class="glow">
+    <animate attributeName="y1" values="0;250;0" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="y2" values="0;250;0" dur="6s" repeatCount="indefinite" />
   </line>
 </svg>
