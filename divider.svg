@@ -1,10 +1,31 @@
-<svg width="800" height="20" viewBox="0 0 800 20" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="9" width="800" height="1" fill="#2B3BE5" opacity="0.3"/>
-  <rect x="350" y="9" width="100" height="1" fill="#CCFF00">
-    <animate attributeName="x" values="-100;800" dur="3s" repeatCount="indefinite" />
-  </rect>
-  <rect x="395" y="7" width="10" height="5" fill="#CCFF00">
-    <animate attributeName="x" values="-55;845" dur="3s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="1;0;1" dur="0.2s" repeatCount="indefinite" />
+<svg width="800" height="30" viewBox="0 0 800 30" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .glow { filter: drop-shadow(0 0 3px #CCFF00); }
+      .bg-track { fill: #2B3BE5; opacity: 0.2; }
+    </style>
+  </defs>
+  
+  <rect x="0" y="14" width="800" height="1" class="bg-track" />
+  
+  <text x="10" y="18" fill="#FAFAFA" font-family="monospace" font-size="10" opacity="0.5">[ 0xMEM_ALLOC ]</text>
+  
+  <!-- Loading Blocks -->
+  <g transform="translate(130, 10)">
+    <rect x="0" y="0" width="10" height="8" fill="#CCFF00" class="glow" />
+    <rect x="15" y="0" width="10" height="8" fill="#CCFF00" class="glow">
+       <animate attributeName="opacity" values="0;1;1" dur="2s" repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="0" width="10" height="8" fill="#CCFF00" class="glow">
+       <animate attributeName="opacity" values="0;0;1" dur="2s" repeatCount="indefinite" />
+    </rect>
+    <rect x="45" y="0" width="10" height="8" fill="#2B3BE5" opacity="0.3" />
+    <rect x="60" y="0" width="10" height="8" fill="#2B3BE5" opacity="0.3" />
+    <rect x="75" y="0" width="10" height="8" fill="#2B3BE5" opacity="0.3" />
+  </g>
+
+  <!-- Sweeping Line -->
+  <rect x="230" y="14" width="50" height="1" fill="#CCFF00" class="glow">
+    <animate attributeName="x" values="230;800" dur="1s" repeatCount="indefinite" />
   </rect>
 </svg>
