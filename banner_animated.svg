@@ -1,0 +1,100 @@
+<svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0A0A0A; }
+      .text-title { font-family: monospace, sans-serif; font-size: 52px; font-weight: 700; fill: #FAFAFA; letter-spacing: 4px; }
+      .text-sub { font-family: monospace, sans-serif; font-size: 14px; font-weight: 400; fill: #CCFF00; letter-spacing: 2px; }
+      .grid-line { stroke: #2B3BE5; stroke-width: 1; opacity: 0.3; }
+      @keyframes glitch {
+        0% { opacity: 1; }
+        95% { opacity: 1; }
+        96% { opacity: 0.2; transform: translate(2px, 0); }
+        97% { opacity: 1; transform: translate(-2px, 0); }
+        98% { opacity: 0.2; }
+        99% { opacity: 1; }
+        100% { opacity: 1; }
+      }
+      .glitch-text { animation: glitch 4s infinite; }
+      .glow { filter: drop-shadow(0 0 8px #CCFF00); }
+    </style>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" class="grid-line" />
+    </pattern>
+    <linearGradient id="scan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A0A0A" stop-opacity="1" />
+      <stop offset="50%" stop-color="#2B3BE5" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="250" class="bg" />
+  
+  <!-- Moving Grid -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="0 -40" to="0 0" dur="2s" repeatCount="indefinite" />
+    <rect x="-40" y="-40" width="880" height="330" fill="url(#grid)" />
+  </g>
+
+  <!-- Radar Sweep -->
+  <rect width="800" height="250" fill="url(#scan)">
+    <animate attributeName="x" from="-800" to="800" dur="2.5s" repeatCount="indefinite" />
+  </rect>
+
+  <rect width="800" height="250" fill="url(#scan)" opacity="0.5">
+    <animate attributeName="x" from="800" to="-800" dur="4s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Corner Brackets -->
+  <path d="M 40 50 L 40 40 L 50 40" fill="none" stroke="#FAFAFA" stroke-width="2" opacity="0.5">
+     <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 760 50 L 760 40 L 750 40" fill="none" stroke="#FAFAFA" stroke-width="2" opacity="0.5">
+     <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 40 200 L 40 210 L 50 210" fill="none" stroke="#FAFAFA" stroke-width="2" opacity="0.5">
+     <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 760 200 L 760 210 L 750 210" fill="none" stroke="#FAFAFA" stroke-width="2" opacity="0.5">
+     <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Typography -->
+  <g class="glitch-text">
+    <text x="400" y="120" class="text-title" text-anchor="middle" dominant-baseline="middle">BORJA<tspan fill="#CCFF00" class="glow">MOSKV</tspan></text>
+    <text x="400" y="160" class="text-sub" text-anchor="middle" dominant-baseline="middle">[ TRUST.INFRASTRUCTURE :: GENERATIVE.SYSTEMS :: SONIC.ARCHITECTURE ]</text>
+  </g>
+
+  <!-- Animated Data Bar (Right) -->
+  <g transform="translate(710, 205)">
+    <rect x="0" y="0" width="8" height="8" fill="#2B3BE5">
+      <animate attributeName="height" values="2;8;2" dur="0.4s" repeatCount="indefinite" />
+      <animate attributeName="fill" values="#2B3BE5;#CCFF00;#2B3BE5" dur="1.1s" repeatCount="indefinite" />
+    </rect>
+    <rect x="12" y="0" width="8" height="8" fill="#2B3BE5">
+      <animate attributeName="height" values="8;2;8" dur="0.5s" repeatCount="indefinite" />
+      <animate attributeName="fill" values="#2B3BE5;#CCFF00;#2B3BE5" dur="1.3s" repeatCount="indefinite" />
+    </rect>
+    <rect x="24" y="0" width="8" height="8" fill="#2B3BE5">
+      <animate attributeName="height" values="5;8;5" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="fill" values="#2B3BE5;#CCFF00;#2B3BE5" dur="1.5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Status indicator (Left) -->
+  <g transform="translate(45, 210)">
+    <circle cx="0" cy="0" r="4" fill="#CCFF00" class="glow">
+      <animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="12" y="4" style="font-family: monospace; font-size: 10px; fill: #FAFAFA; opacity: 0.7;">
+      <tspan>SYS.ONLINE // CORTEX</tspan>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Top Line pulse -->
+  <rect x="350" y="20" width="100" height="2" fill="#CCFF00" class="glow">
+    <animate attributeName="width" values="100;150;100" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="x" values="350;325;350" dur="2s" repeatCount="indefinite" />
+  </rect>
+</svg>
