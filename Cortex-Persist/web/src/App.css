@@ -1,0 +1,26 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #050505;
+  overflow-x: hidden;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #050505;
+}
+
+.app-content {
+  display: flex;
+  margin-top: 48px; /* StatusBar height */
+}
+
+.app-main {
+  flex: 1;
+  margin-right: 280px; /* SemanticMemoryPanel width */
+  min-height: calc(100vh - 48px);
+}
+
+@media (max-width: 900px) {
+  .app-main { margin-right: 0; }
+}

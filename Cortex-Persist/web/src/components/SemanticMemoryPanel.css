@@ -1,0 +1,141 @@
+.memory-panel {
+  position: fixed;
+  right: 0;
+  top: 48px;
+  bottom: 0;
+  width: 280px;
+  background: rgba(5, 5, 7, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(43, 59, 229, 0.2);
+  display: flex;
+  flex-direction: column;
+  font-family: 'JetBrains Mono', monospace;
+  z-index: 90;
+}
+
+.memory-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.memory-panel-title {
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: #2B3BE5;
+  font-weight: 700;
+}
+
+.memory-panel-count {
+  font-size: 0.6rem;
+  color: #444;
+}
+
+.memory-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.memory-panel-body::-webkit-scrollbar {
+  width: 3px;
+}
+.memory-panel-body::-webkit-scrollbar-track { background: transparent; }
+.memory-panel-body::-webkit-scrollbar-thumb { background: rgba(43,59,229,0.4); border-radius: 2px; }
+
+.memory-entry {
+  background: rgba(15,15,20,0.8);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.memory-entry:hover {
+  border-color: rgba(43, 59, 229, 0.4);
+  background: rgba(43, 59, 229, 0.06);
+}
+
+.memory-entry.selected {
+  border-color: #2B3BE5;
+  background: rgba(43, 59, 229, 0.1);
+}
+
+.memory-entry-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.memory-pointer {
+  font-size: 0.6rem;
+  color: #555;
+}
+
+.memory-retention {
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.memory-preview {
+  font-size: 0.65rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Inter', sans-serif;
+}
+
+.memory-detail {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 0.8rem;
+}
+
+.memory-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+}
+
+.memory-detail-row span {
+  color: #444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.memory-detail-row code {
+  color: #888;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+}
+
+.memory-panel-footer {
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.memory-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.memory-stat span:first-child { color: #333; }
