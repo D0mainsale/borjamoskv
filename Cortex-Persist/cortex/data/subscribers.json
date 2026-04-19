@@ -1,0 +1,25 @@
+{
+  "mappings": [
+    {
+      "h_sid": "mock_hash_hb_01",
+      "receiver_type": "editorial_shared_inbox",
+      "domain_class": "media",
+      "editorial_tier": "A",
+      "label": "Hypebeast Editorial"
+    },
+    {
+      "h_sid": "mock_hash_nts_01",
+      "receiver_type": "human_likely",
+      "domain_class": "music_platform",
+      "editorial_tier": "A",
+      "label": "NTS Radio Staff"
+    },
+    {
+      "h_sid": "mock_hash_pfk_01",
+      "receiver_type": "editorial_shared_inbox",
+      "domain_class": "media",
+      "editorial_tier": "A",
+      "label": "Pitchfork Reviews"
+    }
+  ]
+}

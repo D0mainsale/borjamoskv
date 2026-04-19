@@ -1,0 +1,251 @@
+.frontier-landing {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.frontier-visual-substrate {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.substrate-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: blur(10px) brightness(0.8);
+}
+
+.film-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.frontier-content {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  z-index: 2;
+}
+
+.frontier-nav-pill {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.nav-links-minimal {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.frontier-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.frontier-title-cloned {
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  line-height: 0.9;
+}
+
+.frontier-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin-top: 1.5rem;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+.handle-container-minimal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 5rem;
+}
+
+.handle-input-wrapper-cloned {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.handle-input-wrapper-cloned:focus-within {
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.handle-symbol {
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 2.5rem;
+}
+
+.handle-input-cloned {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  width: 100%;
+  text-transform: lowercase;
+}
+
+.handle-input-cloned::placeholder {
+  color: rgba(255, 255, 255, 0.03);
+}
+
+.start-btn-pill {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.start-btn-pill.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.start-btn-pill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.frontier-error {
+  color: #E52B44;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: -8px;
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.start-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 18px 48px;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.start-btn.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.frontier-footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  opacity: 0.5;
+}
+
+/* Synthesis / Warp Effects */
+.synthesis-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(43, 59, 229, 0.2) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.warping .frontier-content {
+  animation: warp-exit 2s forwards;
+}
+
+@keyframes warp-exit {
+  0% { transform: scale(1); opacity: 1; filter: blur(0); }
+  100% { transform: scale(3); opacity: 0; filter: blur(20px); }
+}
+
+@media (max-width: 768px) {
+  .frontier-title { font-size: 2.5rem; }
+  .handle-input-wrapper { padding: 16px 24px; }
+}

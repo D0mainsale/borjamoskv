@@ -1,0 +1,44 @@
+.agent-proximity-hud {
+    pointer-events: none;
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(43, 59, 229, 0.5);
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    min-width: 100px;
+    transform: translateY(-20px);
+    box-shadow: 0 0 20px rgba(43, 59, 229, 0.2);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.hud-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.hud-line .label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.hud-line .value {
+    color: #2B3BE5;
+    font-weight: bold;
+}
+
+.hud-progress-container {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.hud-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2B3BE5, #00D2FF);
+    width: var(--progress-width, 0%);
+    transition: width 0.3s ease-out;
+}

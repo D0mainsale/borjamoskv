@@ -1,0 +1,80 @@
+{
+  "book": {
+    "title": "The Cambridge History of Western Music Theory",
+    "editor": "Thomas Christensen",
+    "chapters_count": 31,
+    "taxonomy_version": "1.0",
+    "parts": [
+      {
+        "id": "I",
+        "title": "Disciplining Music Theory",
+        "chapters": [
+          {"id": 1, "title": "Mapping the terrain", "author": "Leslie Blasius", "concepts": ["historiography", "institutionalization"]},
+          {"id": 2, "title": "Musica practica", "author": "Robert W. Wason", "concepts": ["pedagogy", "practical instruction"]},
+          {"id": 3, "title": "Epistemologies of music theory", "author": "Nicholas Cook", "concepts": ["epistemology", "musical knowledge"]}
+        ]
+      },
+      {
+        "id": "II",
+        "title": "Speculative Traditions",
+        "chapters": [
+          {"id": 4, "title": "Greek music theory", "author": "Thomas J. Mathiesen", "concepts": ["pythagoreanism", "aristoxenianism", "harmonics"]},
+          {"id": 5, "title": "Ancient transmission", "author": "Calvin M. Bower", "concepts": ["boethius", "quadrivium", "medieval synthesis"]},
+          {"id": 6, "title": "Medieval canonics", "author": "Jan Herlinger", "concepts": ["monochord", "proportions"]},
+          {"id": 7, "title": "Tuning and temperament", "author": "Rudolf Rasch", "concepts": ["just intonation", "meantone", "equal temperament"]},
+          {"id": 8, "title": "The scientific revolution", "author": "Penelope Gouk", "concepts": ["scientific revolution", "mersenne", "newton"]},
+          {"id": 9, "title": "From acoustics to Tonpsychologie", "author": "Green & Butler", "concepts": ["helmholtz", "tonpsychologie", "frequency"]},
+          {"id": 10, "title": "Music theory and mathematics", "author": "Catherine Nolan", "concepts": ["set theory", "group theory", "formal logic"]}
+        ]
+      },
+      {
+        "id": "III",
+        "title": "Regulative Traditions",
+        "subsections": [
+          {
+            "title": "Mapping Tonal Spaces",
+            "chapters": [
+              {"id": 11, "title": "Earlier Middle Ages", "author": "David E. Cohen", "concepts": ["octoechos", "solmization", "scales"]},
+              {"id": 12, "title": "Renaissance modal theory", "author": "Cristle Collins Judd", "concepts": ["modes", "glarean", "zarlino"]},
+              {"id": 13, "title": "17th-century tonal organization", "author": "Gregory Barnett", "concepts": ["basso continuo", "major-minor crystallization"]},
+              {"id": 14, "title": "Dualist tonal space", "author": "Henry Klumpenhouwer", "concepts": ["harmonic dualism", "riemann", "transformation"]}
+            ]
+          },
+          {
+            "title": "Compositional Theory",
+            "chapters": [
+              {"id": 15, "title": "Medieval CP", "author": "Sarah Fuller", "concepts": ["organum", "discant", "rhythmic modes"]},
+              {"id": 16, "title": "Renaissance CP", "author": "Peter Schubert", "concepts": ["contrapunctus", "imitation", "renaissance syntax"]},
+              {"id": 17, "title": "Performance theory", "author": "Albert Cohen", "concepts": ["ornamentation", "improvisation"]},
+              {"id": 18, "title": "Steps to Parnassus", "author": "Thomas Christensen", "concepts": ["fux", "species counterpoint", "gradus ad parnassum"]},
+              {"id": 19, "title": "Twelve-tone theory", "author": "Bryan R. Simms", "concepts": ["schoenberg", "dodecaphony", "serialism"]},
+              {"id": 20, "title": "Rhythmic notation", "author": "Anna Maria Busse Berger", "concepts": ["mensuration", "notation evolution"]},
+              {"id": 21, "title": "18th/19th century rhythm", "author": "William Rothstein", "concepts": ["meter", "hypermeter", "phrase structure"]}
+            ]
+          },
+          {
+            "title": "Harmony and Tonality",
+            "chapters": [
+              {"id": 22, "title": "The theory of harmony", "author": "Thomas Christensen", "concepts": ["harmony history"]},
+              {"id": 23, "title": "Rameau", "author": "Joel Lester", "concepts": ["basse fondamentale", "corps sonore", "inversion"]},
+              {"id": 24, "title": "Austro-German legacy", "author": "Kevin Mooney", "concepts": ["stufentheorie", "funktionstheorie", "riemann"]},
+              {"id": 25, "title": "Schenkerian theory", "author": "William Drabkin", "concepts": ["ursatz", "schichten", "voice leading"]}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "IV",
+        "title": "Descriptive Traditions",
+        "chapters": [
+          {"id": 26, "title": "Theories of musical form", "author": "Ian D. Bent", "concepts": ["sonata", "rondo", "ternary"]},
+          {"id": 27, "title": "Musical rhetoric", "author": "Patrick McCreless", "concepts": ["musica poetica", "rhetorical figures"]},
+          {"id": 28, "title": "Theories of musical analysis", "author": "Bent & Pople", "concepts": ["analytical methods", "formalism"]},
+          {"id": 29, "title": "Music theory and aesthetics", "author": "Kofi Agawu", "concepts": ["semiotics", "meaning", "aesthetics"]},
+          {"id": 30, "title": "Music theory and criticism", "author": "Scott Burnham", "concepts": ["interpretation", "criticism"]},
+          {"id": 31, "title": "Music theory and its histories", "author": "Gary Tomlinson", "concepts": ["historical context", "anthropology"]}
+        ]
+      }
+    ]
+  }
+}

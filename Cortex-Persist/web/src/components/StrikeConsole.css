@@ -1,0 +1,162 @@
+.strike-console-ether {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2100;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  animation: modal-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strike-header-minimal {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.strike-branding {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.strike-symbol {
+  color: #E52B2B;
+}
+
+.strike-close-minimal {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: color 0.2s;
+}
+
+.strike-close-minimal:hover {
+  color: #fff;
+}
+
+.strike-body-ether {
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.strike-input-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.strike-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.strike-field label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+.strike-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 0;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-bottom-color 0.4s;
+}
+
+.strike-field input:focus {
+  border-bottom-color: #fff;
+}
+
+.strike-launch-pill {
+  margin-top: 2rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strike-launch-pill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.strike-log-substrate {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(43, 229, 139, 0.8);
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.strike-log-substrate::-webkit-scrollbar {
+  width: 4px;
+}
+
+.strike-log-substrate::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.is-debug {
+  border-color: rgba(229, 43, 43, 0.3);
+}
+
+.strike-footer-ether {
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: lowercase;
+}

@@ -1,0 +1,75 @@
+.forge-history-container {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.6;
+}
+
+.forge-history-container h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: lowercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pulse-dot {
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: pulse-op 2s infinite;
+}
+
+.forge-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.forge-history-item {
+  padding: 1.2rem 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.forge-history-item:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+}
+
+.fact-id {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.directive-preview {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: lowercase;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

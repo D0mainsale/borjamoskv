@@ -1,17 +1,8 @@
 .memory-panel {
-  position: fixed;
-  right: 0;
-  top: 48px;
-  bottom: 0;
-  width: 280px;
-  background: rgba(5, 5, 7, 0.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(43, 59, 229, 0.2);
   display: flex;
   flex-direction: column;
-  font-family: 'JetBrains Mono', monospace;
-  z-index: 90;
+  height: 100%;
+  pointer-events: auto;
 }
 
 .memory-panel-header {
@@ -23,15 +14,16 @@
 }
 
 .memory-panel-title {
-  font-size: 0.6rem;
-  letter-spacing: 3px;
-  color: #2B3BE5;
-  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 800;
+  text-transform: lowercase;
 }
 
 .memory-panel-count {
-  font-size: 0.6rem;
-  color: #444;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.1);
 }
 
 .memory-panel-body {
@@ -50,21 +42,20 @@
 .memory-panel-body::-webkit-scrollbar-thumb { background: rgba(43,59,229,0.4); border-radius: 2px; }
 
 .memory-entry {
-  background: rgba(15,15,20,0.8);
-  border: 1px solid rgba(255,255,255,0.04);
-  padding: 0.8rem;
+  background: transparent;
+  padding: 1rem 0;
   cursor: pointer;
-  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .memory-entry:hover {
-  border-color: rgba(43, 59, 229, 0.4);
-  background: rgba(43, 59, 229, 0.06);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(8px);
 }
 
 .memory-entry.selected {
-  border-color: #2B3BE5;
-  background: rgba(43, 59, 229, 0.1);
+  border-bottom-color: #2B3BE5;
 }
 
 .memory-entry-header {
@@ -84,14 +75,15 @@
 }
 
 .memory-preview {
-  font-size: 0.65rem;
-  color: #666;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
   margin: 0;
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: 'Inter', sans-serif;
+  text-transform: lowercase;
 }
 
 .memory-detail {
@@ -111,9 +103,9 @@
 }
 
 .memory-detail-row span {
-  color: #444;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
 }
 
 .memory-detail-row code {
@@ -133,9 +125,9 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 0.55rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
 }
 
-.memory-stat span:first-child { color: #333; }
+.memory-stat span:first-child { color: rgba(255, 255, 255, 0.2); }

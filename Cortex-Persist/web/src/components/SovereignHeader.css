@@ -1,0 +1,170 @@
+.dashboard-header-minimal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  z-index: 1500;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+.header-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.header-brand-archi {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.header-brand-archi:hover {
+  opacity: 0.6;
+}
+
+.header-nav-pill {
+  display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  padding: 0.4rem;
+  border-radius: 100px;
+  gap: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.4;
+}
+
+.nav-item-btn:hover {
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item-btn.active {
+  opacity: 1;
+  background: #fff;
+  color: #000;
+}
+
+.header-actions-minimal {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.guard-capsule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guard-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.guard-status-dot.active {
+  background: #2BE58B;
+  box-shadow: 0 0 10px #2BE58B;
+}
+
+.guard-status-dot.warning {
+  background: #E52B2B;
+  box-shadow: 0 0 10px #E52B2B;
+}
+
+.guard-btn-text {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.abuelo-btn-minimal {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.abuelo-btn-minimal:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.header-persist-strip {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0.5rem;
+}
+
+.persist-label-minimal {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+.persist-stats-minimal {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stat-unit {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.persist-mode-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #2BE58B;
+}
+
+.persist-mode-tag.desconectado {
+  color: #E52B2B;
+}

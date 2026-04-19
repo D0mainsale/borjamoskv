@@ -1,0 +1,36 @@
+{
+  "project": "Mythos-Sovereign-Hunter",
+  "version": "1.0.0",
+  "state_machine": {
+    "current_phase": 1,
+    "milestones": [
+      {
+        "id": "HITO_0",
+        "description": "macOS-Stack Setup",
+        "status": "COMPLETED",
+        "poy_action": "check_brew_dependencies"
+      },
+      {
+        "id": "HITO_1",
+        "description": "Authz & Multi-tenant Disclosure (Week 1: OAuth Mastery)",
+        "status": "IN_PROGRESS",
+        "unlocks_at": "DAY_30",
+        "poy_target": "BOLA_REPRODUCIBILITY_V1"
+      },
+      {
+        "id": "HITO_2",
+        "description": "Agentic Data Exfiltration (LOCKED)",
+        "status": "LOCKED",
+        "unlocks_at": "DAY_60",
+        "poy_target": "MCP_CONFUSED_DEPUTY"
+      },
+      {
+        "id": "HITO_3",
+        "description": "Cloud-Native Secrets Hijack (LOCKED)",
+        "status": "LOCKED",
+        "unlocks_at": "DAY_90",
+        "poy_target": "CI_CD_CHAIN_STRIKE"
+      }
+    ]
+  }
+}

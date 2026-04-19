@@ -43,10 +43,10 @@ Proof:
 
 ---
 
-## 3. Escalamiento de Enjambre Fractal — O(log N)
+## 3. Escalamiento por Diseño — O(log N)
 **Periodo:** Días 15-22
-**Vector:** Impacto Técnico Masivo.
-**Misión:** Superar el límite lineal. Elevar el clúster a 10,000+ agentes mediante topología de delegación estricta y ruteo asíncrono, protegiendo memoria L1.
+**Vector:** Pureza Arquitectónica.
+**Misión:** Los agentes no escalan por cantidad; escalan por diseño. Superar el límite lineal mediante topología de delegación estricta, instrumentación del entorno y ruteo asíncrono, protegiendo la memoria L1.
 
 *   **Días 15-18:** Refactorización de `MantleOrchestrator`. Sustitución de schedule lineal por anillo de distribución recursivo (LEGATUS → PRAETORIAN → CENTURION → LEGIONARY).
 *   **Días 19-22:** Purga de entropía (Ley Ω₄). Aplicar semáforos termodinámicos. Agente improductivo = Purgado automático del estado tensor.

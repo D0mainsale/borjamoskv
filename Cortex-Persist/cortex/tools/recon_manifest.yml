@@ -1,0 +1,40 @@
+id: vibe-code-secret-leak
+
+info:
+  name: AI API Keys in Vibe-Coded JS Bundles
+  author: borjamoskv
+  severity: critical
+  description: Detects OpenAI, Anthropic, and Google AI keys leaked in client-side JS.
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/main.js"
+      - "{{BaseURL}}/bundle.js"
+      - "{{BaseURL}}/_next/static/chunks/main.js"
+
+    operators:
+      patterns:
+        # OpenAI API Key
+        - name: openai-key
+          regex:
+            - "sk-[a-zA-Z0-9-]{48}"
+        # Anthropic API Key
+        - name: anthropic-key
+          regex:
+            - "ant-api-key01-[a-zA-Z0-9-]{95}"
+        # Google Generative AI Key
+        - name: google-ai-key
+          regex:
+            - "AIzaSy[a-zA-Z0-9-]{33}"
+        # Hardcoded Local Database Paths (Common in Vibe-coding)
+        - name: local-db-path
+          regex:
+            - "(/Users/[a-zA-Z0-9-_]+/.*\\.sqlite)"
+
+    matchers-condition: or
+    matchers:
+      - type: status
+        status:
+          - 200

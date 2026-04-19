@@ -1,0 +1,245 @@
+.causality-nexus-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(30px) saturate(150%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2100;
+  animation: nexus-fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nexus-fade-in {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to { opacity: 1; backdrop-filter: blur(30px); }
+}
+
+.causality-nexus-container {
+  width: 80%;
+  max-width: 900px;
+  height: 80vh;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 50px 150px rgba(0, 0, 0, 0.9);
+}
+
+.nexus-header {
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nexus-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin: 0;
+  color: #fff;
+  line-height: 1;
+}
+
+.nexus-subtitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0.6rem 0 0;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+.nexus-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+}
+
+.nexus-close-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nexus-close-btn:hover {
+  border-color: #fff;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nexus-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 3rem;
+}
+
+.nexus-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.nexus-node-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nexus-line-laser {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 2rem;
+  background: linear-gradient(to bottom, #2BE58B, transparent);
+  transform: translateX(-50%);
+}
+
+.nexus-node {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nexus-node:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(43, 229, 139, 0.2);
+  transform: scale(1.02);
+}
+
+.nexus-node.root {
+  border-color: rgba(43, 229, 139, 0.4);
+  box-shadow: 0 0 30px rgba(43, 229, 139, 0.05);
+}
+
+.node-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.flow-meter {
+  width: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.flow-fill {
+  height: 100%;
+  background: #2BE58B;
+  transition: width 1s ease;
+}
+
+.node-domain {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+.node-exergy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #2BE58B;
+}
+
+.node-content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.2rem;
+}
+
+.node-timestamp {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: lowercase;
+}
+
+.node-level {
+  position: absolute;
+  top: 1.5rem;
+  right: -3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.nexus-strike-btn {
+  width: 100%;
+  margin-top: 1rem;
+  background: #2BE58B;
+  color: #000;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: all 0.3s;
+}
+
+.nexus-strike-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.nexus-footer {
+  padding: 1.5rem 3rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nexus-status-bar {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.status-label {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.status-value {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.nexus-loading, .nexus-empty {
+  text-align: center;
+  padding: 4rem;
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
