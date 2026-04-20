@@ -1,0 +1,228 @@
+.maestro-console-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  max-width: 95vw;
+  height: 600px;
+  max-height: 90vh;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-dark);
+  border: 1px solid var(--color-green-laser);
+  box-shadow: 0 0 40px rgba(43, 229, 139, 0.1);
+  color: #fff;
+}
+
+.maestro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(43, 229, 139, 0.2);
+  background: rgba(10, 10, 10, 0.9);
+}
+
+.maestro-branding {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: var(--color-green-laser);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.maestro-symbol {
+  font-size: 1.2rem;
+  animation: pulse-op 2s infinite alternate;
+}
+
+.maestro-close {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.maestro-close:hover {
+  color: var(--color-red-blood);
+}
+
+.maestro-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.maestro-sidebar {
+  width: 300px;
+  border-right: 1px solid rgba(43, 229, 139, 0.2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(10, 10, 10, 0.95);
+}
+
+.maestro-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.maestro-field label {
+  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.maestro-field input,
+.maestro-field textarea {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+  padding: 0.6rem 0.8rem;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.maestro-field input:focus,
+.maestro-field textarea:focus {
+  border-color: var(--color-green-laser);
+  box-shadow: 0 0 10px rgba(43, 229, 139, 0.1);
+}
+
+.script-field textarea {
+  flex: 1;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.maestro-task-modes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.maestro-task-modes button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.5rem;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.maestro-task-modes button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.maestro-task-modes button.active {
+  border-color: var(--color-green-laser);
+  color: var(--color-green-laser);
+  background: rgba(43, 229, 139, 0.05);
+}
+
+.maestro-launch-pill {
+  width: 100%;
+  margin-top: auto;
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-green-laser);
+  color: var(--color-green-laser);
+  padding: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+.maestro-launch-pill:hover {
+  background: var(--color-green-laser);
+  color: #000;
+  box-shadow: 0 0 20px rgba(43, 229, 139, 0.3);
+}
+
+.maestro-launch-pill.executing {
+  background: rgba(43, 229, 139, 0.2);
+  color: #fff;
+  border-color: transparent;
+  cursor: not-allowed;
+  animation: pulse-bg 1s infinite alternate;
+}
+
+.maestro-log-substrate {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  position: relative;
+}
+
+.log-header {
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #666;
+  border-bottom: 1px solid #1a1a1a;
+  letter-spacing: 1px;
+}
+
+.log-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.maestro-log-line {
+  line-height: 1.5;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.log-caret {
+  color: var(--color-green-laser);
+  font-weight: bold;
+}
+
+.log-pulsing {
+  color: var(--color-green-laser);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes pulse-op {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-bg {
+  0% { background: rgba(43, 229, 139, 0.1); }
+  100% { background: rgba(43, 229, 139, 0.3); }
+}
