@@ -1,28 +1,92 @@
-# SOVEREIGN UNIFICATION - Scientific Triad 2026 (MICA v6.1)
+# Borja Moskv
 
-Ecosystem Standard for Borja Moskv.
-Mandatory Palette Pivot: April 2026.
+**Sovereign agent infrastructure · semantic automation · immersive systems**
 
-## Omega-Axioms: Visual & Operational Logic
-This project is part of the CORTEX unified substrate. The legacy "Industrial Noir" is DEPRECATED. 
+I build tools that let autonomous agents remember, verify, execute, and leave evidence.
 
-### 1. The Mandatory Triad
-Only and exclusively these three colors are permitted:
-- Divalent Chromium Magenta (2024): #D40056
-- The Whitest White (2021): #FFFFFF
-- Hibonite Blue (2020): #0055FF
+My work sits at the intersection of **AI trust infrastructure**, **macOS semantic automation**, **forensic memory**, and **cinematic web systems**. The operating thesis is simple:
 
-### 2. Constraints
-- Zero Black/Grey: No #000000 or #0A0A0A.
-- Contrast: Background must be the Whitest White.
-- Typography: Headings: Outfit (900 weight). Meta: JetBrains Mono. Case: Mandatory lowercase for all UI.
-
-### 3. Atmosphere (MICA Texture)
-- Persistent SVG noise overlay.
-- Grain opacity: 0.05.
-- Intent: Mimic the crystalline structure of the Hibonite and Chromium pigments.
+> Agents do not need more chat. They need memory with provenance, execution with guardrails, and evidence that survives inspection.
 
 ---
-Status: C5-REAL (Unified & Purged)
-Timestamp: 2026-04-29
-Protocol: Mandato Cientifico-Soberano
+
+## Active systems
+
+### [CORTEX Persist](https://github.com/borjamoskv/Cortex-Persist)
+Tamper-evident memory, audit trails, and verifiable lineage for AI agents.
+
+- cryptographic ledger for agent memory and decisions
+- verification membrane before durable writes
+- replay, export, signatures, and offline verification paths
+- designed for agentic systems where logs are not enough
+
+### [mac-maestro](https://github.com/borjamoskv/mac-maestro)
+Semantic GUI automation for macOS.
+
+- structured traces for UI actions
+- safer automation loops
+- bridge between natural-language intent and deterministic desktop execution
+
+### [borjamoskv-site](https://github.com/borjamoskv/borjamoskv-site)
+Personal research surface for essays, artifacts, and immersive interfaces.
+
+- cinematic web direction
+- technical writing
+- CORTEX ecosystem narrative
+
+---
+
+## Current frontier
+
+```yaml
+focus:
+  - verifiable agent memory
+  - audit-grade AI decision lineage
+  - semantic automation for operating systems
+  - adversarial evaluation of agent guardrails
+  - trust infrastructure for autonomous software
+
+principles:
+  - verify before persist
+  - evidence over rhetoric
+  - local-first when possible
+  - deterministic execution paths
+  - beautiful systems are easier to operate
+
+stack:
+  languages: [python, typescript, javascript]
+  interfaces: [next.js, react, cli, macos automation]
+  substrate: [sqlite, hash chains, merkle proofs, structured traces]
+  aesthetics: [mica, high-contrast systems, cinematic interaction]
+```
+
+---
+
+## Research direction
+
+I am exploring a practical architecture for **sovereign agents**:
+
+1. **memory** that can be inspected, replayed, and challenged
+2. **guards** that treat every input as adversarial until validated
+3. **execution traces** that connect intent, tool calls, outcomes, and state changes
+4. **interfaces** that make complex systems legible without flattening them
+
+The goal is not to make agents feel magical.
+
+The goal is to make them **accountable**.
+
+---
+
+## Public surfaces
+
+- Website: [cortexpersist.com](https://cortexpersist.com/)
+- Profile: [portrait.so/borja](https://portrait.so/borja)
+- Music archive: [borjamoskv.bandcamp.com](https://borjamoskv.bandcamp.com/)
+- X: [@bakaladetroya](https://x.com/bakaladetroya)
+- Instagram: [@borjamoskv](https://www.instagram.com/borjamoskv/)
+
+---
+
+## Operating line
+
+**Build the substrate. Prove the state. Ship the artifact.**
