@@ -90,3 +90,11 @@ The goal is to make them **accountable**.
 ## Operating line
 
 **Build the substrate. Prove the state. Ship the artifact.**
+
+---
+## Live agent system (Run → Break → Verify → Export)
+- Demo repo: https://github.com/borjamoskv/cortex-demo
+- StackBlitz: https://stackblitz.com/github/borjamoskv/Cortex-Persist
+- Live state SVG: https://raw.githubusercontent.com/borjamoskv/cortex-demo/main/api/state.svg
+
+**Build the substrate. Prove the state.**
