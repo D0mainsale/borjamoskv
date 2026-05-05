@@ -1,6 +1,6 @@
 # SOVEREIGN UNIFICATION - Scientific Triad 2026 (MICA v6.1)
 
-Ecosystem Standard for Borja Moskv and Naroa Vision.
+Ecosystem Standard for Borja Moskv.
 Mandatory Palette Pivot: April 2026.
 
 ## Omega-Axioms: Visual & Operational Logic
