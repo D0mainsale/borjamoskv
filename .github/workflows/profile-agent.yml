@@ -1,0 +1,91 @@
+name: CORTEX Profile Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cortex-profile-agent
+  cancel-in-progress: false
+
+jobs:
+  project:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    env:
+      CORTEX_PERSIST_PATH: ${{ vars.CORTEX_PERSIST_PATH }}
+      CORTEX_PROFILE_AGENT_DB: ${{ vars.CORTEX_PROFILE_AGENT_DB }}
+    steps:
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+
+      - name: Resolve local CORTEX path
+        shell: bash
+        run: |
+          set -euo pipefail
+          cortex_path="${CORTEX_PERSIST_PATH:-$HOME/Cortex-Persist}"
+          if [ ! -f "$cortex_path/scripts/profile_agent_bridge.py" ]; then
+            echo "::error::CORTEX profile bridge not found at $cortex_path"
+            echo "Set repository variable CORTEX_PERSIST_PATH to a local Cortex-Persist checkout on the self-hosted runner."
+            exit 1
+          fi
+          cortex_db="${CORTEX_PROFILE_AGENT_DB:-$HOME/.cortex/profile-agent.sqlite}"
+          mkdir -p "$(dirname "$cortex_db")"
+          echo "CORTEX_PATH=$cortex_path" >> "$GITHUB_ENV"
+          echo "CORTEX_DB=$cortex_db" >> "$GITHUB_ENV"
+
+      - name: Update public projection
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$CORTEX_PATH" python3 "$CORTEX_PATH/scripts/profile_agent_bridge.py" \
+            --profile-repo-path . \
+            --db "$CORTEX_DB" \
+            --profile-repo borjamoskv/borjamoskv \
+            --source-repo borjamoskv/Cortex-Persist \
+            --tenant public-profile \
+            --project github-profile-agent \
+            --agent-id cortex-profile-agent \
+            --json
+
+      - name: Verify public artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s README.md
+          test -s assets/cortex-profile-agent.svg
+          test -s assets/cortex-profile-agent.status.json
+          grep -q "CORTEX-PROFILE-AGENT:START" README.md
+          grep -q "assets/cortex-profile-agent.svg" README.md
+          grep -q "assets/cortex-profile-agent.status.json" README.md
+          python3 - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          ET.parse("assets/cortex-profile-agent.svg")
+          status = json.loads(Path("assets/cortex-profile-agent.status.json").read_text())
+          assert status["schema_version"] == 1
+          assert status["privacy_boundary"]["raw_memory_published"] is False
+          assert status["privacy_boundary"]["prompts_published"] is False
+          assert status["privacy_boundary"]["tenant_payloads_published"] is False
+          assert status["privacy_boundary"]["secrets_published"] is False
+          assert status["cortex"]["tenant_scope"] == "public-profile"
+          PY
+
+      - name: Commit projection
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- README.md assets/cortex-profile-agent.svg assets/cortex-profile-agent.status.json; then
+            exit 0
+          fi
+          git config user.name "cortex-profile-agent"
+          git config user.email "actions@users.noreply.github.com"
+          git add README.md assets/cortex-profile-agent.svg assets/cortex-profile-agent.status.json
+          git commit -m "chore: update CORTEX profile projection"
+          git push

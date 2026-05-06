@@ -98,3 +98,45 @@ The goal is to make them **accountable**.
 - Live state SVG: https://raw.githubusercontent.com/borjamoskv/cortex-demo/main/api/state.svg
 
 **Build the substrate. Prove the state.**
+
+
+<!-- CORTEX-PROFILE-AGENT:START -->
+<div align="center">
+
+### CORTEX Live Agent Surface
+
+<img src="assets/cortex-profile-agent.svg" alt="CORTEX profile agent status panel" width="100%">
+
+[![Ledger](https://img.shields.io/badge/ledger-verified-2ea44f?style=for-the-badge)](https://github.com/borjamoskv/Cortex-Persist) ![Transactions](https://img.shields.io/badge/tx%20checked-1-0969da?style=for-the-badge) ![Memory](https://img.shields.io/badge/memory-CORTEX-6f42c1?style=for-the-badge) ![Boundary](https://img.shields.io/badge/privacy%20boundary-redacted-57606a?style=for-the-badge)
+
+**Wake -> Guard -> Store -> Hash -> Verify -> Project**
+
+</div>
+
+| Layer | Public Signal |
+|---|---|
+| Runtime | `cortex-profile-agent` |
+| Memory admission | `CortexEngine.store(...) -> fact #1` |
+| Ledger | `VALID` over `1` checked transaction(s) |
+| Hash anchor | `538be8299a44e57e` |
+| Public digest | `a2331cb0f4957d1c` |
+| Profile commit | `4d8852acdc09` |
+| Generated | `2026-05-06T10:14:25.161886+00:00` |
+
+<details>
+<summary>Public evidence packet</summary>
+
+| Field | Value |
+|---|---|
+| Profile repo | `borjamoskv/borjamoskv` |
+| Source repo | `borjamoskv/Cortex-Persist` |
+| CORTEX project | `github-profile-agent` |
+| Tenant scope | `public-profile` |
+| Last public fact | `#1` |
+| Merkle roots checked | `0` |
+| Public status JSON | `assets/cortex-profile-agent.status.json` |
+
+This is a public projection only. Raw memory, prompts, tenant payloads, secrets, and private ledger details stay outside the README.
+
+</details>
+<!-- CORTEX-PROFILE-AGENT:END -->
