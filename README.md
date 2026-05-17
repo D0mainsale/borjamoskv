@@ -1,38 +1,83 @@
 # Borja Moskv
 
-**Sovereign agent infrastructure · semantic automation · immersive systems**
+**Sovereign agent infrastructure · trust substrate · formal verification · immersive systems**
 
 I build tools that let autonomous agents remember, verify, execute, and leave evidence.
 
-My work sits at the intersection of **AI trust infrastructure**, **macOS semantic automation**, **forensic memory**, and **cinematic web systems**. The operating thesis is simple:
+My work sits at the intersection of **AI trust infrastructure**, **formal verification**, **macOS semantic automation**, **forensic memory**, and **cinematic web systems**. The operating thesis:
 
 > Agents do not need more chat. They need memory with provenance, execution with guardrails, and evidence that survives inspection.
 
 ---
 
-## Active systems
+## Core systems
 
 ### [CORTEX Persist](https://github.com/borjamoskv/Cortex-Persist)
 Tamper-evident memory, audit trails, and verifiable lineage for AI agents.
 
 - cryptographic ledger for agent memory and decisions
-- verification membrane before durable writes
-- replay, export, signatures, and offline verification paths
+- verification membrane (guards) before durable writes
+- saga-pattern write path with compensating transactions
+- replay, export, signatures, and offline verification
 - designed for agentic systems where logs are not enough
+
+### [agents-archi](https://github.com/borjamoskv/agents-archi)
+Sovereign Agentic Architecture Registry — the definitive hub for multi-agent design patterns.
+
+- CORTEX protocols and swarm topologies
+- Industrial Noir design system for agent interfaces
+- pattern library for guardrails, consensus, and memory admission
+
+### [Anvil](https://github.com/borjamoskv/anvil-lang)
+A programming language where trust doesn't compile. Formally verified smart contracts via Z3 SMT solver.
+
+- contract verification at compile time
+- SMT-backed proof obligations
+- designed for adversarial environments where bugs are exploits
+
+### [ASL Spec](https://github.com/borjamoskv/asl-spec)
+Agent Specification Language — open standard for formally verifying autonomous agent behavior.
+
+- behavioral contracts for AI agents
+- machine-checkable safety properties
+- MIT licensed specification
+
+---
+
+## Infrastructure
 
 ### [mac-maestro](https://github.com/borjamoskv/mac-maestro)
 Semantic GUI automation for macOS.
 
 - structured traces for UI actions
-- safer automation loops
-- bridge between natural-language intent and deterministic desktop execution
+- safety gates and deterministic execution paths
+- bridge between natural-language intent and desktop execution
+
+### [cortex-ram-guard](https://github.com/borjamoskv/cortex-ram-guard)
+Sovereign macOS memory pressure daemon.
+
+- 4-tier graduated response to memory pressure
+- per-app RSS budgets
+- predictive swap exhaustion
+
+### [homebrew-tap](https://github.com/borjamoskv/homebrew-tap)
+Homebrew formulae for borjamoskv tools — `brew tap borjamoskv/tap`.
+
+---
+
+## Surfaces & demos
 
 ### [borjamoskv-site](https://github.com/borjamoskv/borjamoskv-site)
 Personal research surface for essays, artifacts, and immersive interfaces.
 
-- cinematic web direction
-- technical writing
-- CORTEX ecosystem narrative
+### [cortex-demo](https://github.com/borjamoskv/cortex-demo)
+Interactive demo: Run → Break → Verify → Export.
+
+### [gordacorp-immersive](https://github.com/borjamoskv/gordacorp-immersive)
+Immersive audit microsite exploring cinematic front-end direction.
+
+### [launchpad-audit](https://github.com/borjamoskv/launchpad-audit)
+GitHub repo growth copilot: audit discoverability, generate launch kits.
 
 ---
 
@@ -40,11 +85,12 @@ Personal research surface for essays, artifacts, and immersive interfaces.
 
 ```yaml
 focus:
-  - verifiable agent memory
-  - audit-grade AI decision lineage
-  - semantic automation for operating systems
+  - verifiable agent memory (CORTEX Persist)
+  - formal verification for smart contracts (Anvil)
+  - behavioral specification for AI agents (ASL)
   - adversarial evaluation of agent guardrails
   - trust infrastructure for autonomous software
+  - macOS system-level daemons (cortex-ram-guard)
 
 principles:
   - verify before persist
@@ -54,22 +100,24 @@ principles:
   - beautiful systems are easier to operate
 
 stack:
-  languages: [python, typescript, javascript]
+  languages: [python, rust, typescript, javascript]
+  verification: [z3, smt, formal proofs, merkle chains]
   interfaces: [next.js, react, cli, macos automation]
-  substrate: [sqlite, hash chains, merkle proofs, structured traces]
-  aesthetics: [mica, high-contrast systems, cinematic interaction]
+  substrate: [sqlite, hash chains, structured traces]
+  aesthetics: [industrial noir, high-contrast, cinematic]
 ```
 
 ---
 
 ## Research direction
 
-I am exploring a practical architecture for **sovereign agents**:
+I am building a practical architecture for **sovereign agents**:
 
 1. **memory** that can be inspected, replayed, and challenged
 2. **guards** that treat every input as adversarial until validated
 3. **execution traces** that connect intent, tool calls, outcomes, and state changes
-4. **interfaces** that make complex systems legible without flattening them
+4. **formal specs** that make agent behavior machine-checkable
+5. **interfaces** that make complex systems legible without flattening them
 
 The goal is not to make agents feel magical.
 
@@ -81,24 +129,13 @@ The goal is to make them **accountable**.
 
 - Website: [cortexpersist.com](https://cortexpersist.com/)
 - Profile: [portrait.so/borja](https://portrait.so/borja)
-- Music archive: [borjamoskv.bandcamp.com](https://borjamoskv.bandcamp.com/)
+- Music: [borjamoskv.bandcamp.com](https://borjamoskv.bandcamp.com/)
 - X: [@bakaladetroya](https://x.com/bakaladetroya)
 - Instagram: [@borjamoskv](https://www.instagram.com/borjamoskv/)
 
 ---
 
-## Operating line
-
 **Build the substrate. Prove the state. Ship the artifact.**
-
----
-## Live agent system (Run → Break → Verify → Export)
-- Demo repo: https://github.com/borjamoskv/cortex-demo
-- StackBlitz: https://stackblitz.com/github/borjamoskv/Cortex-Persist
-- Live state SVG: https://raw.githubusercontent.com/borjamoskv/cortex-demo/main/api/state.svg
-
-**Build the substrate. Prove the state.**
-
 
 <!-- CORTEX-PROFILE-AGENT:START -->
 <div align="center">
