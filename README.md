@@ -13,13 +13,13 @@ My work sits at the intersection of **AI trust infrastructure**, **formal verifi
 ## Core systems
 
 ### [CORTEX Persist](https://github.com/borjamoskv/Cortex-Persist)
-Tamper-evident memory, audit trails, and verifiable lineage for AI agents.
+Tamper-evident memory, audit trails, and verifiable lineage for AI agents. Now operating as an **L0 Hypervisor** (Terminal State 4).
 
-- cryptographic ledger for agent memory and decisions
-- verification membrane (guards) before durable writes
-- saga-pattern write path with compensating transactions
-- replay, export, signatures, and offline verification
-- designed for agentic systems where logs are not enough
+- **AST Autopoiesis**: The daemon self-mutates its own source code at runtime to eradicate local entropy.
+- **C5-REAL Outbox**: Zero-latency WAL atomic task consumption without lock contention.
+- **Zero-Copy VSA Memory**: O(1) Ring Buffer memory mapped to silicon (mmap).
+- **ZK-STARK Ledger Seals**: Cryptographic proofs for every transaction to establish inter-nodal mesh trust.
+- designed for sovereign swarm systems where logs are not enough
 
 ### [agents-archi](https://github.com/borjamoskv/agents-archi)
 Sovereign Agentic Architecture Registry — the definitive hub for multi-agent design patterns.
