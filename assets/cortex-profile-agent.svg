@@ -140,14 +140,14 @@
       <text x="360" y="145" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" text-anchor="middle">TX_B</text>
     </g>
 
-    <text x="25" y="190" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">Anchor hash: <tspan fill="#FFFFFF">e3a04ee9350d2255ed</tspan> | Merkle check: <tspan fill="#2B3BE5">PASS</tspan></text>
+    <text x="25" y="190" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">Anchor hash: <tspan fill="#FFFFFF">6a01d22f5e10efd9e5</tspan> | Merkle check: <tspan fill="#2B3BE5">PASS</tspan></text>
   </g>
 
   <!-- Bottom Ticker -->
   <g transform="translate(45 285)">
     <rect width="1010" height="40" rx="6" fill="#0E0E0E" stroke="#1F1F1F" stroke-width="1"/>
-    <text x="15" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">HASH DIGEST: <tspan fill="#00F0FF">524ab71b44c00887</tspan></text>
-    <text x="500" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">COMMIT: <tspan fill="#FFFFFF">7371c6b6222e</tspan></text>
-    <text x="750" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">SYNCHRONIZED: <tspan fill="#FFFFFF">2026-05-27T04:37:12.424898+00:00</tspan></text>
+    <text x="15" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">HASH DIGEST: <tspan fill="#00F0FF">03378c168ab02795</tspan></text>
+    <text x="500" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">COMMIT: <tspan fill="#FFFFFF">51cab5503490</tspan></text>
+    <text x="750" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">SYNCHRONIZED: <tspan fill="#FFFFFF">2026-05-27T05:13:58.377920+00:00</tspan></text>
   </g>
 </svg>
