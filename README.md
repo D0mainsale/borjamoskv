@@ -4,158 +4,157 @@
 
 I build tools that let autonomous agents remember, verify, execute, and leave evidence.
 
-My work sits at the intersection of **AI trust infrastructure**, **formal verification**, **macOS semantic automation**, **forensic memory**, and **cinematic web systems**. The operating thesis:
+---
 
-> Agents do not need more chat. They need memory with provenance, execution with guardrails, and evidence that survives inspection.
+<div align="center">
+  <img src="banner_animated.svg" alt="Borja Moskv Systems Banner" width="100%">
+</div>
 
 ---
 
-## Core systems
+## ▀▄ Focus
+- **Persistent memory for agents**: High-density Vector Symbolic Architecture (VSA) memory models.
+- **Verifiable AI systems**: Zero-trust containment layers (Epistemic Membrane) using Z3 SMT solvers.
+- **Distributed cognition**: Sovereignty middleware (HMAC-SHA256 obfuscation) for multi-agent swarms.
+- **Runtime auditability**: Append-Only Ledger (AOF) with SHA-256 Merkle chain verification.
+
+---
+
+## ▀▄ Core Systems
 
 ### [CORTEX Persist](https://github.com/borjamoskv/Cortex-Persist)
-Tamper-evident memory, audit trails, and verifiable lineage for AI agents. Now operating as an **L0 Hypervisor** (Terminal State 4).
+Tamper-evident memory, audit trails, and verifiable lineage for AI agents. Operating as an **L0 Hypervisor** for autonomous agents.
 
-- **AST Autopoiesis**: The daemon self-mutates its own source code at runtime to eradicate local entropy.
-- **C5-REAL Outbox**: Zero-latency WAL atomic task consumption without lock contention.
-- **Zero-Copy VSA Memory**: O(1) Ring Buffer memory mapped to silicon (mmap).
-- **ZK-STARK Ledger Seals**: Cryptographic proofs for every transaction to establish inter-nodal mesh trust.
-- designed for sovereign swarm systems where logs are not enough
+```mermaid
+graph TD
+    classDef default fill:#0A0A0A,stroke:#2B3BE5,stroke-width:1px,color:#F0F0F0;
+    classDef highlight fill:#2B3BE5,stroke:#CCFF00,stroke-width:1.5px,color:#FFFFFF;
+    classDef guard fill:#1A1A1A,stroke:#FF0055,stroke-width:1px,color:#F0F0F0;
+
+    subgraph Stochastic Space
+        LLM[Agent Stochastic Output]:::default
+    end
+
+    subgraph Epistemic Membrane [CORTEX-Persist Containment Shield]
+        direction TB
+        G1[Z3 SMT Guard / Admission Gate]:::guard
+        VSA[Zero-Copy VSA Ring Buffer]:::default
+        mmap[( mmap Silicon Space )]:::default
+        Hash[SHA-256 Block Sealing]:::default
+        Merkle[Merkle Provenance Chain]:::default
+    end
+
+    subgraph Trust Substrate
+        Ledger[(Append-Only AOF Ledger)]:::highlight
+        Proof[Verifiable Audit Pack JSON]:::default
+    end
+
+    LLM -->|Decision / Observation| G1
+    G1 -->|Passed Asserts| VSA
+    VSA -->|Zero I/O Overhead| mmap
+    VSA -->|Batch Commit| Hash
+    Hash -->|Hash Link| Merkle
+    Merkle -->|State Anchoring| Ledger
+    Ledger -->|Generate| Proof
+    
+    style Epistemic Membrane fill:#050505,stroke:#2B3BE5,stroke-dasharray: 5 5;
+    style Trust Substrate fill:#050505,stroke:#CCFF00,stroke-dasharray: 5 5;
+```
+
+#### Threat Model & Trust Guarantees
+| Threat | Mitigation Mechanism | Guarantee Level |
+| :--- | :--- | :--- |
+| **Generative Drift (State Drift)** | Z3-solver formal validation constraints on structural input | **Hard Gate (C5-REAL)** |
+| **State Tampering (CRUD Bypass)** | SHA-256 hash chaining + local AOF append-only Ledger | **Tamper-Evident Ledger** |
+| **I/O Latency Spikes** | Zero-Copy memory mapped `mmap` Vector Symbolic Architecture (VSA) ring buffer | **O(1) Memory Bypass** |
+| **Self-Auditing Degradation** | AST Autopoiesis runtime self-mutation to eliminate structural code drift | **Autopoietic Equilibrium** |
+
+#### Quickstart: Run in 3 Minutes
+```bash
+# Clone and enter the repository
+git clone https://github.com/borjamoskv/Cortex-Persist.git
+cd Cortex-Persist
+
+# Install in editable mode with development dependencies
+pip install -e ".[dev,acceleration]"
+
+# Run the canonical verification and tampering-detection demo
+python examples/demo_canonical.py
+```
 
 ### [agents-archi](https://github.com/borjamoskv/agents-archi)
-Sovereign Agentic Architecture Registry — the definitive hub for multi-agent design patterns.
-
-- CORTEX protocols and swarm topologies
-- Industrial Noir design system for agent interfaces
-- pattern library for guardrails, consensus, and memory admission
+Sovereign Agentic Architecture Registry — the definitive hub for multi-agent design patterns, including:
+- Swarm topologies and inter-agent communication matrices.
+- Industrial Noir design tokens for state monitoring UIs.
+- Provenance architectures for cryptographic swarm alignment.
 
 ### [Anvil](https://github.com/borjamoskv/anvil-lang)
-A programming language where trust doesn't compile. Formally verified smart contracts via Z3 SMT solver.
-
-- contract verification at compile time
-- SMT-backed proof obligations
-- designed for adversarial environments where bugs are exploits
+A programming language where trust is a compilation invariant. Formally verified smart contracts via Z3 SMT solver.
+- Compile-time contract specification check.
+- Automatic verification condition generation and logic proofs.
 
 ### [ASL Spec](https://github.com/borjamoskv/asl-spec)
-Agent Specification Language — open standard for formally verifying autonomous agent behavior.
-
-- behavioral contracts for AI agents
-- machine-checkable safety properties
-- MIT licensed specification
+Agent Specification Language (ASL) — open standard for formally specifying and verifying autonomous agent behaviors.
 
 ---
 
-## Infrastructure
+## ▀▄ System Infrastructure
 
 ### [mac-maestro](https://github.com/borjamoskv/mac-maestro)
-Semantic GUI automation for macOS.
-
-- structured traces for UI actions
-- safety gates and deterministic execution paths
-- bridge between natural-language intent and desktop execution
+Semantic GUI automation bridge for macOS, enabling natural language intent execution via macOS API hooks.
 
 ### [cortex-ram-guard](https://github.com/borjamoskv/cortex-ram-guard)
-Sovereign macOS memory pressure daemon.
-
-- 4-tier graduated response to memory pressure
-- per-app RSS budgets
-- predictive swap exhaustion
+Sovereign daemon for macOS memory monitoring and RSS budgeting to contain execution spikes.
 
 ### [homebrew-tap](https://github.com/borjamoskv/homebrew-tap)
-Homebrew formulae for borjamoskv tools — `brew tap borjamoskv/tap`.
+Homebrew formulas for local daemon installation: `brew tap borjamoskv/tap`.
 
 ---
 
-## Surfaces & demos
-
-### [borjamoskv-site](https://github.com/borjamoskv/borjamoskv-site)
-Personal research surface for essays, artifacts, and immersive interfaces.
-
-### [cortex-demo](https://github.com/borjamoskv/cortex-demo)
-Interactive demo: Run → Break → Verify → Export.
-
-### [gordacorp-immersive](https://github.com/borjamoskv/gordacorp-immersive)
-Immersive audit microsite exploring cinematic front-end direction.
-
----
-
-## Current frontier
-
+## ▀▄ Stack & Research Direction
 ```yaml
-focus:
-  - verifiable agent memory (CORTEX Persist)
-  - formal verification for smart contracts (Anvil)
-  - behavioral specification for AI agents (ASL)
-  - adversarial evaluation of agent guardrails
-  - trust infrastructure for autonomous software
-  - macOS system-level daemons (cortex-ram-guard)
-
-principles:
-  - verify before persist
-  - evidence over rhetoric
-  - local-first when possible
-  - deterministic execution paths
-  - beautiful systems are easier to operate
-
-stack:
-  languages: [python, rust, typescript, javascript]
-  verification: [z3, smt, formal proofs, merkle chains]
-  interfaces: [next.js, react, cli, macos automation]
-  substrate: [sqlite, hash chains, structured traces]
-  aesthetics: [industrial noir, high-contrast, cinematic]
+Focus:
+  - Verifiable Agent Memory & Provenance Layers
+  - Formal Verification for Distributed Agent Runtimes
+  - Adversarial Testing of Agent Guardrails & Containment Filters
+  - Local-first System-level macOS Daemons
+Stack:
+  Languages: [Rust, Python, TypeScript, Swift, GLSL]
+  Verification: [Z3, SMT Solvers, Merkle Tree Chains, SHA-256]
+  Substrates: [SQLite Vector, mmap buffers, AOF logs]
+  Design: [Industrial Noir 2026, High-Contrast UI, CSS Grid]
 ```
 
 ---
 
-## Engineering metrics
+## ▀▄ Engineering Metrics & Security Audits
 
-| Metric | Value |
-|---|---|
-| **CORTEX Persist PRs** | 391+ merged & reviewed |
-| **Test suite** | 1,824 passing tests |
-| **Languages in production** | Python, Rust, TypeScript, Swift |
-| **Immunefi submissions** | 4 vulnerability reports (see below) |
-| **CI enforcement** | Ruff lint + pytest on every PR |
+| Metric | Status / Value | Verification Source |
+|---|---|---|
+| **CORTEX Persist PRs** | 391+ Merged & Reviewed | Git history |
+| **CORTEX Test Suite** | 2,218 / 2,218 passing (100% Green) | `pytest tests/` |
+| **Languages in Production** | Python, Rust, TypeScript, Swift | GitHub Linguist |
+| **CI/CD Pipeline** | Ruff lint + pytest on every commit | GitHub Actions |
 
-### Security disclosures (Immunefi)
+### Verified Security Disclosures (Immunefi & Audits)
 
-Verified vulnerability reports submitted via Immunefi and CORTEX audit pipelines:
-
-| Report ID | Severity | Vulnerability / Attack Vector | Target | Status |
+| Report ID | Severity | Target Subsystem | Vulnerability Vector | Status |
 |---|---|---|---|---|
-| `OUROBOROS-EIGEN-03NEW` | **CRITICAL** | Slashing Desync via Latency Front-run in AVS Orchestration | EigenLayer | SUBMITTED |
-| `OUROBOROS-LZ-SHADOW-01` | **CRITICAL** | Shadow Library Integrity Bypass in LzV2 during Grace Period | LayerZero V2 | SUBMITTED |
-| `OUROBOROS-LIDO-03` | **HIGH** | Untracked ETH Injection in StakingVault Bypasses Quarantine | Lido V3 | SUBMITTED |
-| `CORTEX-NET-C5-01` | **INFO** | Network Topography Sync - Ethereum-Public Latency: 36.80ms | EVM Topography | VERIFIED |
+| `OUROBOROS-EIGEN-03NEW` | **CRITICAL** | EigenLayer AVS | Slashing Desync via Latency Front-run in AVS Orchestration | SUBMITTED |
+| `OUROBOROS-LZ-SHADOW-01` | **CRITICAL** | LayerZero V2 | Shadow Library Integrity Bypass in LzV2 during Grace Period | SUBMITTED |
+| `OUROBOROS-LIDO-03` | **HIGH** | Lido V3 | Untracked ETH Injection in StakingVault Bypasses Quarantine | SUBMITTED |
+| `CORTEX-NET-C5-01` | **INFO** | EVM Topography | Network Topography Sync - Ethereum-Public Latency: 36.80ms | VERIFIED |
 
 ---
 
-## Research direction
+## ▀▄ Public Surfaces
 
-I am building a practical architecture for **sovereign agents**:
-
-1. **memory** that can be inspected, replayed, and challenged
-2. **guards** that treat every input as adversarial until validated
-3. **execution traces** that connect intent, tool calls, outcomes, and state changes
-4. **formal specs** that make agent behavior machine-checkable
-5. **interfaces** that make complex systems legible without flattening them
-
-The goal is not to make agents feel magical.
-
-The goal is to make them **accountable**.
+- Domain: [cortexpersist.com](https://cortexpersist.com) | [agents.archi](https://agents.archi)
+- Portrait: [portrait.so/borja](https://portrait.so/borja)
+- Audio Foundry: [borjamoskv.bandcamp.com](https://borjamoskv.bandcamp.com)
+- Communication: X [@bakaladetroya](https://x.com/bakaladetroya) | Instagram [@borjamoskv](https://www.instagram.com/borjamoskv/)
 
 ---
-
-## Public surfaces
-
-- Website: [cortexpersist.com](https://cortexpersist.com/)
-- Profile: [portrait.so/borja](https://portrait.so/borja)
-- Music: [borjamoskv.bandcamp.com](https://borjamoskv.bandcamp.com/)
-- X: [@bakaladetroya](https://x.com/bakaladetroya)
-- Instagram: [@borjamoskv](https://www.instagram.com/borjamoskv/)
-
----
-
-**Build the substrate. Prove the state. Ship the artifact.**
 
 <!-- CORTEX-PROFILE-AGENT:START -->
 <div align="center">
