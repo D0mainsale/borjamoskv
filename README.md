@@ -174,10 +174,10 @@ Stack:
 | Runtime | `cortex-profile-agent` |
 | Memory admission | `CortexEngine.store(...) -> fact #1` |
 | Ledger | `VALID` over `1` checked transaction(s) |
-| Hash anchor | `538be8299a44e57e` |
-| Public digest | `a2331cb0f4957d1c` |
-| Profile commit | `4d8852acdc09` |
-| Generated | `2026-05-06T10:14:25.161886+00:00` |
+| Hash anchor | `d14ab94a44a9911792` |
+| Public digest | `4a7ec6a50d2565c4` |
+| Profile commit | `e15cdb8f0140` |
+| Generated | `2026-05-27T04:33:26.017482+00:00` |
 
 <details>
 <summary>Public evidence packet</summary>
