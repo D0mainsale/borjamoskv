@@ -17,7 +17,7 @@
     "project": "github-profile-agent",
     "tenant_scope": "public-profile"
   },
-  "generated_at": "2026-05-27T05:13:58.377920+00:00",
+  "generated_at": "2026-05-27T07:38:47.683496+00:00",
   "ledger": {
     "latest_hash": "6a01d22f5e10efd9e5412c0a28f1d0bbd2aa46ae066a7a9919a9f29217d780eb",
     "latest_hash_short": "6a01d22f5e10efd9e5",
@@ -36,7 +36,7 @@
   },
   "repositories": {
     "profile": "borjamoskv/borjamoskv",
-    "profile_commit": "51cab55034902a00d6a1d70cb31bc284f1966f27",
+    "profile_commit": "c901f38ad392a5750dcc1124d54c26587360d735",
     "source": "borjamoskv/Cortex-Persist"
   },
   "schema_version": 1

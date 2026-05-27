@@ -146,8 +146,8 @@
   <!-- Bottom Ticker -->
   <g transform="translate(45 285)">
     <rect width="1010" height="40" rx="6" fill="#0E0E0E" stroke="#1F1F1F" stroke-width="1"/>
-    <text x="15" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">HASH DIGEST: <tspan fill="#00F0FF">03378c168ab02795</tspan></text>
-    <text x="500" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">COMMIT: <tspan fill="#FFFFFF">51cab5503490</tspan></text>
-    <text x="750" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">SYNCHRONIZED: <tspan fill="#FFFFFF">2026-05-27T05:13:58.377920+00:00</tspan></text>
+    <text x="15" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">HASH DIGEST: <tspan fill="#00F0FF">341e0ef27fbd317e</tspan></text>
+    <text x="500" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">COMMIT: <tspan fill="#FFFFFF">c901f38ad392</tspan></text>
+    <text x="750" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">SYNCHRONIZED: <tspan fill="#FFFFFF">2026-05-27T07:38:47.683496+00:00</tspan></text>
   </g>
 </svg>
