@@ -241,7 +241,6 @@ class RegistroGanchos:
         accion_final = AccionGancho.CONTINUAR
         carga_fusionada = dict(evento.carga)
         lista_errores: list[str] = []
-        razon_aborto = None
 
         for id_manejador, funcion_manejador in manejadores:
             try:

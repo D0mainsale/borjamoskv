@@ -6,13 +6,12 @@ Law Ω1: Byzantine logic must survive hardware verification.
 from __future__ import annotations
 
 import uuid
-from typing import Any, Optional
+from typing import Optional
 
 from .types import (
     Generation, 
     Event, 
     Ok, 
-    Err, 
     Result, 
     STAGNATION_PERSONA_MAP,
     LateralPersona

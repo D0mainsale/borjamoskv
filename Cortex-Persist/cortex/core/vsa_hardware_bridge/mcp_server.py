@@ -35,7 +35,6 @@ class SovereignMCPServer:
                 
                 # VSA-Silicon-Bypass-Ω (Zero-Copy)
                 import numpy as np
-                import os
                 
                 tensor = np.array(response, dtype=np.float32)
                 if tensor.nbytes > 8192:  # > 8KB Bypass Trigger

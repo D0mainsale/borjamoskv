@@ -23,10 +23,9 @@ import json
 import os
 import re
 import subprocess
-import sys
 import textwrap
 import time
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -311,7 +310,7 @@ def run() -> None:
 
     # ── Summary ──
     print(f"\n{_B}{'─'*60}")
-    print(f"  RALPH SESSION SUMMARY")
+    print("  RALPH SESSION SUMMARY")
     print(f"{'─'*60}{_R}")
     print(f"  Iterations : {stats['iterations']}")
     print(f"  Done       : {_GRN}{stats['done']}{_R}")

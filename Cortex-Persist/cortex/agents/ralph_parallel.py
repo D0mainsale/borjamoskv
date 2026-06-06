@@ -29,11 +29,9 @@ import json
 import os
 import re
 import subprocess
-import sys
-import textwrap
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from threading import Lock
@@ -173,7 +171,6 @@ class TaskStore:
                 task.status = "in_progress"
 
                 # Replace exactly this line
-                original_line = line
                 new_line      = line.replace(stripped, task.to_md(), 1)
                 lines[i]      = new_line
                 task.raw      = stripped   # keep original for later replace

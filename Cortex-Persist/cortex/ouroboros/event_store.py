@@ -6,7 +6,6 @@ The serpent's memory survives restarts.
 from __future__ import annotations
 
 import json
-import os
 import sqlite3
 from pathlib import Path
 from typing import Optional

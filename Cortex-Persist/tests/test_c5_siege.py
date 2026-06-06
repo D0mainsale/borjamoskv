@@ -29,7 +29,7 @@ def run_siege():
     result = engine.run(seed, failing_executor)
     
     print("==================================================")
-    print(f"Resultado Final:")
+    print("Resultado Final:")
     print(f" - Fallo contenido (No crashea el loop general): {not result.converged}")
     print(f" - Iteraciones de sangrado térmico: {result.generations_run}/{config.max_retries}")
     print("==================================================")

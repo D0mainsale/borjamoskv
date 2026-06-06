@@ -21,12 +21,10 @@ from __future__ import annotations
 import json
 import os
 import re
-import sys
-import time
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional, List, Dict, Any
+from typing import Optional, Dict, Any
 
 try:
     import requests
@@ -400,4 +398,4 @@ if __name__ == "__main__":
         print(f"\n{_B}{_GRN}🎯 Scout complete. {len(programs)} bounty targets queued.{_R}\n")
     else:
         print(f"\n{_YEL}⚠ No viable bounties found above ${MIN_REWARD} threshold.{_R}\n")
-        print(f"  Try: python cortex.tools.bounty_scout.py --min-reward 500\n")
+        print("  Try: python cortex.tools.bounty_scout.py --min-reward 500\n")

@@ -16,7 +16,7 @@ try:
     _GENAI_DISPONIBLE = True
 except ImportError:
     _GENAI_DISPONIBLE = False
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 
 
 class Planificador:
@@ -90,6 +90,5 @@ class Planificador:
 
 
 if __name__ == "__main__":
-    import asyncio
     planificador = Planificador()
     # asyncio.run(planificador.generar_plan("Analizar estado actual del enjambre"))

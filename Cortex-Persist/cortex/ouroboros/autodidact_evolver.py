@@ -6,7 +6,7 @@ Implements:
 """
 
 import logging
-from typing import Optional, Any
+from typing import Any
 
 logger = logging.getLogger("cortex.ouroboros.evolver")
 

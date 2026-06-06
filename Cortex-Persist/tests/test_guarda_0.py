@@ -100,7 +100,7 @@ def test_reduction_correctness():
     )
     reduced, audit = reduce(padding_text)
     if audit.bypass_triggered:
-        failures.append(f"  FAIL: padding text should not be bypassed")
+        failures.append("  FAIL: padding text should not be bypassed")
     elif audit.reduction_ratio < 0.05:
         failures.append(
             f"  FAIL: expected >5% reduction on padding text, got {audit.reduction_ratio*100:.1f}%"
@@ -115,7 +115,6 @@ def test_guarda_0_harness():
     Smoke test run_guarda_0 with a trivial embedding (identity hash projection).
     C5-REAL NOTE: In production, swap embed_fn with a real sentence-transformer.
     """
-    import hashlib
 
     def mock_embed(text: str) -> list[float]:
         """
@@ -136,7 +135,7 @@ def test_guarda_0_harness():
     ]
 
     result = run_guarda_0(corpus, mock_embed)
-    print(f"\n  Guarda 0 result:")
+    print("\n  Guarda 0 result:")
     print(f"    passed         = {result['passed']}")
     print(f"    p95_similarity = {result['p95_similarity']}")
     print(f"    p50_similarity = {result['p50_similarity']}")

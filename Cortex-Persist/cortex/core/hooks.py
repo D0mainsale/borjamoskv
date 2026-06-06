@@ -155,7 +155,6 @@ class HookRegistry:
         final_action = HookAction.CONTINUE
         merged_payload = dict(event.payload)
         errors: list[str] = []
-        abort_reason = None
 
         for handler_id, handler_fn in handlers:
             try:

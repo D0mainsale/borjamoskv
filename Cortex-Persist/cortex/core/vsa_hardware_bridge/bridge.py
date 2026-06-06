@@ -23,7 +23,7 @@ try:
         CORTEX_JIT_LIB = ctypes.CDLL(jit_lib_path)
         # Firma C5-REAL: u64
         CORTEX_JIT_LIB.fetch_ultrathin_rpc_block.restype = ctypes.c_uint64
-except Exception as e:
+except Exception:
     pass # Permite bootear en modo degradado (C4)
 
 

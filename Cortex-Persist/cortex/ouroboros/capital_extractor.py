@@ -144,7 +144,7 @@ class CapitalExtractorC5:
         
         if self.strike_mode == "dry-run":
             logger.info(
-                f"C5-REAL: [DRY-RUN] Transaction signed. No broadcast."
+                "C5-REAL: [DRY-RUN] Transaction signed. No broadcast."
             )
             return f"0x_DRY_RUN_TX_HASH_{target_contract[:8]}"
 

@@ -16,19 +16,17 @@ import uuid
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any, Optional
+from typing import Optional
 
 from .types import (
     Event,
     Generation,
-    EvolutionAction,
     LateralPersona,
-    StagnationPattern,
     STAGNATION_PERSONA_MAP,
     hash_content,
 )
 from .seed import Seed, crystallize, compute_ambiguity
-from .evaluator import Evaluator, EvalResult
+from .evaluator import Evaluator
 from . import stagnation as stagnation_detector
 
 

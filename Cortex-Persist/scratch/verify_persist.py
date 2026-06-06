@@ -1,15 +1,12 @@
-import os
 import sys
 import time
-import json
 import subprocess
-import httpx
 
 # Configuración de paths para que Python encuentre los módulos
 CORTEX_ROOT = "/Users/borjafernandezangulo/borjamoskv/Cortex-Persist"
 sys.path.append(CORTEX_ROOT)
 
-from cortex.sovereign import guard_and_commit_sync, PropuestaHecho
+from cortex.sovereign import guard_and_commit_sync
 
 def test_persist_flow():
     print("◈ INICIANDO TEST DE PERSISTENCIA C5-REAL")

@@ -22,7 +22,7 @@ import os
 import re
 import sys
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Optional
 
@@ -163,7 +163,7 @@ def reduce(text: str) -> tuple[str, ReducerAudit]:
     t0 = time.perf_counter()
     ts = datetime.now(timezone.utc).isoformat()
     tokens_before = _token_count(text)
-    input_hash = _sha256(text)
+    _sha256(text)
 
     if not _ENV_ON:
         # Reducer disabled: pass-through, audit still emitted for zero-noise baseline

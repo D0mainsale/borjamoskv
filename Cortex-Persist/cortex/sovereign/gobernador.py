@@ -15,9 +15,8 @@ Fusión de dos controladores en un único Gobernador con juicio:
 from __future__ import annotations
 
 import time
-import math
 from dataclasses import dataclass, field
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any
 
 # ── Estructuras de Estado ─────────────────────────────────────────────────────
 

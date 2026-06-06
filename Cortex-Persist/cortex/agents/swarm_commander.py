@@ -26,12 +26,10 @@ import os
 import re
 import subprocess
 import sys
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from threading import Lock
-from typing import Optional
 
 # ─── ANSI / Industrial Noir ──────────────────────────────────────────────────
 _R   = "\033[0m"
@@ -111,7 +109,7 @@ def phase_scout() -> int:
         _log(f"cortex.tools.bounty_scout.py not found at {script}", _RED)
         return 0
 
-    result = subprocess.run(
+    subprocess.run(
         [sys.executable, str(script),
          "--min-reward", str(MIN_REWARD),
          "--inject"],
@@ -386,7 +384,7 @@ def full_cycle() -> None:
 
     # Final status
     print(f"\n{_B}{'═'*64}")
-    print(f"  SWARM CYCLE COMPLETE")
+    print("  SWARM CYCLE COMPLETE")
     print(f"{'═'*64}{_R}")
     print(f"  Targets hunted : {hunt_results['total']}")
     print(f"  Findings total : {_GRN}{hunt_results['findings']}{_R}")
