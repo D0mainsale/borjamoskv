@@ -10,7 +10,7 @@ from cortex.core.multipass import MultipassEngine, MultipassConfig
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 # Seed sintético
-seed = Seed(hash="SED_ASDO_9901", content="Init OpenSpace Protocol")
+seed = Seed(goal="Init OpenSpace Protocol", context="SED_ASDO_9901")
 
 # Inyección entrópica premeditada: El ejecutor colapsa automáticamente
 def failing_executor(seed: Seed, generation: int) -> str:
