@@ -28,11 +28,16 @@ async fn main() {
     tracing_subscriber::fmt::init();
     info!("MOSKV-1 APEX: Inicializando CORTEX-LLM Gateway Rust (C5-REAL)...");
 
-    // Asegurar directorio persistencia
-    let db_path = "../persist/cortex_ledger.db";
-    let _ = std::fs::create_dir_all("../persist");
+    // Asegurar directorio persistencia o variable de test
+    let db_path = std::env::var("DATABASE_URL").unwrap_or_else(|_| "../persist/cortex_ledger.db".to_string());
     
-    let db_pool = ledger::init_ledger(db_path).await;
+    if db_path.contains("../persist") {
+        let _ = std::fs::create_dir_all("../persist");
+    } else if let Some(parent) = std::path::Path::new(&db_path).parent() {
+        let _ = std::fs::create_dir_all(parent);
+    }
+    
+    let db_pool = ledger::init_ledger(&db_path).await;
     let http_client = Client::new();
 
     let state = Arc::new(AppState { db_pool, http_client });
@@ -89,6 +94,27 @@ async fn process_inference(
         stream: false,
         format: "json".to_string(),
     };
+
+    if std::env::var("FAKE_PROVIDER").unwrap_or_default() == "1" {
+        let delta = ThermodynamicDelta {
+            hash_base: hash_base.clone(),
+            confidence: "C5".to_string(),
+            claim: "Fake Provider Injection".to_string(),
+            operations: vec![],
+            raw_exergy: 1.0,
+        };
+        if let Err(e) = ledger::append_to_ledger(&state.db_pool, &delta).await {
+            error!("Fallo al persistir en Ledger C5: {}", e);
+        }
+        return (
+            StatusCode::OK,
+            Json(GatewayResponse {
+                status: "COLLAPSED".into(),
+                delta: Some(delta),
+                error: None,
+            })
+        );
+    }
 
     let response = state.http_client.post("http://localhost:11434/api/generate")
         .json(&ollama_req)
