@@ -13,3 +13,9 @@ dev = ["pytest>=8.0"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+
+[tool.ruff]
+exclude = ["scratch"]
+
+[tool.ruff.lint]
+ignore = ["E402", "E701", "F403", "F401", "E741"]

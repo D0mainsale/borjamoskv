@@ -186,6 +186,7 @@ class TaskStore:
         self,
         task:       Task,
         new_status: str,
+        worker_id:  int = 0,
         note:       str = "",
     ) -> None:
         """Atomically update task status after execution."""
