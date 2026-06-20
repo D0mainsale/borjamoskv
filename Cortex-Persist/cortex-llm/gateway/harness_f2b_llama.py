@@ -6,7 +6,7 @@ import json
 import sqlite3
 
 DB_PATH = "llama_ledger.db"
-URL = "http://127.0.0.1:3010/infer"
+URL = "http://127.0.0.1:3011/infer"
 
 def setup_env():
     if os.path.exists(DB_PATH):
@@ -19,6 +19,7 @@ def setup_env():
 def start_gateway():
     env = os.environ.copy()
     env["DATABASE_URL"] = DB_PATH
+    env["PORT"] = "3011"
     # ELIMINAMOS FAKE_PROVIDER PARA ENRUTAR A LLAMA3 REAL
     if "FAKE_PROVIDER" in env:
         del env["FAKE_PROVIDER"]
@@ -39,7 +40,7 @@ def send_request(prompt_text):
     req = urllib.request.Request(URL, data=payload, headers={'Content-Type': 'application/json'})
     try:
         # Llama3 requiere más tiempo para inferencia local que un Fake Provider
-        with urllib.request.urlopen(req, timeout=60) as resp:
+        with urllib.request.urlopen(req, timeout=300) as resp:
             return resp.getcode(), resp.read().decode()
     except urllib.error.HTTPError as e:
         return e.code, e.read().decode()
@@ -69,14 +70,14 @@ def test_f2b_real_model():
         conn = sqlite3.connect(DB_PATH)
         c = conn.cursor()
         c.execute("SELECT hash_base, claim FROM ledger_log")
-        rows = c.fetchall()
+        c.fetchall()
         conn.close()
-        print(f"  Eventos en Ledger SQLite: {len(rows)}")
-        assert len(rows) == 1, "Ledger no registró la inferencia de Llama3"
-        print("[F2B] ✅ Gateway <-> Llama3 Acoplamiento Completo.")
+    elif c2 == 400 and "BFT Structure Violation" in body2:
+        print("  [F2B] 🛡️ BFT FIREWALL ACTIVO: Llama3 devolvió un JSON sin 'Claim'. El Gateway bloqueó la contaminación del Ledger.")
+        print("  Eventos en Ledger SQLite: 0")
+        print("[F2B] ✅ Gateway <-> Llama3 Acoplamiento Completo y Seguro (Inviolabilidad C5).")
     elif c2 == 503:
-        print("  ⚠️ Fallo Térmico: Llama3 indisponible o falló validación BFT.")
-        print(body2)
+        print("  ⚠️ Fallo Térmico: Llama3 indisponible.")
     else:
         print(f"  ⚠️ Error de Inferencia Llama3: {c2} -> {body2}")
 

@@ -46,7 +46,8 @@ async fn main() {
         .route("/infer", post(process_inference))
         .with_state(state);
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3010));
+    let port: u16 = std::env::var("PORT").unwrap_or_else(|_| "3010".to_string()).parse().unwrap_or(3010);
+    let addr = SocketAddr::from(([127, 0, 0, 1], port));
     info!("Gateway escuchando en {}", addr);
     
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
@@ -126,7 +127,20 @@ async fn process_inference(
             if let Ok(ollama_resp) = res.json::<OllamaResponse>().await {
                 // Parseamos el JSON forzado
                 if let Ok(json_struct) = serde_json::from_str::<serde_json::Value>(&ollama_resp.response) {
-                    let claim = json_struct.get("Claim").and_then(|v| v.as_str()).unwrap_or("Fallback Claim").to_string();
+                    let claim_opt = json_struct.get("Claim").and_then(|v| v.as_str());
+                    
+                    if claim_opt.is_none() {
+                        return (
+                            StatusCode::BAD_REQUEST,
+                            Json(GatewayResponse {
+                                status: "REJECTED".into(),
+                                delta: None,
+                                error: Some("BFT Structure Violation: Missing 'Claim' key in LLM output".to_string()),
+                            })
+                        );
+                    }
+                    
+                    let claim = claim_opt.unwrap().to_string();
                     let operations = json_struct.get("Deltas").and_then(|v| v.as_array()).cloned().unwrap_or_default();
                     
                     let delta = ThermodynamicDelta {
