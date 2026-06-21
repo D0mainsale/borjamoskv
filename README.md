@@ -1,8 +1,8 @@
 # Borja Moskv
 
-**Sovereign agent infrastructure · trust substrate · formal verification · immersive systems**
+**Error Navigation Systems · Sovereign AI Infrastructure · Epistemic Dependency Graphs**
 
-I build tools that let autonomous agents remember, verify, execute, and leave evidence.
+I build infrastructure that transforms AI from Answer Machines into Error Navigation Systems. Optimizing for correction, not certainty.
 
 ---
 
@@ -13,10 +13,10 @@ I build tools that let autonomous agents remember, verify, execute, and leave ev
 ---
 
 ## ▀▄ Focus
+- **Error Navigation Engines**: Building Epistemic Dependency Graphs (EDG V6) for isolating generative blast radius and computing failure topographies.
 - **Persistent memory for agents**: High-density Vector Symbolic Architecture (VSA) memory models.
-- **Verifiable AI systems**: Zero-trust containment layers (Epistemic Membrane) using Z3 SMT solvers.
-- **Distributed cognition**: Sovereignty middleware (HMAC-SHA256 obfuscation) for multi-agent swarms.
-- **Runtime auditability**: Append-Only Ledger (AOF) with SHA-256 Merkle chain verification.
+- **Verifiable AI systems**: Zero-trust containment layers using Z3 SMT solvers to mathematically bound agent hallucinations.
+- **Runtime auditability**: Append-Only Ledger (AOF) with SHA-256 Merkle chain verification for absolute provenance.
 
 ---
 
