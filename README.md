@@ -67,5 +67,5 @@ Every public claim requires:
 
 <div align="center">
   <br>
-  <a href="https://cortexpersist.com">cortexpersist.com</a> | <a href="https://portrait.so/borja">portrait.so/borja</a> | <a href="https://x.com/bakaladetroya">@bakaladetroya</a>
+  <a href="https://cortexpersist.com">cortexpersist.com</a>
 </div>
