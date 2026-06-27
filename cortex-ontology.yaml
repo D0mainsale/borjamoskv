@@ -1,0 +1,54 @@
+# CORTEX V4 ONTOLOGY & GITHUB METADATA NEXUS
+# Sovereign Single Source of Truth for borjamoskv GitHub Surface
+# Any manual change on GitHub UI will be overwritten by this file.
+
+repositories:
+  - name: "smoke-detector-extension"
+    description: "Chrome/Brave extension for heuristic AI detector bypass analysis and thermodynamic content entropy scoring."
+    visibility: "public"
+    has_issues: true
+
+  - name: "rustchain-telegram-bot"
+    description: "Telegram agent interface built in Rust for multi-chain query routing and BFT consensus telemetry."
+    visibility: "public"
+    has_issues: true
+
+  - name: "cortex-web"
+    description: "Web interface for Cortex Agentic OS. Real-time C5-REAL observability and topological visualizer."
+    visibility: "public"
+    has_issues: true
+
+  - name: "naroagutierrezgil.com"
+    description: "Personal branding, portfolio, and immersive web architecture for Naroa Gutiérrez Gil."
+    visibility: "public"
+    has_issues: true
+
+  - name: "cortex-fas"
+    description: "Federated Autonomous Swarm (FAS) orchestration engine. Gitops sync for multi-agent workflows."
+    visibility: "public"
+    has_issues: true
+
+  - name: "ctre-optimal-stopping"
+    description: "Stochastic algorithms for Contextual Tree-Root Evaluation and optimal stopping problems in agent memory."
+    visibility: "public"
+    has_issues: true
+
+  - name: "babylon-60"
+    description: "Experimental decentralized semantic graph and agentic communication protocol."
+    visibility: "public"
+    has_issues: true
+
+  - name: "wiki"
+    description: "Legacy documentation nexus. DEPRECATED. Target for Nexus Bridging to agents-archi."
+    visibility: "public"
+    has_issues: false
+
+  - name: "cortex-docs-site"
+    description: "Static documentation engine for CORTEX protocols. DEPRECATED. Target for Nexus Bridging to agents-archi."
+    visibility: "public"
+    has_issues: false
+
+  - name: "C5-REAL-MAC-MUTATOR"
+    description: "Low-level macOS mutation engine for C5-REAL UI automation and deterministic state control."
+    visibility: "public"
+    has_issues: true
