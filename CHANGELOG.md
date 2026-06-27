@@ -1,6 +1,1 @@
-# CHANGELOG
-
-All notable changes to this project will be documented in this file.
-
-## [Unreleased]
-- Injected C5-REAL Verification Topology (EDG V6).
+/Users/borjafernandezangulo/10_PROJECTS/cortexpersist-monorepo/CHANGELOG.md
