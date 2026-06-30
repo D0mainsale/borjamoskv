@@ -92,7 +92,7 @@ class ToolRegistry:
             # Simple wrapper for now, will integrate with secure-bash.js later
             result = subprocess.run(
                 command, 
-                shell=True, 
+                shell=False, 
                 capture_output=True, 
                 text=True, 
                 timeout=30

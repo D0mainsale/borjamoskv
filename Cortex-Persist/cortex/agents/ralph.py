@@ -157,7 +157,7 @@ def _execute_shell(cmd: str) -> tuple[bool, str, str, int]:
     try:
         result = subprocess.run(
             cmd,
-            shell=True,
+            shell=False,
             capture_output=True,
             text=True,
             timeout=TASK_TIMEOUT,

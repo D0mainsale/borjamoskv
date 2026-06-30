@@ -14,8 +14,8 @@ RUN_HOURS = 12
 def get_process_metrics(pid):
     # RSS in KB
     try:
-        rss = subprocess.check_output(f"ps -o rss= -p {pid}", shell=True).decode().strip()
-        fd_count = subprocess.check_output(f"lsof -p {pid} | wc -l", shell=True).decode().strip()
+        rss = subprocess.check_output(f"ps -o rss= -p {pid}", shell=False).decode().strip()
+        fd_count = subprocess.check_output(f"lsof -p {pid} | wc -l", shell=False).decode().strip()
         return rss, fd_count
     except Exception:
         return "0", "0"

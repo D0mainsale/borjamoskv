@@ -104,7 +104,7 @@ class Forja:
         try:
             resultado = subprocess.run(
                 command,
-                shell=True,
+                shell=False,
                 capture_output=True,
                 text=True,
                 timeout=30
