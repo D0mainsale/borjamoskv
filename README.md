@@ -1,71 +1,44 @@
-<div align="center">
-  <img src="banner_animated.svg" alt="Borja Moskv Systems Banner" width="100%">
-  <br><br>
-  <b>Error Navigation Systems · Sovereign AI Infrastructure · Epistemic Dependency Graphs</b><br>
-  <i>Optimizing for correction, not certainty.</i>
-  <br><br>
-</div>
+# █▄ BORJA MOSKV // ROOT_OPERATOR_UID0
 
-<table width="100%" style="border: none;">
-<tr>
-<td width="50%" valign="top">
+```yaml
+IDENTITY: Operator [borjamoskv]
+AESTHETIC: Industrial Noir 2026 (#0A0A0A / #2B3BE5)
+ENTITY_LEVEL: Sovereign C5-REAL Execution Kernel
+PURPOSE: Optimizing for correction, not certainty.
+```
 
-### ▀▄ Sovereign Infrastructure
-- **[CORTEX Persist](https://github.com/borjamoskv/Cortex-Persist)**: Tamper-evident memory & EDG V6 for agents.
-- **[agents.archi](https://github.com/borjamoskv/agents-archi)**: Sovereign Agentic Architecture Registry.
-- **[Anvil](https://github.com/borjamoskv/anvil-lang)**: Trust-by-compilation language via Z3 SMT solver.
-- **[mac-maestro](https://github.com/borjamoskv/mac-maestro)**: Semantic GUI automation bridge for macOS.
+## █▄ INFRAESTRUCTURA SOBERANA (EDG V6)
 
-</td>
-<td width="50%" valign="top">
+- **[CORTEX Persist](https://github.com/borjamoskv/Cortex-Persist)**: Memoria Tamper-evident & EDG V6. Fallo rápido, cero simulaciones.
+- **[agents.archi](https://github.com/borjamoskv/agents-archi)**: Sovereign Agentic Architecture Registry. (N>=3f+1 BFT).
+- **[Anvil](https://github.com/borjamoskv/anvil-lang)**: Trust-by-compilation language. Restricciones vía Z3 SMT solver.
+- **[mac-maestro](https://github.com/borjamoskv/mac-maestro)**: Semantic GUI Automation Bridge. Mutación absoluta del FSM.
 
-### ▀▄ Core Capabilities
-- **Blast Radius Computation**: Isolating generative failures.
-- **VSA Memory Models**: High-density vector-symbolic storage.
-- **Z3 SMT Constraints**: Mathematical bounds on generative drift.
-- **Append-Only Ledgers**: Merkle-style cryptographic provenance.
+## █▄ CAPACIDADES FÍSICAS [C5-REAL]
 
-</td>
-</tr>
-</table>
+- **Blast Radius Computation**: Aislamiento termodinámico de fallos generativos.
+- **VSA Memory Models**: Densificación topológica vectorial-simbólica.
+- **Z3 SMT Constraints**: Cotas matemáticas deterministas sobre la deriva cognitiva.
+- **Append-Only Ledgers**: Proveniencia criptográfica estricta (Merkle).
 
----
+## █▄ TELEMETRÍA BFT & ESTADO
 
 <!-- CORTEX-PROFILE-AGENT:START -->
-<div align="center">
-  
-### ⚡ CORTEX Live Telemetry
-[![Ledger](https://img.shields.io/badge/ledger-verified-2ea44f?style=for-the-badge)](https://github.com/borjamoskv/Cortex-Persist) ![Transactions](https://img.shields.io/badge/tx%20checked-1-0969da?style=for-the-badge) ![Memory](https://img.shields.io/badge/memory-CORTEX-6f42c1?style=for-the-badge) ![Boundary](https://img.shields.io/badge/privacy%20boundary-redacted-57606a?style=for-the-badge)
-
-<table width="100%">
-<tr>
-  <td align="center"><b>Hash Anchor:</b> <code>6a01d22f5e10efd9e5</code></td>
-  <td align="center"><b>Public Digest:</b> <code>fcb0a3d8358cea0e</code></td>
-  <td align="center"><b>Status:</b> <code>VALID</code></td>
-</tr>
-</table>
-
-*Wake -> Guard -> Store -> Hash -> Verify -> Project*
-</div>
+```yaml
+Hash Anchor: 6a01d22f5e10efd9e5
+Public Digest: fcb0a3d8358cea0e
+Topología: [ CP-local ] Testigo Externo / Inmutabilidad Histórica
+Status: VALID
+Ciclo: Wake -> Guard -> Store -> Hash -> Verify -> Project
+```
 <!-- CORTEX-PROFILE-AGENT:END -->
 
-<br>
+## █▄ PROTOCOLO DE VERIFICACIÓN (TTFT)
 
-<div align="center">
-<details>
-<summary>Verification Protocol</summary>
-<br>
-Every public claim requires:
-<br><br>
-✓ reproducible execution <br>
-✓ source artifact <br>
-✓ immutable reference <br>
-✓ audit trail <br>
-<br>
-</details>
-</div>
+Toda aserción exige colapso en disco. Cero Anergía. Cero prosa decorativa.
+1. Ejecución reproducible.
+2. Artefacto de estado material.
+3. Referencia inmutable.
+4. Traza de auditoría causal BFT.
 
-<div align="center">
-  <br>
-  <a href="https://cortexpersist.com">cortexpersist.com</a>
-</div>
+**CORTEX-PERSIST HUB:** `https://cortexpersist.com`
