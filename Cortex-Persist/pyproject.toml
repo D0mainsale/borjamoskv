@@ -16,6 +16,8 @@ dependencies = [
     "web3>=7.0",
     "eth-account>=0.13",
     "numpy>=1.26",
+    "openai>=1.50.0",
+    "anthropic>=0.30.0",
 ]
 
 [project.optional-dependencies]
