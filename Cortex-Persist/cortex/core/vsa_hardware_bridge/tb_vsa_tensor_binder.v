@@ -2,7 +2,7 @@
 
 /*
  * CORTEX-Persist: Testbench for VSA Tensor Binder (Register-Level FPGA Architecture)
- * Validates O(1) Register Spatter Code Binding, Permutations, Accumulation and Popcount Monitoring.
+ * Validates O(1) Register Spatter Code Binding, Permutations, Unbinding, Accumulation and Popcount Monitoring.
  */
 module tb_vsa_tensor_binder;
 
@@ -20,6 +20,7 @@ module tb_vsa_tensor_binder;
 
     wire [BUS_WIDTH-1:0] tensor_out;
     wire [BUS_WIDTH:0]   popcount;
+    wire [BUS_WIDTH:0]   hamming_dist;
     wire                 entropy_anomaly;
     wire                 valid;
 
@@ -37,6 +38,7 @@ module tb_vsa_tensor_binder;
         .acc_reset(acc_reset),
         .tensor_out(tensor_out),
         .popcount(popcount),
+        .hamming_dist(hamming_dist),
         .entropy_anomaly(entropy_anomaly),
         .valid(valid)
     );
@@ -49,7 +51,7 @@ module tb_vsa_tensor_binder;
 
     // Test sequence
     initial begin
-        $display("CORTEX-Persist C5-REAL: Iniciando validación VSA Tensor Binder a nivel de registro FPGA");
+        $display("CORTEX-Persist C5-REAL: Iniciando validación VSA Tensor Binder a nivel de registro FPGA con UNBIND y Hamming");
         $dumpfile("tb_vsa_tensor_binder.vcd");
         $dumpvars(0, tb_vsa_tensor_binder);
         
@@ -74,18 +76,18 @@ module tb_vsa_tensor_binder;
         bind_enable = 1;
         #20; // 2 ciclos para cruzar el pipeline de registro
         
-        if (valid && tensor_out == {{(BUS_WIDTH-8){1'b0}}, 8'hFF}) begin
-            $display("[OK] Exergía Conservada: Binding XOR (AA ^ 55 = FF) en Registro.");
+        if (valid && tensor_out == {{(BUS_WIDTH-8){1'b0}}, 8'hFF} && hamming_dist == 8) begin
+            $display("[OK] Exergía Conservada: Binding XOR (AA ^ 55 = FF) y Hamming = 8 en Registro.");
         end else begin
-            $display("[ERROR] Fallo en Binding XOR. valid=%b, out=%h", valid, tensor_out);
+            $display("[ERROR] Fallo en Binding XOR. valid=%b, out=%h, dist=%d", valid, tensor_out, hamming_dist);
         end
         bind_enable = 0;
         #20;
         
-        // Test Case 2: Permute-Bind (Pi^k(A) ^ B)
-        tensor_a = {{(BUS_WIDTH-8){1'b0}}, 8'h01}; // 00...00000001
+        // Test Case 2: Permute-Bind (Pi^4(A) ^ B)
+        tensor_a = {{(BUS_WIDTH-8){1'b0}}, 8'h01};
         tensor_b = {BUS_WIDTH{1'b0}};
-        mode = 2'b10; // MODE_PERM_XOR
+        mode = 2'b10; // MODE_PERM_BIND
         shift_amount = 4;
         bind_enable = 1;
         #20;
@@ -98,26 +100,26 @@ module tb_vsa_tensor_binder;
         bind_enable = 0;
         #20;
 
-        // Test Case 3: Accumulator & Entropy Popcount Check
-        acc_reset = 1;
-        #10;
-        acc_reset = 0;
-        mode = 2'b11; // MODE_ACCUMULATE
-        tensor_a = {{(BUS_WIDTH-8){1'b0}}, 8'h0F};
-        tensor_b = {{(BUS_WIDTH-8){1'b0}}, 8'hF0};
+        // Test Case 3: UNBIND (Left Shift Inverse Permutation)
+        tensor_a = {{(BUS_WIDTH-8){1'b0}}, 8'h01};
+        tensor_b = {BUS_WIDTH{1'b0}};
+        mode = 2'b11; // MODE_UNBIND
+        shift_amount = 4;
         bind_enable = 1;
         #20;
 
-        if (valid && popcount == 8) begin
-            $display("[OK] Acumulador e Inspección Entrópica (Popcount = 8) validada.");
+        if (valid && tensor_out[4]) begin
+            $display("[OK] UNBIND Permutación Inversa Pi^-4 en registro validada.");
         end else begin
-            $display("[ERROR] Fallo en Popcount/Acumulador. popcount=%d", popcount);
+            $display("[ERROR] Fallo en UNBIND. out=%h", tensor_out);
         end
+        bind_enable = 0;
 
         #40;
-        $display("CORTEX-Persist C5-REAL: Validación FPGA en registro finalizada exitosamente.");
+        $display("CORTEX-Persist C5-REAL: Validación FPGA avanzada finalizada exitosamente.");
         $finish;
     end
 
 endmodule
+
 

@@ -166,6 +166,7 @@ class HardwareBridge:
         return {
             "status": "crystallized",
             "state": "C5-Dynamic",
+            "data": res,
             "latency": "O(1)"
         }
 

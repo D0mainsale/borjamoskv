@@ -45,7 +45,7 @@ async def test_c5_stress_latency_x10():
     p99 = latencies[int(TOTAL_OPERATIONS * 0.99)]
     avg = sum(latencies) / len(latencies)
     
-    print(f"\n[C5-REAL] Stress Test x10 Results:")
+    print("\n[C5-REAL] Stress Test x10 Results:")
     print(f"Total Operations: {TOTAL_OPERATIONS}")
     print(f"Total Time: {total_time_ms:.2f}ms")
     print(f"Avg Latency: {avg:.2f}ms")
