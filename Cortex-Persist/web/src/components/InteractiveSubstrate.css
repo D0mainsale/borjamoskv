@@ -1,0 +1,17 @@
+/* InteractiveSubstrate.css - Industrial Noir 2026 */
+
+.interactive-substrate-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Allow pointer events for the canvas so it can receive keyboard/mouse input if needed */
+.interactive-substrate-container canvas {
+  pointer-events: auto;
+}

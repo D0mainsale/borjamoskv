@@ -86,7 +86,7 @@ def test_bypass_rules():
             emoji = "⏭️ " if got_bypass else "✂️ "
             ratio = f" ({audit.reduction_ratio*100:.1f}% saved)" if not got_bypass else ""
             print(f"  ✅ {emoji} [{desc}]{ratio}")
-    assert not failures
+    assert not failures, "\n".join(failures)
 
 
 def test_reduction_correctness():
@@ -106,7 +106,7 @@ def test_reduction_correctness():
         )
     else:
         print(f"  ✅ ✂️  Structural reducer: {audit.reduction_ratio*100:.1f}% saved")
-    assert not failures
+    assert not failures, "\n".join(failures)
 
 
 def test_guarda_0_harness():
@@ -145,7 +145,7 @@ def test_guarda_0_harness():
     failures = []
     if not result["passed"] and result["p95_similarity"] < 0.80:
         failures.append(f"  FAIL: p95={result['p95_similarity']} well below threshold")
-    assert not failures
+    assert not failures, "\n".join(failures)
 
 
 # ── Runner ────────────────────────────────────────────────────────────

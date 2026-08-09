@@ -2,9 +2,9 @@ import sys
 import time
 
 # Add root to path
-sys.path.append("/Users/borjafernandezangulo/borjamoskv/Cortex-Persist")
+# scratch scripts run from repo root: python -m scratch.verify_v2_1
 
-from cortex.agentic.agent_stability_governor import AgentStabilityGovernor, TelemetrySample
+from cortex.agentic.agent_stability_governor import AgentStabilityGovernor, SovereignSignalSample
 
 def test_governor():
     gov = AgentStabilityGovernor()
@@ -15,7 +15,7 @@ def test_governor():
     # 1. Stress -> RED
     print("\n--- Stressing to RED ---")
     for _ in range(10):
-        sample = TelemetrySample(ts=time.time(), dt=1.0, r=0.9, h=0.9, d=0.9, p=0.9)
+        sample = SovereignSignalSample(ts=time.time(), dt=1.0, exergy=0.9, entropy=0.9, risk=0.9, impact=0.9)
         pulse = gov.tick(sample)
     print(f"Current Mode: {pulse['mode']}, u: {pulse['u']:.2f}")
 
@@ -23,7 +23,7 @@ def test_governor():
     print("\n--- Recovering to YELLOW ---")
     time.sleep(1.1)
     for i in range(15):
-        sample = TelemetrySample(ts=time.time(), dt=1.0, r=0.01, h=0.01, d=0.01, p=0.01) # e ~ 0.01
+        sample = SovereignSignalSample(ts=time.time(), dt=1.0, exergy=0.01, entropy=0.01, risk=0.01, impact=0.01) # e ~ 0.01
         pulse = gov.tick(sample)
         if i % 3 == 0: print(f"Step {i+1}: u={pulse['u']:.2f}, mode={pulse['mode']}, rule={pulse['rule']}")
     

@@ -1,7 +1,6 @@
 import sys
 
-# Add root to path
-sys.path.append("/Users/borjafernandezangulo/borjamoskv/Cortex-Persist")
+# scratch scripts run from repo root: python -m scratch.verify_bridge_v2_2
 
 from cortex.core.mcp_native_bridge import bridge, NativeRequest
 
