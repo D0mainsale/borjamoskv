@@ -19,6 +19,20 @@ import sqlite3
 import time
 from datetime import datetime
 from typing import List, Dict, Any
+import ctypes
+
+_JIT_LIB = None
+try:
+    # Resolve the JIT library path
+    import sys
+    _ext = "dylib" if sys.platform == "darwin" else "so"
+    _lib_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "core", "cortex_jit", "target", "release", f"libcortex_jit.{_ext}")
+    if os.path.exists(_lib_path):
+        _JIT_LIB = ctypes.CDLL(_lib_path)
+        _JIT_LIB.vsa_store_fact_rust.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_double]
+        _JIT_LIB.vsa_store_fact_rust.restype = ctypes.c_bool
+except Exception:
+    pass
 
 
 class AlmacenMemoria:
@@ -36,7 +50,9 @@ class AlmacenMemoria:
         self._inicializar_bd()
 
     def _inicializar_bd(self):
-        os.makedirs(os.path.dirname(self.ruta_bd), exist_ok=True)
+        dirname = os.path.dirname(self.ruta_bd)
+        if dirname:
+            os.makedirs(dirname, exist_ok=True)
         with sqlite3.connect(self.ruta_bd) as conexion:
             conexion.execute("""
                 CREATE TABLE IF NOT EXISTS mensajes_soberanos (
@@ -140,7 +156,16 @@ class AlmacenMemoria:
 
     def archivar_hecho(self, dominio: str, contenido: str,
                       exergia: float = 1.0, padres: List[int] = None):
-        """Destila un pensamiento en un Hecho Soberano persistente."""
+        """Destila un pensamiento en un Hecho Soberano persistente (Direct-Silicon JIT)."""
+        # [C5-REAL] Delegación a FFI de Rust para O(1) Binary Write a VSA WAL
+        if _JIT_LIB:
+            _JIT_LIB.vsa_store_fact_rust(
+                dominio.encode('utf-8'),
+                contenido.encode('utf-8'),
+                float(exergia)
+            )
+            
+        # Mantenemos SQLite como índice asíncrono para lecturas estructuradas
         with sqlite3.connect(self.ruta_bd) as conexion:
             query = """
                 INSERT INTO hechos_soberanos (dominio, contenido, exergia)

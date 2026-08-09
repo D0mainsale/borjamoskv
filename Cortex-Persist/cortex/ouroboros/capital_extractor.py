@@ -128,10 +128,14 @@ class CapitalExtractorC5:
         
         logger.info(f"[CapitalExtractor] P0 Extraction Complete. Confidence: {delta.confidence}, Exergy: {delta.raw_exergy:.2f}")
         
+        import json
+        operaciones_json = json.dumps(delta.operations, indent=2)
+        markdown_body = f"## Resumen (Claim)\n{delta.claim}\n\n## C5-REAL Extracted Payload\n- **Hash Base:** `{delta.hash_base}`\n- **Exergía Pura:** `{delta.raw_exergy:.2f}`\n\n### Operaciones AST (VSA Delta)\n```json\n{operaciones_json}\n```\n"
+
         return {
             "title": delta.claim,
             "risk": "3 (High Risk)" if delta.confidence in ["C4", "C5"] else "2 (Med Risk)",
-            "markdown_body": f"Hash Base: {delta.hash_base}\\nOperations: {delta.operations}",
+            "markdown_body": markdown_body,
             "raw_delta": delta
         }
 

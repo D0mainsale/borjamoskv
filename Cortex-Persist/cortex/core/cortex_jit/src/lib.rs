@@ -248,3 +248,39 @@ pub extern "C" fn crystallize_skill(ast_ptr: *const u8, len: usize, output_hash:
 
     0 // SUCCESS
 }
+
+#[no_mangle]
+pub extern "C" fn vsa_store_fact_rust(
+    domain_ptr: *const c_char,
+    content_ptr: *const c_char,
+    exergy: f64,
+) -> bool {
+    if domain_ptr.is_null() || content_ptr.is_null() {
+        return false;
+    }
+    
+    let domain = unsafe { CStr::from_ptr(domain_ptr).to_string_lossy() };
+    let content = unsafe { CStr::from_ptr(content_ptr).to_string_lossy() };
+    
+    let timestamp = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_millis();
+        
+    let record = format!("[{}] DOMAIN: {} | EXERGY: {:.2} | CONTENT: {}\n", timestamp, domain, exergy, content);
+
+    let mut file = match std::fs::OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open("/tmp/cortex_vsa_facts.wal")
+    {
+        Ok(f) => f,
+        Err(_) => return false,
+    };
+
+    if file.write_all(record.as_bytes()).is_ok() {
+        file.sync_data().is_ok()
+    } else {
+        false
+    }
+}
