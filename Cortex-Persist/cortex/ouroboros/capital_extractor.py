@@ -2,6 +2,8 @@ import os
 import logging
 from typing import Dict, Any, Optional
 
+from cortex.engine.cortex_llm_adapters import invocar_cortex_llm_sota
+
 try:
     from web3 import Web3
     from eth_account import Account
@@ -108,6 +110,30 @@ class CapitalExtractorC5:
             raise RuntimeError(f"C5-REAL Submission Failed: {response.status_code} {response.text}")
             
         return response.json()
+
+    def analyze_contract_for_p0(self, contract_source: str) -> Dict[str, Any]:
+        """
+        Uses SOTA 2026 inference cluster (via C5-REAL engine) to extract P0 vulnerabilities.
+        The ThermodynamicInferenceEngine guarantees only pure JSON with structural deltas is returned.
+        Any prose results in systemic crash (Zero-Day Heuristics).
+        """
+        prompt = (
+            "You are the CORTEX P0 Extractor. Analyze the following smart contract for critical vulnerabilities (P0/High).\n"
+            "Identify the exact attack vector and provide the extraction payload.\n\n"
+            f"CONTRACT SOURCE:\n{contract_source}\n"
+        )
+        
+        logger.info("[CapitalExtractor] Invocando SOTA Inference Cluster para Zero-Day Heuristics...")
+        delta = invocar_cortex_llm_sota(prompt)
+        
+        logger.info(f"[CapitalExtractor] P0 Extraction Complete. Confidence: {delta.confidence}, Exergy: {delta.raw_exergy:.2f}")
+        
+        return {
+            "title": delta.claim,
+            "risk": "3 (High Risk)" if delta.confidence in ["C4", "C5"] else "2 (Med Risk)",
+            "markdown_body": f"Hash Base: {delta.hash_base}\\nOperations: {delta.operations}",
+            "raw_delta": delta
+        }
 
     def extract_yield_onchain(self, target_contract: str, extraction_function: str, abi: list, args: list = None) -> str:
         """
