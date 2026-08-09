@@ -73,3 +73,24 @@ def test_hardware_bridge_bind_tensor_advanced_modes():
     assert res_perm["tensor_out"] == [0, 0, 1, 1]
     assert res_perm["popcount"] == 2
 
+
+def test_hardware_bridge_factorize_tensor_finds_closest_match():
+    bridge = HardwareBridge()
+    # Codebook of 3 known atomic hypervectors (8-bit)
+    codebook = [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0]
+    ]
+    
+    # Noisy tensor (1 bit flip from codebook[2])
+    noisy_tensor = [1, 0, 1, 0, 1, 0, 1, 1]
+    
+    result = bridge.factorize_tensor(noisy_tensor, codebook)
+    assert result == [1, 0, 1, 0, 1, 0, 1, 0]
+
+
+def test_hardware_bridge_factorize_tensor_empty_codebook():
+    bridge = HardwareBridge()
+    result = bridge.factorize_tensor([1, 0, 1, 0], [])
+    assert result == []

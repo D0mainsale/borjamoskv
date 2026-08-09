@@ -97,11 +97,25 @@ class HardwareBridge:
     def factorize_tensor(self, noisy_tensor: List[int], codebook: List[List[int]]) -> List[int]:
         """
         ULTRATHINK Resonator Protocol: O(1) combinational XOR + Popcount.
+        Software fallback scans codebook for minimum Hamming Distance.
         """
         if VSA_LIB:
             # VSA_LIB.resonator_factorize(noisy_tensor, codebook)
             pass
-        return []
+            
+        if not codebook:
+            return []
+            
+        best_match = codebook[0]
+        min_dist = float('inf')
+        
+        for candidate in codebook:
+            dist = sum(1 for a, b in zip(noisy_tensor, candidate) if a != b)
+            if dist < min_dist:
+                min_dist = dist
+                best_match = candidate
+                
+        return best_match
 
     def retrieve_kanerva_sdm(self, query_tensor: List[int]) -> dict:
         """
@@ -122,6 +136,30 @@ class HardwareBridge:
         if VSA_LIB:
             # VSA_LIB.lfsr_ebbinghaus_decay()
             pass
+
+    def purge_scratch_environment(self) -> dict:
+        """
+        [Invariante Ω24: Cero Residuo]
+        Auto-evaporación de scripts y artefactos efímeros tras la ejecución JIT.
+        Asegura que el entorno vuelva a un estado isomórfico limpio.
+        """
+        import glob
+        purged_files = 0
+        try:
+            # Purge tmp JIT compilation artifacts and diagnostic logs
+            for f in glob.glob("/tmp/vsa_jit_*.so") + glob.glob("/tmp/cortex_diag_*.log") + glob.glob("/tmp/agent_scratch_*.py"):
+                if os.path.exists(f):
+                    os.remove(f)
+                    purged_files += 1
+        except Exception:
+            pass
+
+        return {
+            "status": "purged",
+            "state": "Ω24-Isomorphic",
+            "purged_count": purged_files,
+            "latency": "O(1)"
+        }
 
     def evaluate_stagnation_fsm(self, current_vector: List[int], history: List[List[int]], convergence_threshold: float, current_score: float) -> dict:
         """
