@@ -10,7 +10,7 @@
 **Vector:** Validación Comercial Frontal.
 **Misión:** Ejecución on-chain inmediata. Iniciar Fuzzer Ouroboros en modo C5 contra Uniswap v4 (bounty flow). Generar capital soberano para justificar el gasto calórico de inferencia.
 
-*   **Días 1-3:** Integrar clúster Deepthink (DeepSeek-R1) en Ouroboros. Activar el extractor de vulnerabilidades P0.
+*   **Días 1-3:** Integrar clúster de inferencia SOTA 2026 (Claude Opus 4.6 / Gemini 3.1 Pro / O4-Omega) en Ouroboros. Activar el extractor de vulnerabilidades P0 (Zero-Day Heuristics).
 *   **Días 4-7:** Bootstrapping C5-REAL interactuando con contratos on-chain. Zero-Latency SSE. Bloqueo paramétrico de C4-SIMULACIÓN.
 
 ```yaml
@@ -48,7 +48,7 @@ Proof:
 **Vector:** Pureza Arquitectónica.
 **Misión:** Los agentes no escalan por cantidad; escalan por diseño. Superar el límite lineal mediante topología de delegación estricta, instrumentación del entorno y ruteo asíncrono, protegiendo la memoria L1.
 
-*   **Días 15-18:** Refactorización de `MantleOrchestrator`. Sustitución de schedule lineal por anillo de distribución recursivo (LEGATUS → PRAETORIAN → CENTURION → LEGIONARY).
+*   **Días 15-18:** Refactorización de `MantleOrchestrator`. Implementar sincronización P×S (Colapso Cuántico) y sustitución de schedule lineal por anillo de distribución recursivo (LEGATUS → PRAETORIAN → CENTURION → LEGIONARY).
 *   **Días 19-22:** Purga de entropía (Ley Ω₄). Aplicar semáforos termodinámicos. Agente improductivo = Purgado automático del estado tensor.
 
 ```yaml
