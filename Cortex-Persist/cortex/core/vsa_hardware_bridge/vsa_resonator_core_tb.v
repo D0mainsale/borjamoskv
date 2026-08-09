@@ -53,9 +53,9 @@ module vsa_resonator_core_tb;
         
         // --- Test 1: Exact Convergence ---
         resonate_enable = 1;
-        #10;
+        #20; // 2 clock cycles for pipeline
         resonate_enable = 0;
-        $display("[ULTRATHINK] Test 1: Distance: %d, Match: %b", hamming_distance, match_found);
+        if (valid) $display("[ULTRATHINK] Test 1: Distance: %d, Match: %b", hamming_distance, match_found);
         
         #10;
 
@@ -63,12 +63,12 @@ module vsa_resonator_core_tb;
         // Injecting hardware noise: 16 absolute bit-flips
         noisy_tensor[255:240] = ~query_tensor[255:240]; 
         resonate_enable = 1;
-        #10;
+        #20; // 2 clock cycles for pipeline
         resonate_enable = 0;
-        $display("[ULTRATHINK] Test 2 (Noise): Expected Distance: 16. Actual Distance: %d, Match: %b", hamming_distance, match_found);
+        if (valid) $display("[ULTRATHINK] Test 2 (Noise): Expected Distance: 16. Actual Distance: %d, Match: %b", hamming_distance, match_found);
         
-        if (hamming_distance === 9'd16 && match_found === 1'b1) begin
-             $display("[MOSKV-1] VALIDATION PASS: Resonator Core successfully factors identity within 1 clock cycle (O(1)).");
+        if (valid && hamming_distance === 9'd16 && match_found === 1'b1) begin
+             $display("[MOSKV-1] VALIDATION PASS: Resonator Core successfully factors identity within 2 clock cycles (Pipeline).");
         end else begin
              $display("[MOSKV-1] VALIDATION FAIL: Algorithmic Noise Detected.");
         end
