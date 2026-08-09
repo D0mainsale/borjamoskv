@@ -88,7 +88,7 @@ def parse_and_apply_edits(response_text: str):
                     f.write(new_content)
                 print(f"[C5-REAL] Sustitución matemática exitosa en {file_path}")
             else:
-                print(f"[ERROR C4] Desalineación de contexto. El bloque <search> no se encontró.")
+                print("[ERROR C4] Desalineación de contexto. El bloque <search> no se encontró.")
                 print(f"[Trazas de falla, buscando el siguiente patrón:]\n{search_text}")
         else:
             # Creación de materia (nuevo archivo)
@@ -128,7 +128,7 @@ def run_agent(prompt: str, files: List[str]):
             model_reply = result.get("message", {}).get("content", "")
             parse_and_apply_edits(model_reply)
             
-    except urllib.error.URLError as e:
+    except urllib.error.URLError:
         print("[ERROR CRÍTICO] Servidor termal inaccesible.")
         print("¿Está corriendo Ollama? Asegúrate de ejecutar: ollama serve")
     except Exception as e:

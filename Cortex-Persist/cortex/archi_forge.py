@@ -66,7 +66,7 @@ class ArchiForge:
         elif name == "execute_command":
             cmd = action.get("cmd")
             # WARNING: Law Ω6 mandates SafeToAutoRun
-            process = subprocess.run(cmd, shell=True, capture_output=True, text=True, cwd=self.workspace_root)
+            process = subprocess.run(cmd, shell=False, capture_output=True, text=True, cwd=self.workspace_root)
             if process.returncode != 0:
                 raise RuntimeError(f"Command failed: {process.stderr}")
             return f"Executed command: {cmd[:50]}..."

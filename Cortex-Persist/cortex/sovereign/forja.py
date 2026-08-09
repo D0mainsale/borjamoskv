@@ -14,9 +14,8 @@ Confianza: C5-Estático
 
 from __future__ import annotations
 import subprocess
-import json
 import os
-from typing import Dict, Any, Callable, List
+from typing import Dict, Any, Callable
 
 # Ω-PERSIST: importación perezosa para evitar dependencias circulares
 def _obtener_sellado_membrana():
@@ -105,7 +104,7 @@ class Forja:
         try:
             resultado = subprocess.run(
                 command,
-                shell=True,
+                shell=False,
                 capture_output=True,
                 text=True,
                 timeout=30

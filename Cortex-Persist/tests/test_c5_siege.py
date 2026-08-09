@@ -10,7 +10,7 @@ from cortex.core.multipass import MultipassEngine, MultipassConfig
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 # Seed sintético
-seed = Seed(hash="SED_ASDO_9901", content="Init OpenSpace Protocol")
+seed = Seed(goal="Init OpenSpace Protocol", context="SED_ASDO_9901")
 
 # Inyección entrópica premeditada: El ejecutor colapsa automáticamente
 def failing_executor(seed: Seed, generation: int) -> str:
@@ -29,7 +29,7 @@ def run_siege():
     result = engine.run(seed, failing_executor)
     
     print("==================================================")
-    print(f"Resultado Final:")
+    print("Resultado Final:")
     print(f" - Fallo contenido (No crashea el loop general): {not result.converged}")
     print(f" - Iteraciones de sangrado térmico: {result.generations_run}/{config.max_retries}")
     print("==================================================")

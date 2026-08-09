@@ -10,7 +10,7 @@ import sqlite3
 import time
 import os
 from contextlib import contextmanager
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Optional
 
 class IndustrialQueue:
     def __init__(self, db_path: str = "server/data/queue.db"):

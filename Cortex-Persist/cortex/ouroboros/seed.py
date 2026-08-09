@@ -6,7 +6,6 @@ Law Ω9: Ambiguity score is deterministic math, not LLM theater.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 from .types import AMBIGUITY_GATE, hash_content, Ok, Err, Result
 

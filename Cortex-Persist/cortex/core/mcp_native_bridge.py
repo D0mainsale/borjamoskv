@@ -1,8 +1,8 @@
 import time
 import hmac
 import hashlib
-from dataclasses import dataclass, field
-from typing import Dict, Any, List, Optional
+from dataclasses import dataclass
+from typing import Dict, Any, Optional
 
 @dataclass
 class BypassToken:
@@ -60,7 +60,7 @@ class MCPNativeBridge:
         Enforcement logic for v2.2 Modes.
         """
         mode = governor_snapshot.get("mode", "RED")
-        intensity = governor_snapshot.get("u", 1.0)
+        governor_snapshot.get("u", 1.0)
         
         # 1. Global Bypass (Recovery Mode)
         if override and self.validate_scoped_override(override, request):

@@ -15,9 +15,8 @@ Fusión de dos controladores en un único Gobernador con juicio:
 from __future__ import annotations
 
 import time
-import math
 from dataclasses import dataclass, field
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any
 
 # ── Estructuras de Estado ─────────────────────────────────────────────────────
 
@@ -59,7 +58,7 @@ class MuestraSeñalSoberana:
 class EstadoGobernador:
     modo: str = "VERDE"  # VERDE | ÁMBAR | ROJO
     u: float = 0.0       # Intensidad de control (0=explorar, 1=explotar/bloqueo)
-    I: float = 0.0       # Acumulador integral
+    integral_acc: float = 0.0       # Acumulador integral
     error_previo: float = 0.0
     inicio_modo_ts: float = field(default_factory=time.time)
     bloqueado: bool = False
@@ -100,8 +99,10 @@ class GobernadorDimensional:
         # I: Integral (Hechos Fantasma / Historial)
         e.integral += error * dt
         # ZENÓN-1 Anti-saturación
-        if e.integral > self.i_max: e.integral = self.i_max
-        if e.integral < -self.i_max: e.integral = -self.i_max
+        if e.integral > self.i_max:
+            e.integral = self.i_max
+        if e.integral < -self.i_max:
+            e.integral = -self.i_max
         termino_i = e.ki * e.integral
 
         # D: Derivada (KAIROS-Ω / Tendencia)
@@ -149,9 +150,12 @@ class GobernadorDimensional:
 
     def actualizar_parametros(self, kp: float = None, ki: float = None, kd: float = None):
         """Actualiza coeficientes PID en caliente."""
-        if kp is not None: self.estado.kp = kp
-        if ki is not None: self.estado.ki = ki
-        if kd is not None: self.estado.kd = kd
+        if kp is not None:
+            self.estado.kp = kp
+        if ki is not None:
+            self.estado.ki = ki
+        if kd is not None:
+            self.estado.kd = kd
 
     # ── Aliases EN (Puente) ──────────────────────────────────────────────────
     def tick(self, measured_entropy: float, dt: float = 1.0) -> Dict[str, Any]:

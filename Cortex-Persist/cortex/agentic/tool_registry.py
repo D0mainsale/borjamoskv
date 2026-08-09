@@ -11,10 +11,8 @@ Confidence: C5-Static
 
 from __future__ import annotations
 import subprocess
-import json
 import os
-from typing import Dict, Any, Callable, List
-from .agent_capabilities import CapabilityDomain
+from typing import Dict, Any, Callable
 
 # Ω-PERSIST: lazy import to avoid circular deps
 def _get_membrane_commit():
@@ -94,7 +92,7 @@ class ToolRegistry:
             # Simple wrapper for now, will integrate with secure-bash.js later
             result = subprocess.run(
                 command, 
-                shell=True, 
+                shell=False, 
                 capture_output=True, 
                 text=True, 
                 timeout=30

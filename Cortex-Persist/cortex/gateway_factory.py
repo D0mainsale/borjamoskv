@@ -1,7 +1,5 @@
-import os
 import asyncio
 import logging
-from typing import List
 from cortex.swarm.llm_gateway import SovereignLLMGateway, ModelSpec
 
 logger = logging.getLogger("cortex.gateway_factory")

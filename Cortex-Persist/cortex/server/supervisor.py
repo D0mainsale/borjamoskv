@@ -8,10 +8,9 @@ Orchestrates: 1x API Server + Nx Swarm Workers
 import os
 import sys
 import time
-import signal
 import subprocess
 from datetime import datetime
-from typing import List, Dict
+from typing import List
 
 from rich.live import Live
 from rich.table import Table
@@ -82,7 +81,7 @@ class Supervisor:
         )
         
         # Header
-        header_text = Text(f"◈ CORTEX INDUSTRIAL SUPERVISOR v1.0 ◈", style="bold cyan")
+        header_text = Text("◈ CORTEX INDUSTRIAL SUPERVISOR v1.0 ◈", style="bold cyan")
         layout["header"].update(Panel(header_text, style="blue"))
         
         # Table of status

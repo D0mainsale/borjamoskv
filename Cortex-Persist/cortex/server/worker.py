@@ -5,8 +5,6 @@ The execution engine of the Agents.archi swarm.
 Pulls tasks from IndustrialQueue and executes agent logic.
 """
 
-import os
-import sys
 import time
 import uuid
 import logging
@@ -18,7 +16,7 @@ from cortex.server.queue import IndustrialQueue
 # Industrial Noir Logging
 logging.basicConfig(
     level=logging.INFO,
-    format=f"\033[2m%(asctime)s\033[0m \033[38;5;33m\033[1mWORKER\033[0m %(message)s",
+    format="\033[2m%(asctime)s\033[0m \033[38;5;33m\033[1mWORKER\033[0m %(message)s",
     datefmt="%H:%M:%S"
 )
 logger = logging.getLogger("cortex-worker")

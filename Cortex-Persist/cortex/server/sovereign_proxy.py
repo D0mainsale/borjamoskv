@@ -1073,7 +1073,7 @@ class SovereignRequestHandler(BaseHTTPRequestHandler):
                     with open(ledger_path, "a") as f:
                         f.write(json.dumps(ledger_entry) + "\n")
 
-                except Exception as e:
+                except Exception:
                     msg = (
                         "Advertencia: Operación de alto riesgo detectada. "
                         "Se requiere firma secundaria."
@@ -1702,7 +1702,6 @@ class SovereignRequestHandler(BaseHTTPRequestHandler):
                 try:
                     # Stubbing missing bridge
                     # import scripts.ouroboros_bridge as bridge
-                    bridge = None
                     # We can't easily hijack the generator here, but we can call engine
                     WORKING_DIR = "/Users/borjafernandezangulo/10_PROJECTS/agents-archi/temp_strikes"
                     repo_name = target.split("/")[-1].replace(".git", "")
@@ -2067,7 +2066,6 @@ class SovereignRequestHandler(BaseHTTPRequestHandler):
                 # 3. Verify Ledger Integrity (C5-REAL Gate)
                 # from scripts.sovereign_ledger import SovereignLedger
                 # ledger = SovereignLedger()
-                ledger = None
                 success = tid is not None # and ledger.verify_chain_integrity()
                 
                 if success:

@@ -7,16 +7,13 @@ Law Ω9: All scoring is deterministic math. No theater.
 """
 from __future__ import annotations
 
-import os
 from dataclasses import dataclass
-from typing import Optional
 
 from .types import (
     EvalStage,
     Generation,
     EVAL_PASS_SCORE,
     DRIFT_THRESHOLD,
-    hash_content,
 )
 from .seed import Seed
 

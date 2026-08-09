@@ -1,5 +1,4 @@
 import requests
-import json
 import difflib
 
 # ∴ CONTEXT: BOLA (Broken Object Level Authorization) Fuzzer v1.0
@@ -42,7 +41,7 @@ def scan_bola(target_url, base_headers, tenant_ids, header_key="X-Tenant-ID"):
                 # print(f"[-] Denied for Tenant-ID: {t_id} (Status: {res.status_code})")
                 pass
 
-        except Exception as e:
+        except Exception:
             continue
 
 if __name__ == "__main__":

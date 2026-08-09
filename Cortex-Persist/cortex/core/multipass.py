@@ -17,11 +17,10 @@ Loop invariant:
 """
 from __future__ import annotations
 
-import itertools
 import uuid
 import ctypes
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Callable, Optional, Protocol
 
@@ -52,7 +51,6 @@ def _append_flight_recorder(session_id: str, step: str, payload: str):
 
 
 from cortex.ouroboros.types import (
-    Event,
     Generation,
     EvolutionAction,
     StagnationPattern,

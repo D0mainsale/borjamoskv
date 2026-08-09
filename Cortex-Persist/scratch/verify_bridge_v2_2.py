@@ -1,5 +1,4 @@
 import sys
-import os
 
 # Add root to path
 sys.path.append("/Users/borjafernandezangulo/borjamoskv/Cortex-Persist")

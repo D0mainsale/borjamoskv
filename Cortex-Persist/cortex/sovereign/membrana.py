@@ -31,7 +31,7 @@ import json
 import hashlib
 import logging
 from typing import Any, Dict, Optional, List, Literal
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field
 
 import httpx
 

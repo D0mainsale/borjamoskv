@@ -15,17 +15,19 @@
   "cortex": {
     "last_public_fact_id": 1,
     "project": "github-profile-agent",
-    "tenant_scope": "public-profile"
+    "tenant_scope": "public-profile",
+    "signals_processed": 1
   },
-  "generated_at": "2026-05-06T10:14:25.161886+00:00",
+  "generated_at": "2026-05-27T07:40:31.721192+00:00",
   "ledger": {
-    "latest_hash": "538be8299a44e57e46cbc061a135eb41fdacc859eb18efc7a949114b4e768b43",
-    "latest_hash_short": "538be8299a44e57e46",
+    "latest_hash": "6a01d22f5e10efd9e5412c0a28f1d0bbd2aa46ae066a7a9919a9f29217d780eb",
+    "latest_hash_short": "6a01d22f5e10efd9e5",
     "merkle_roots_checked": 0,
     "status": "VALID",
     "transactions_checked": 1,
     "valid": true,
-    "violations_public": []
+    "violations_public": [],
+    "integrity_checks": 3
   },
   "privacy_boundary": {
     "prompts_published": false,
@@ -36,7 +38,7 @@
   },
   "repositories": {
     "profile": "borjamoskv/borjamoskv",
-    "profile_commit": "4d8852acdc097c12a9463f85c9529883ba6e8df2",
+    "profile_commit": "36ac50d7156790d54fa82dfde6a106f614714443",
     "source": "borjamoskv/Cortex-Persist"
   },
   "schema_version": 1

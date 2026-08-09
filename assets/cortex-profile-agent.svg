@@ -1,54 +1,163 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360" role="img" aria-labelledby="title desc">
   <title id="title">CORTEX profile agent status</title>
-  <desc id="desc">Public CORTEX-backed GitHub profile agent projection with ledger status VERIFIED.</desc>
+  <desc id="desc">Public CORTEX-backed GitHub profile agent projection with ledger status VALID.</desc>
+  
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 2px #2B3BE5); }
+      50% { opacity: 1; filter: drop-shadow(0 0 8px #2B3BE5); }
+    }
+    @keyframes flow {
+      to { stroke-dashoffset: -20; }
+    }
+    @keyframes grid-glow {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.3; }
+    }
+    .glow-active {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .flow-line {
+      stroke-dasharray: 6, 4;
+      animation: flow 1.5s linear infinite;
+    }
+    .grid-bg {
+      animation: grid-glow 4s infinite ease-in-out;
+    }
+  </style>
+
   <defs>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0d1117"/>
-      <stop offset="0.52" stop-color="#111827"/>
-      <stop offset="1" stop-color="#172033"/>
+    <!-- Dark panel background gradient -->
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
     </linearGradient>
-    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#2da44e"/>
-      <stop offset="0.48" stop-color="#0969da"/>
-      <stop offset="1" stop-color="#bf8700"/>
-    </linearGradient>
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+    </pattern>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <rect width="1100" height="360" rx="24" fill="url(#panel)"/>
-  <path d="M36 78 H1064 M36 152 H1064 M36 226 H1064 M36 300 H1064" stroke="#30363d" stroke-width="1"/>
-  <path d="M152 32 V328 M334 32 V328 M516 32 V328 M698 32 V328 M880 32 V328" stroke="#21262d" stroke-width="1"/>
-  <rect x="28" y="28" width="1044" height="304" rx="18" fill="none" stroke="#30363d" stroke-width="1.5"/>
-  <rect x="52" y="54" width="234" height="48" rx="12" fill="#161b22" stroke="#30363d"/>
-  <circle cx="78" cy="78" r="8" fill="#2da44e" filter="url(#softGlow)"/>
-  <text x="96" y="84" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">CORTEX LIVE SURFACE</text>
-  <text x="52" y="136" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">bounded public projection</text>
-  <text x="52" y="166" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="700">cortex-profile-agent</text>
-  <text x="52" y="196" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">Wake - Guard - Store - Hash - Verify - Project</text>
-  <rect x="52" y="230" width="150" height="54" rx="12" fill="#0d1117" stroke="#30363d"/>
-  <text x="70" y="252" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">LEDGER</text>
-  <text x="70" y="275" fill="#2da44e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">VERIFIED</text>
-  <rect x="218" y="230" width="150" height="54" rx="12" fill="#0d1117" stroke="#30363d"/>
-  <text x="236" y="252" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">TX CHECKED</text>
-  <text x="236" y="275" fill="#58a6ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">1</text>
-  <rect x="384" y="230" width="150" height="54" rx="12" fill="#0d1117" stroke="#30363d"/>
-  <text x="402" y="252" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">FACT</text>
-  <text x="402" y="275" fill="#d2a8ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">#1</text>
-  <g transform="translate(604 64)">
-    <rect x="0" y="0" width="418" height="198" rx="16" fill="#0d1117" stroke="#30363d"/>
-    <text x="24" y="36" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">HASH CHAIN</text>
-    <line x1="46" y1="88" x2="356" y2="88" stroke="url(#signal)" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="46" cy="88" r="15" fill="#2da44e"/>
-    <circle cx="150" cy="88" r="15" fill="#0969da"/>
-    <circle cx="254" cy="88" r="15" fill="#6f42c1"/>
-    <circle cx="356" cy="88" r="15" fill="#bf8700"/>
-    <text x="24" y="146" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18">anchor 538be8299a44e57e46</text>
-    <text x="24" y="174" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">commit 4d8852acdc09 | roots 0 | digest a2331cb0f4957d1c</text>
+
+  <!-- Base Panel -->
+  <rect width="1100" height="360" rx="16" fill="url(#bg-grad)" stroke="#1F1F1F" stroke-width="2"/>
+  <rect width="1100" height="360" rx="16" fill="url(#grid)" class="grid-bg"/>
+  
+  <!-- Outer border layout glow -->
+  <rect x="15" y="15" width="1070" height="330" rx="12" fill="none" stroke="#2B3BE5" stroke-opacity="0.2" stroke-width="1"/>
+  <rect x="14" y="14" width="1072" height="332" rx="13" fill="none" stroke="#1F1F1F" stroke-width="1"/>
+
+  <!-- Left Cybernetic Control column -->
+  <!-- Header Title -->
+  <text x="45" y="55" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" letter-spacing="3">CORTEX LIVE SECURE ENCLAVE // TELEMETRY PROJECTION</text>
+  <text x="45" y="72" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1">SOVEREIGN PERSISTENCE ENGINE v10.0 // PROTOCOL C5-REAL</text>
+  
+  <!-- Active Node Box -->
+  <g transform="translate(45 95)">
+    <rect width="450" height="75" rx="8" fill="#121212" stroke="#1F1F1F" stroke-width="1.5"/>
+    <!-- LED Indicators -->
+    <circle cx="25" cy="22" r="5" fill="#2B3BE5" class="glow-active" filter="url(#glow)"/>
+    <text x="42" y="26" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" letter-spacing="1">RUNTIME: cortex-profile-agent</text>
+    
+    <text x="20" y="48" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11">Admission: <tspan fill="#00F0FF">CortexEngine.store</tspan> | Tenant: <tspan fill="#2B3BE5">public-profile</tspan></text>
+    <text x="20" y="63" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9">Exergy Level:</text>
+    <rect x="95" y="55" width="200" height="8" rx="4" fill="#1A1A1A"/>
+    <rect x="95" y="55" width="200" height="8" rx="4" fill="#CCFF00" />
+    <text x="305" y="63" fill="#CCFF00" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700">100% STABLE (ΔS=0)</text>
   </g>
-  <text x="52" y="318" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">raw memory, prompts, tenant payloads, and secrets are not published</text>
+
+  <!-- Metrics Grid -->
+  <g transform="translate(45 190)">
+    <!-- Ledger Status -->
+    <g transform="translate(0 0)">
+      <rect width="105" height="60" rx="8" fill="#0A0A0A" stroke="#2B3BE5" stroke-opacity="0.6" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing="1">LEDGER</text>
+      <text x="12" y="44" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" letter-spacing="1">VALID</text>
+      <circle cx="90" cy="18" r="3.5" fill="#00F0FF" class="glow-active" filter="url(#glow)"/>
+    </g>
+    
+    <!-- TX Checked -->
+    <g transform="translate(115 0)">
+      <rect width="105" height="60" rx="8" fill="#0A0A0A" stroke="#1F1F1F" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing="1">TX CHECKED</text>
+      <text x="12" y="44" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">1</text>
+    </g>
+    
+    <!-- Active Facts -->
+    <g transform="translate(230 0)">
+      <rect width="105" height="60" rx="8" fill="#0A0A0A" stroke="#1F1F1F" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing="1">FACTS SEEDED</text>
+      <text x="12" y="44" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">#1</text>
+    </g>
+
+    <!-- Integrity Audits -->
+    <g transform="translate(345 0)">
+      <rect width="105" height="60" rx="8" fill="#0A0A0A" stroke="#1F1F1F" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing="1">INTEGRITY CHK</text>
+      <text x="12" y="44" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700">3</text>
+    </g>
+  </g>
+
+  <!-- Cryptographic Merkle Visualization (Right Hand Side) -->
+  <g transform="translate(540 50)">
+    <!-- Boundary line -->
+    <line x1="-30" y1="20" x2="-30" y2="220" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="4 4"/>
+    
+    <rect width="515" height="210" rx="10" fill="#0E0E0E" stroke="#1F1F1F" stroke-width="1.5"/>
+    <text x="25" y="32" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" letter-spacing="2">CRYPTOGRAPHIC CHAIN VERIFICATION</text>
+    
+    <!-- Merkle Graph Nodes & Connections -->
+    <g transform="translate(45 55)">
+      <!-- Root Node -->
+      <line x1="210" y1="25" x2="110" y2="75" stroke="#2B3BE5" stroke-width="2"/>
+      <line x1="210" y1="25" x2="310" y2="75" stroke="#2B3BE5" stroke-width="2"/>
+      
+      <!-- Intermediate nodes -->
+      <line x1="110" y1="75" x2="60" y2="125" stroke="#1F1F1F" stroke-width="1.5"/>
+      <line x1="110" y1="75" x2="160" y2="125" stroke="#1F1F1F" stroke-width="1.5"/>
+      <line x1="310" y1="75" x2="260" y2="125" stroke="#1F1F1F" stroke-width="1.5"/>
+      <line x1="310" y1="75" x2="360" y2="125" stroke="#1F1F1F" stroke-width="1.5"/>
+
+      <!-- Animated flowing line on valid ledger path -->
+      <line x1="210" y1="25" x2="110" y2="75" stroke="#00F0FF" stroke-width="2" class="flow-line" />
+      <line x1="110" y1="75" x2="160" y2="125" stroke="#00F0FF" stroke-width="1.5" class="flow-line" />
+
+      <!-- Circles / Nodes -->
+      <circle cx="210" cy="25" r="10" fill="#2B3BE5" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)"/>
+      <text x="210" y="5" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" text-anchor="middle" font-weight="700">ROOT</text>
+
+      <circle cx="110" cy="75" r="8" fill="#121212" stroke="#2B3BE5" stroke-width="1.5"/>
+      <circle cx="310" cy="75" r="8" fill="#121212" stroke="#1F1F1F" stroke-width="1.5"/>
+
+      <circle cx="60" cy="125" r="6" fill="#121212" stroke="#1F1F1F" stroke-width="1.5"/>
+      <circle cx="160" cy="125" r="6" fill="#00F0FF" stroke="#FFFFFF" stroke-width="1" class="glow-active" filter="url(#glow)"/>
+      <circle cx="260" cy="125" r="6" fill="#121212" stroke="#1F1F1F" stroke-width="1.5"/>
+      <circle cx="360" cy="125" r="6" fill="#121212" stroke="#1F1F1F" stroke-width="1.5"/>
+      
+      <!-- TX Legend/labels -->
+      <text x="60" y="145" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" text-anchor="middle">TX_0</text>
+      <text x="160" y="145" fill="#00F0FF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" text-anchor="middle" font-weight="700">TX_LATEST</text>
+      <text x="260" y="145" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" text-anchor="middle">TX_A</text>
+      <text x="360" y="145" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" text-anchor="middle">TX_B</text>
+    </g>
+
+    <text x="25" y="190" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">Anchor hash: <tspan fill="#FFFFFF">6a01d22f5e10efd9e5</tspan> | Merkle check: <tspan fill="#2B3BE5">PASS</tspan></text>
+  </g>
+
+  <!-- Bottom Ticker -->
+  <g transform="translate(45 285)">
+    <rect width="1010" height="40" rx="6" fill="#0E0E0E" stroke="#1F1F1F" stroke-width="1"/>
+    <text x="15" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">HASH DIGEST: <tspan fill="#00F0FF">fcb0a3d8358cea0e</tspan></text>
+    <text x="500" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">COMMIT: <tspan fill="#FFFFFF">36ac50d71567</tspan></text>
+    <text x="750" y="24" fill="#8F8F8F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">SYNCHRONIZED: <tspan fill="#FFFFFF">2026-05-27T07:40:31.721192+00:00</tspan></text>
+  </g>
 </svg>

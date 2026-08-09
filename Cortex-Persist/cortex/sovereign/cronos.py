@@ -2,8 +2,10 @@ import time
 import math
 import logging
 from datetime import datetime
-from memoria import AlmacenMemoria
+from sqlite3 import connect
+from contextlib import contextmanager
 
+from memoria import AlmacenMemoria
 # Configuración de CRONOS-Ω
 DECAY_INTERVAL = 5.0  # Frecuencia de actualización (segundos)
 BASE_LAMBDA = 0.005   # Tasa de decaimiento base (exergía)
@@ -80,9 +82,6 @@ class DemonioCronos:
             conn.commit()
 
 # Extender AlmacenMemoria para conexión directa en el demonio
-from sqlite3 import connect
-from contextlib import contextmanager
-
 @contextmanager
 def conexion_directa(self):
     conn = connect(self.ruta_bd)
