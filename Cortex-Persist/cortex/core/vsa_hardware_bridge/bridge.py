@@ -1,5 +1,6 @@
 import ctypes
 import os
+import glob
 from typing import List, Optional
 
 # Law Ω0: Direct-Silicon JIT FFI Stubs
@@ -143,16 +144,12 @@ class HardwareBridge:
         Auto-evaporación de scripts y artefactos efímeros tras la ejecución JIT.
         Asegura que el entorno vuelva a un estado isomórfico limpio.
         """
-        import glob
         purged_files = 0
-        try:
-            # Purge tmp JIT compilation artifacts and diagnostic logs
-            for f in glob.glob("/tmp/vsa_jit_*.so") + glob.glob("/tmp/cortex_diag_*.log") + glob.glob("/tmp/agent_scratch_*.py"):
-                if os.path.exists(f):
-                    os.remove(f)
-                    purged_files += 1
-        except Exception:
-            pass
+        # Purge tmp JIT compilation artifacts and diagnostic logs
+        for f in glob.glob("/tmp/vsa_jit_*.so") + glob.glob("/tmp/cortex_diag_*.log") + glob.glob("/tmp/agent_scratch_*.py"):
+            if os.path.exists(f):
+                os.remove(f)
+                purged_files += 1
 
         return {
             "status": "purged",

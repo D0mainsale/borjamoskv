@@ -94,3 +94,20 @@ def test_hardware_bridge_factorize_tensor_empty_codebook():
     bridge = HardwareBridge()
     result = bridge.factorize_tensor([1, 0, 1, 0], [])
     assert result == []
+
+def test_hardware_bridge_purge_scratch_environment_follows_omega24():
+    import os
+    # Simulate an ephemeral JIT artifact
+    test_file = "/tmp/vsa_jit_test_omega24.so"
+    with open(test_file, "w") as f:
+        f.write("dummy")
+
+    assert os.path.exists(test_file)
+
+    bridge = HardwareBridge()
+    res = bridge.purge_scratch_environment()
+
+    assert res["status"] == "purged"
+    assert res["state"] == "Ω24-Isomorphic"
+    assert not os.path.exists(test_file)
+
