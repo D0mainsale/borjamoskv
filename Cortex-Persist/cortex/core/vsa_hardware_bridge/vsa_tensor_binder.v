@@ -46,10 +46,10 @@ module vsa_tensor_binder #(
     wire [BUS_WIDTH-1:0] right_shifted;
     wire [BUS_WIDTH-1:0] left_shifted;
 
-    assign right_shifted = (reg_shift == 0) ? reg_a :
-                           ((reg_a >> reg_shift) | (reg_a << (BUS_WIDTH - reg_shift)));
-    assign left_shifted  = (reg_shift == 0) ? reg_a :
-                           ((reg_a << reg_shift) | (reg_a >> (BUS_WIDTH - reg_shift)));
+    wire [2*BUS_WIDTH-1:0] double_a = {reg_a, reg_a};
+    
+    assign right_shifted = double_a >> reg_shift;
+    assign left_shifted  = double_a >> (BUS_WIDTH - reg_shift);
 
     assign permuted_a = (reg_mode == MODE_UNBIND) ? left_shifted : right_shifted;
 
@@ -77,6 +77,13 @@ module vsa_tensor_binder #(
             end
         end
     endfunction
+
+    // Evaluaciones combinacionales deduplicadas
+    wire [BUS_WIDTH:0] popcount_bound = log2_popcount(bound_combinational);
+    wire [BUS_WIDTH:0] popcount_hamming = log2_popcount(reg_a ^ reg_b);
+    
+    // Reducción lógica O(1) para anomalía entrópica (mucho más rápido que comparación aritmética)
+    wire anomaly_comb = (~|bound_combinational) | (&bound_combinational);
 
     // Etapa 2: Latch de cómputo y salida
     always @(posedge clk or negedge rst_n) begin
@@ -108,10 +115,9 @@ module vsa_tensor_binder #(
             if (reg_enable) begin
                 tensor_out      <= bound_combinational;
                 acc_reg         <= acc_reg ^ bound_combinational;
-                popcount        <= log2_popcount(bound_combinational);
-                hamming_dist    <= log2_popcount(reg_a ^ reg_b);
-                entropy_anomaly <= (log2_popcount(bound_combinational) == 0) || 
-                                   (log2_popcount(bound_combinational) == BUS_WIDTH);
+                popcount        <= popcount_bound;
+                hamming_dist    <= popcount_hamming;
+                entropy_anomaly <= anomaly_comb;
                 valid           <= 1'b1;
             end else begin
                 valid           <= 1'b0;
