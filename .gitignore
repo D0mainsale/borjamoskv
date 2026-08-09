@@ -1,0 +1,7 @@
+*.zst
+*.db.zst
+*.vcd
+*.so
+*.dylib
+__pycache__/
+*.pyc
