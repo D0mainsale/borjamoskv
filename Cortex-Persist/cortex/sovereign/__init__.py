@@ -13,6 +13,7 @@ El software es una abstracción temporal; el pensamiento es la verdad.
 from .gobernador import GobernadorDimensional, GobernadorEstabilidad, EstadoPID
 from .memoria import AlmacenMemoria
 from .membrana import MembranaPersistencia, PropuestaHecho, ResultadoGuardia, ResultadoSellado
+from .membrana import guard_and_commit_sync, custodiar_y_sellar_sync
 from .forja import Forja
 from .planificador import Planificador
 from .motor import MotorSoberano, EstadoEjecucion
@@ -22,6 +23,7 @@ __all__ = [
     "GobernadorDimensional", "GobernadorEstabilidad", "EstadoPID",
     "AlmacenMemoria",
     "MembranaPersistencia", "PropuestaHecho", "ResultadoGuardia", "ResultadoSellado",
+    "guard_and_commit_sync", "custodiar_y_sellar_sync",
     "Forja",
     "Planificador",
     "MotorSoberano", "EstadoEjecucion",

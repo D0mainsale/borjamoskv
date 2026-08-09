@@ -10,7 +10,7 @@ def run_bridge(domain, target_url, auth_token, tenant_header="X-Tenant-ID"):
     print("∴ PHASE 1: DISCOVERY")
     try:
         # Importamos la lógica de tenant_osint si es posible, o ejecutamos como subprocess
-        from tenant_osint_v1 import run_osint
+        from cortex.tools.tenant_osint_v1 import run_osint
         candidates = run_osint(domain)
     except ImportError:
         print("Error: tenant_osint_v1.py no encontrado en el path.")
@@ -23,7 +23,7 @@ def run_bridge(domain, target_url, auth_token, tenant_header="X-Tenant-ID"):
     # 2. Ejecutar Fuzzer BOLA
     print("\n∴ PHASE 2: BOLA STRIKE")
     try:
-        from bola_fuzzer_v1 import scan_bola
+        from cortex.tools.bola_fuzzer_v1 import scan_bola
         headers = {
             "Authorization": f"Bearer {auth_token}",
             tenant_header: "DUMMY_INIT_VAL" # Se sobreescribirá en el fuzzer

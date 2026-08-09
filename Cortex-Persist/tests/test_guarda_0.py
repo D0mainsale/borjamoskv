@@ -61,10 +61,9 @@ CASES = [
     (
         "verbose padding should reduce",
         (
-            "This is a long document.\n\n\n\n\nWith many blank lines.\n\n\n\n\n"
-            "And more content here.   \n"
-            "----\n----\n----\n"
-            "Final section.\n\n\n\n\nEnd.\n"
+            ("This is a long document paragraph with detailed content.\n\n\n\n\nWith many blank lines.\n\n\n\n\n" * 15)
+            + "----\n----\n----\n"
+            + ("Final section with more padding.\n\n\n\n\n" * 15)
         ),
         False,  # should NOT bypass, should be reduced
     ),
@@ -87,16 +86,16 @@ def test_bypass_rules():
             emoji = "⏭️ " if got_bypass else "✂️ "
             ratio = f" ({audit.reduction_ratio*100:.1f}% saved)" if not got_bypass else ""
             print(f"  ✅ {emoji} [{desc}]{ratio}")
-    return failures
+    assert not failures
 
 
 def test_reduction_correctness():
     """Verify structural reducer does not change bypass payloads."""
     failures = []
     padding_text = (
-        "Content here.\n\n\n\n\nMore content.   \n"
-        "====\n====\n====\n"
-        "End section.\n\n\n\n\nFin.\n"
+        ("Content line with extra trailing spaces.   \n\n\n\n\n" * 30)
+        + "====\n====\n====\n"
+        + ("End section content with extra blank lines.\n\n\n\n\n" * 30)
     )
     reduced, audit = reduce(padding_text)
     if audit.bypass_triggered:
@@ -107,7 +106,7 @@ def test_reduction_correctness():
         )
     else:
         print(f"  ✅ ✂️  Structural reducer: {audit.reduction_ratio*100:.1f}% saved")
-    return failures
+    assert not failures
 
 
 def test_guarda_0_harness():
@@ -146,7 +145,7 @@ def test_guarda_0_harness():
     failures = []
     if not result["passed"] and result["p95_similarity"] < 0.80:
         failures.append(f"  FAIL: p95={result['p95_similarity']} well below threshold")
-    return failures
+    assert not failures
 
 
 # ── Runner ────────────────────────────────────────────────────────────

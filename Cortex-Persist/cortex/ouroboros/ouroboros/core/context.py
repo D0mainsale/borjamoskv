@@ -6,8 +6,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
 
-from ouroboros.core.seed import Seed
-from ouroboros.core.types import (
+from .seed import Seed
+from .types import (
     AmbiguityScore,
     DriftScore,
     Phase,

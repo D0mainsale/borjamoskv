@@ -5,6 +5,17 @@ description = "Sovereign Agentic Runtime — CORTEX-Persist"
 requires-python = ">=3.11"
 dependencies = [
     "httpx>=0.27.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "requests>=2.32",
+    "rich>=13.9",
+    "google-genai>=1.0",
+    "protobuf>=5.28",
+    "web3>=7.0",
+    "eth-account>=0.13",
+    "numpy>=1.26",
 ]
 
 [project.optional-dependencies]

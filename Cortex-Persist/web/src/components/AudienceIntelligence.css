@@ -1,0 +1,216 @@
+/* AudienceIntelligence — Industrial Noir 2026 */
+
+.aie-container {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  animation: aie-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  backdrop-filter: blur(30px);
+}
+
+@keyframes aie-enter {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.aie-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aie-close-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.aie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.aie-title {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+}
+
+.tag-neutral {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+
+.aie-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+}
+
+.aie-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.aie-card-sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.aie-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.aie-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: left;
+  padding: 0 0 0.8rem 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.aie-table-row td {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.6);
+  vertical-align: middle;
+}
+
+.aie-table-row:hover td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.hmac-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.exergy-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.exergy-percent {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  min-width: 2.5rem;
+}
+
+.exergy-bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.exergy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2B3BE5, #2BE58B);
+  border-radius: 100px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pulse-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.pulse-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.pulse-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pulse-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.02em;
+}
+
+.pulse-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.noise-panel {
+  background: rgba(229, 43, 43, 0.03);
+  border: 1px solid rgba(229, 43, 43, 0.06);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.noise-header {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: rgba(229, 43, 43, 0.5);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.noise-item {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0.3rem 0;
+}

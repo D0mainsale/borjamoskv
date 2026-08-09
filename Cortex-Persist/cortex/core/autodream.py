@@ -20,7 +20,7 @@ from typing import Optional
 
 # Lazy import to avoid circular deps — EventStore is optional
 try:
-    from cortex.ouroboros_event_store import EventStore, Event
+    from cortex.ouroboros.event_store import EventStore, Event
 except ImportError:
     EventStore = None  # type: ignore
     Event = None  # type: ignore

@@ -1,0 +1,89 @@
+/* BootSequence — Industrial Noir 2026 */
+
+.boot-container {
+  position: fixed;
+  inset: 0;
+  background: #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: boot-power-on 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes boot-power-on {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.boot-container.glitch-out {
+  animation: boot-glitch-out 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes boot-glitch-out {
+  0%   { opacity: 1; transform: scale(1); filter: none; }
+  30%  { opacity: 1; transform: scale(1.02) skewX(-2deg); filter: hue-rotate(90deg) brightness(3); }
+  60%  { opacity: 0.6; transform: scale(0.98) skewX(1deg); filter: hue-rotate(180deg) brightness(0.5); }
+  100% { opacity: 0; transform: scale(1.05); filter: brightness(10); }
+}
+
+.boot-terminal {
+  width: 90%;
+  max-width: 700px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.boot-line {
+  display: flex;
+  gap: 0.8rem;
+  animation: boot-line-in 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0 0.5rem;
+}
+
+@keyframes boot-line-in {
+  from { opacity: 0; transform: translateX(-4px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.boot-line:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.boot-timestamp {
+  color: rgba(43, 59, 229, 0.5);
+  font-size: 0.6rem;
+  min-width: 5rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.boot-text {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Highlight keywords */
+.boot-line:nth-child(-n+2) .boot-text {
+  color: rgba(43, 59, 229, 0.7);
+}
+
+.boot-line:last-child .boot-text {
+  color: #2BE58B;
+  font-weight: 700;
+}
+
+.boot-cursor {
+  display: inline-block;
+  color: #2B3BE5;
+  font-weight: 700;
+  animation: cursor-blink 0.6s step-end infinite;
+  margin-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from ouroboros.core.errors import SecurityLimitError
+from .errors import SecurityLimitError
 
 # ── Constants ─────────────────────────────────────────────────
 

@@ -17,22 +17,13 @@ def failing_executor(seed: Seed, generation: int) -> str:
     logging.info(f"[*] Ejecutor intentando procesar gen {generation}...")
     raise SyntaxError("C5_INJECTED_FAULT: IndentationError in skill 'dummy_skill' at line 42")
 
-def run_siege():
-    # Loop ajustado a 3 intentos máximo
-    config = MultipassConfig(max_retries=3, record_events=False) 
+def test_c5_siege_contains_injected_executor_fault():
+    config = MultipassConfig(max_retries=3, record_events=False)
     engine = MultipassEngine(config=config)
-    
-    print("==================================================")
-    print(" INICIANDO ASEDIO C5 (Vector AUTO-FIX OpenSpace)  ")
-    print("==================================================")
-    
     result = engine.run(seed, failing_executor)
-    
-    print("==================================================")
-    print("Resultado Final:")
-    print(f" - Fallo contenido (No crashea el loop general): {not result.converged}")
-    print(f" - Iteraciones de sangrado térmico: {result.generations_run}/{config.max_retries}")
-    print("==================================================")
-    
+    assert not result.converged
+    assert result.generations_run == config.max_retries
+
+
 if __name__ == "__main__":
-    run_siege()
+    test_c5_siege_contains_injected_executor_fault()

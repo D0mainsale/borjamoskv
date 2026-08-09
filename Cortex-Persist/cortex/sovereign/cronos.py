@@ -5,7 +5,7 @@ from datetime import datetime
 from sqlite3 import connect
 from contextlib import contextmanager
 
-from memoria import AlmacenMemoria
+from cortex.sovereign.memoria import AlmacenMemoria
 # Configuración de CRONOS-Ω
 DECAY_INTERVAL = 5.0  # Frecuencia de actualización (segundos)
 BASE_LAMBDA = 0.005   # Tasa de decaimiento base (exergía)

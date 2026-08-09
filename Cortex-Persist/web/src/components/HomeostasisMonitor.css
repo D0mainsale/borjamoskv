@@ -1,0 +1,223 @@
+/* HomeostasisMonitor — Industrial Noir 2026 */
+
+.homeostasis-root {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.8rem 2rem;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  animation: homeo-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(30px);
+}
+
+.homeostasis-root.offline {
+  border-color: rgba(229, 43, 43, 0.15);
+}
+
+@keyframes homeo-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.homeostasis-loading {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  animation: blink-load 1.2s ease-in-out infinite;
+}
+
+@keyframes blink-load {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 1; }
+}
+
+.homeostasis-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pulse-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2BE58B;
+  box-shadow: 0 0 8px rgba(43, 229, 139, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.homeostasis-root.offline .pulse-indicator {
+  background: #E52B2B;
+  box-shadow: 0 0 8px rgba(229, 43, 43, 0.5);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50%      { opacity: 1; transform: scale(1.2); }
+}
+
+.homeostasis-header .label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+
+.status-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #2BE58B;
+  background: rgba(43, 229, 139, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  margin-left: auto;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+
+.homeostasis-root.offline .status-badge {
+  color: #E52B2B;
+  background: rgba(229, 43, 43, 0.08);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.metric-box {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.metric-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+}
+
+.metric-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.metric-value-large {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.metric-bar-container {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+
+.metric-bar {
+  height: 100%;
+  width: var(--fill-width, 0%);
+  background: linear-gradient(90deg, #2B3BE5, #2BE58B);
+  border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metric-sub {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.sub-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.stability-ring {
+  width: 50px;
+  height: 50px;
+  margin-top: 0.3rem;
+}
+
+.ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 3;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: #2B3BE5;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: var(--stroke-dash, 0), 100;
+  transition: stroke-dasharray 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metric-value-glow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #2BE58B;
+  text-shadow: 0 0 20px rgba(43, 229, 139, 0.3);
+  line-height: 1;
+}
+
+.yield-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(43, 229, 139, 0.5);
+  margin-top: 0.4rem;
+  text-transform: lowercase;
+}
+
+.blink-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #2BE58B;
+  animation: blink-load 1s ease-in-out infinite;
+}
+
+.homeostasis-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.timestamp, .engine-v {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.04em;
+}

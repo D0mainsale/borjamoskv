@@ -6,15 +6,17 @@ import asyncio
 from datetime import datetime
 
 # Axiom Ω₈: Interoperabilidad de Espacios
-CORTEX_BASE = "/Users/borjafernandezangulo/30_CORTEX"
+CORTEX_BASE = os.environ.get("CORTEX_BASE", os.path.expanduser("~/30_CORTEX"))
 sys.path.append(CORTEX_BASE)
 
 try:
     from cortex.engine.legion import LegionOmegaEngine, SiegeResult
     from cortex.engine.legion_vectors import RED_TEAM_SWARM
 except ImportError as e:
-    print(f"❌ Error Crítico: No se pudo importar el motor LEGION desde 30_CORTEX. {e}")
-    sys.exit(1)
+    LegionOmegaEngine = None
+    SiegeResult = None
+    RED_TEAM_SWARM = None
+    print(f"⚠ LEGION: Motor no disponible — fallback activo. {e}")
 
 VANGUARD_LEDGER = os.path.join(CORTEX_BASE, "engine-c5/vanguard_ledger.json")
 

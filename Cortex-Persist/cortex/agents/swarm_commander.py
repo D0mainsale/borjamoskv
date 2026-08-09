@@ -276,8 +276,7 @@ def phase_submit() -> None:
                 _log(f"  → Submitting to Code4rena: {finding.get('title', 'Unknown')[:50]}", _BLU)
                 # Import and call CapitalExtractorC5
                 try:
-                    sys.path.insert(0, str(BASE_DIR / "cortex.ouroboros"))
-                    from capital_extractor import CapitalExtractorC5
+                    from cortex.ouroboros.capital_extractor import CapitalExtractorC5
                     extractor = CapitalExtractorC5()
                     result = extractor.submit_code4rena_finding(
                         handle=os.getenv("C4_HANDLE", "cortex-hunter"),

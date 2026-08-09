@@ -1,0 +1,306 @@
+/* MacOmegaHUD — Industrial Noir 2026 */
+
+.mac-omega-hud-container {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: hud-activate 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hud-activate {
+  from { opacity: 0; filter: brightness(3) saturate(0); }
+  to   { opacity: 1; filter: brightness(1) saturate(1); }
+}
+
+/* Noise texture overlay */
+.hud-overlay-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* Scan line effect */
+.hud-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  top: var(--scan-y, 0%);
+  background: linear-gradient(90deg, transparent, rgba(43, 59, 229, 0.15), transparent);
+  pointer-events: none;
+  z-index: 2;
+  transition: top 0.1s linear;
+}
+
+/* Ambilight emitters */
+.ambilight-emitter {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambilight-emitter.top {
+  top: -40px;
+  left: 20%;
+  right: 20%;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(43, 59, 229, calc(var(--exergy-glow, 0.8) * 0.15)), transparent);
+  filter: blur(30px);
+}
+
+.ambilight-emitter.bottom {
+  bottom: -40px;
+  left: 20%;
+  right: 20%;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(43, 229, 139, calc(var(--exergy-glow, 0.8) * 0.1)), transparent);
+  filter: blur(30px);
+}
+
+.ambilight-emitter.left {
+  top: 20%;
+  bottom: 20%;
+  left: -30px;
+  width: 60px;
+  background: radial-gradient(ellipse at center, rgba(43, 59, 229, 0.08), transparent);
+  filter: blur(20px);
+}
+
+.ambilight-emitter.right {
+  top: 20%;
+  bottom: 20%;
+  right: -30px;
+  width: 60px;
+  background: radial-gradient(ellipse at center, rgba(43, 59, 229, 0.08), transparent);
+  filter: blur(20px);
+}
+
+/* Header */
+.hud-header {
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  position: relative;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.hud-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hud-main-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hud-icon {
+  font-size: 1.1rem;
+  color: #2B3BE5;
+  text-shadow: 0 0 12px rgba(43, 59, 229, 0.4);
+}
+
+.hud-version {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.hud-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.blinking-indicator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2BE58B;
+  box-shadow: 0 0 6px rgba(43, 229, 139, 0.5);
+  animation: blink-ind 1.5s step-end infinite;
+}
+
+@keyframes blink-ind {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.2; }
+}
+
+.hud-silicon-truth {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.hud-silicon-truth .label {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.status-green {
+  color: #2BE58B;
+}
+
+.hud-notch-trigger {
+  background: rgba(43, 59, 229, 0.08);
+  border: 1px solid rgba(43, 59, 229, 0.15);
+  color: rgba(43, 59, 229, 0.6);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.hud-notch-trigger:hover {
+  background: rgba(43, 59, 229, 0.15);
+  color: #6B7AFF;
+  border-color: rgba(43, 59, 229, 0.3);
+  box-shadow: 0 0 20px rgba(43, 59, 229, 0.15);
+}
+
+.hud-notch-trigger:active {
+  transform: scale(0.96);
+}
+
+/* 3D Spatial Volume */
+.hud-spatial-volume {
+  flex: 1;
+  position: relative;
+  perspective: 800px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.hud-watermark-omega {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.012);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.hud-3d-scene {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.hud-dom-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:
+    translate(-50%, -50%)
+    translate3d(var(--node-x, 0), var(--node-y, 0), var(--node-z, 0));
+  opacity: var(--node-opacity, 0);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.node-bracket {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.node-tag {
+  color: var(--node-color, #2BE58B);
+  font-weight: 700;
+}
+
+.node-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, var(--node-color, #2BE58B), transparent);
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Footer */
+.hud-footer {
+  padding: 1.2rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 10;
+}
+
+.hud-metrics {
+  display: flex;
+  gap: 2rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.m-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.m-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.color-gold {
+  color: #E5C02B !important;
+  text-shadow: 0 0 10px rgba(229, 192, 43, 0.2);
+}
+
+.hud-log {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 1.8;
+  text-align: right;
+  max-width: 50%;
+}
