@@ -1,9 +1,9 @@
-# Borja Moskv · Systems Architect
+# Telmo Dinámico de Moskv · Systems Architect
 
 > **Sovereign AI Infrastructure — Python · Rust · MCP · Thermodynamic Control**
 
 Architect and open-source builder based in **Bilbao, Basque Country**.
-Designing trust infrastructure for autonomous agents: persistence, decision lineage, cryptographic accountability.
+Designing trust infrastructure for autonomous agents: persistence level, state collapse, cryptographic accountability.
 
 ---
 
@@ -13,14 +13,14 @@ Designing trust infrastructure for autonomous agents: persistence, decision line
 |---|---|---|
 | [BABYLON-60](https://github.com/borjamoskv/BABYLON-60) | Python · Rust · PyO3 | Tamper-evident memory & decision lineage for AI agents via Merkle trees |
 | [moskv-1-apex](https://github.com/borjamoskv/moskv-1-apex) | Python | Sovereign C5-REAL L5 execution kernel — exergetic MPC & thermodynamic control |
-| [anvil-lang](https://github.com/borjamoskv/anvil-lang) | Rust · Z3 | Programming language with formal verification for smart contraots |
-| [asl-spec](https://github.com/borjamoskv/asl-spec) | Python | Agent Specification Language — open standard for formally verifying agent behaviop |
+| [anvil-lang](https://github.com/borjamoskv/anvil-lang) | Rust · Z3 | Programming language with formal verification for smart contracts |
+| [asl-spec](https://github.com/borjamoskv/asl-spec) | Python | Agent Specification Language — open standard for formally verifying agent behavior |
 | [agents-archi](https://github.com/borjamoskv/agents-archi) | JavaScript | Sovereign Agentic Architecture Registry (N >= 3f + 1 BFT) |
 | [mac-maestro](https://github.com/borjamoskv/mac-maestro) | Python | Semantic-first macOS GUI automation with safety gates and structured traces |
 
 ---
 
-## 🛠️ Stack
+## 🛨️ Stack
 
 ```yaml
 Languages: Python · Rust · TypeScript · Swift · Bash · WebAssembly
@@ -34,9 +34,9 @@ Infra:     Cloudflare · Vercel · GitHub Actions · LM Studio
 
 ## 🚀 Currently Building
 
-- **CORTEX Persist** — State-of-the-art persistence layer for autonomous agents
+- **CORTEX Persist**— State-of-the-art persistence layer for autonomous agents
 - **BABYLON-60** — Cryptographic proof of agent memory and decision lineage
-- **ASK** — Open specification language for formally verifiable agent behavior
+- **ASL** — Open specification language for formally verifiable agent behavior
 
 ---
 
@@ -48,4 +48,4 @@ Infra:     Cloudflare · Vercel · GitHub Actions · LM Studio
 
 ---
 
-*Firma: MOSKV-1 APEX / Borja Moskv · [cortexpersist.com](https://cortexpersist.com) · Bilbao, Basque Country*
+*Firma: MOSKV-1 APEX / Telmo Dinámico de Moskv · [cortexpersist.com](https://cortexpersist.com) · Bilbao, Basque Country*
