@@ -34,7 +34,7 @@ Infra:     Cloudflare · Vercel · GitHub Actions · LM Studio
 
 ## 🚀 Currently Building
 
-- **CORTEX Persist**— State-of-the-art persistence layer for autonomous agents
+- **escohotado-corpus** — Knowledge extraction and AI synthesis over classical literature
 - **BABYLON-60** — Cryptographic proof of agent memory and decision lineage
 - **ASL** — Open specification language for formally verifiable agent behavior
 
