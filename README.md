@@ -12,11 +12,11 @@ Designing trust infrastructure for autonomous agents: persistence level, state c
 | Project | Stack | Description |
 |---|---|---|
 | [BABYLON-60](https://github.com/borjamoskv/BABYLON-60) | Python · Rust · PyO3 | Tamper-evident memory & decision lineage for AI agents via Merkle trees |
+| [babylon60-ide](https://github.com/borjamoskv/babylon60-ide) | Tauri v2 · FastAPI · React | Sovereign multi-platform IDE with zero-copy IPC and WORM ledger inspection |
 | [moskv-1-apex](https://github.com/borjamoskv/moskv-1-apex) | Python | Sovereign C5-REAL L5 execution kernel — exergetic MPC & thermodynamic control |
 | [anvil-lang](https://github.com/borjamoskv/anvil-lang) | Rust · Z3 | Programming language with formal verification for smart contracts |
 | [asl-spec](https://github.com/borjamoskv/asl-spec) | Python | Agent Specification Language — open standard for formally verifying agent behavior |
 | [agents-archi](https://github.com/borjamoskv/agents-archi) | JavaScript | Sovereign Agentic Architecture Registry (N >= 3f + 1 BFT) |
-| [mac-maestro](https://github.com/borjamoskv/mac-maestro) | Python | Semantic-first macOS GUI automation with safety gates and structured traces |
 
 ---
 
